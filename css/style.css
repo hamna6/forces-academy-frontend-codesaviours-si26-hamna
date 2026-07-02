@@ -1,0 +1,662 @@
+/* =====================================================
+   FORCES ACADEMY – NAVBAR STYLES (Professional Spacing)
+   Deep military green + sage green, finely tuned.
+   ===================================================== */
+
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+}
+
+.fa-navbar {
+  background-color: #16331f;
+  border-bottom: 3px solid #9caf88;
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+.fa-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+}
+
+/* ---------- Circular logo ---------- */
+.fa-crest-ring {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--fa-parchment, #f3efe4);
+  border: 2px solid #9caf88;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.fa-crest {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+.fa-brand-text {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+  line-height: 1.1;
+  letter-spacing: 1px;
+  color: #f3efe4;
+}
+
+.fa-brand-text small {
+  display: block;
+  font-size: 0.6rem;
+  letter-spacing: 1.8px;
+  color: #9caf88;
+  font-weight: 500;
+  margin-top: 2px;
+  white-space: nowrap;
+}
+
+.fa-roster-nav .nav-link {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.92rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: rgba(243, 239, 228, 0.75);
+  margin: 0 2px;
+  padding: 0.5rem 0.8rem;
+  border-bottom: 2px solid transparent;
+  transition: 0.2s ease;
+}
+
+.fa-roster-nav .nav-link:hover,
+.fa-roster-nav .nav-link.active {
+  color: #f3efe4;
+  border-bottom-color: #9caf88;
+}
+
+.fa-clearance-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: #9caf88;
+  background: transparent;
+  border: 1.5px solid #9caf88;
+  border-radius: 3px;
+  padding: 0.5rem 1.2rem;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.fa-clearance-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #9caf88;
+  box-shadow: 0 0 0 3px rgba(156, 175, 136, 0.25);
+}
+
+.fa-clearance-badge:hover {
+  background-color: #9caf88;
+  color: #0c2013;
+  transform: translateY(-1px);
+}
+
+.fa-clearance-badge:hover .fa-clearance-dot {
+  background-color: #0c2013;
+}
+
+.navbar-toggler {
+  border-color: #9caf88;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%239caf88' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+@media (max-width: 991.98px) {
+  .fa-roster-nav .nav-link {
+    padding: 0.6rem 0;
+    border-bottom: none;
+    border-left: 2px solid transparent;
+    padding-left: 0.75rem;
+  }
+
+  .fa-roster-nav .nav-link:hover,
+  .fa-roster-nav .nav-link.active {
+    border-left-color: #9caf88;
+  }
+}
+
+@media (min-width: 992px) {
+  .fa-navbar .navbar-collapse {
+    margin-left: 3rem;
+  }
+}
+
+:root {
+  --fa-green: #16331f;
+  --fa-green-dark: #0c2013;
+  --fa-parchment: #f3efe4;
+  --fa-sage: #9caf88;
+
+  --fa-font-display: 'Oswald', sans-serif;
+  --fa-font-mono: 'JetBrains Mono', monospace;
+}
+
+.fa-hero {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: var(--fa-parchment);
+}
+
+.fa-hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.fa-hero-img {
+  position: absolute;
+  inset: -6%;
+  background-image: url('https://images.unsplash.com/photo-1608396941316-ea89219bd56e?auto=format&fit=crop&w=1920&q=80');
+  background-size: cover;
+  background-position: center;
+  filter: saturate(0.85) contrast(1.05);
+  animation: fa-hero-zoom 22s ease-in-out infinite alternate;
+}
+
+@keyframes fa-hero-zoom {
+  from { transform: scale(1); }
+  to   { transform: scale(1.12); }
+}
+
+.fa-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 80% 15%, rgba(156, 175, 136, 0.18), transparent 45%),
+    linear-gradient(180deg, rgba(12, 32, 19, 0.55) 0%, rgba(12, 32, 19, 0.8) 55%, rgba(12, 32, 19, 0.96) 100%);
+}
+
+.fa-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 8.5rem 0 5rem;
+}
+
+.fa-hero-badge {
+  display: inline-block;
+  font-family: var(--fa-font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--fa-sage);
+  border: 1px solid rgba(156, 175, 136, 0.5);
+  border-radius: 30px;
+  padding: 0.45rem 1.1rem;
+  margin-bottom: 1.75rem;
+  background: rgba(22, 51, 31, 0.4);
+  backdrop-filter: blur(4px);
+  animation: fa-fade-down 0.8s ease both;
+}
+
+.fa-hero-title {
+  font-family: var(--fa-font-display);
+  font-weight: 700;
+  font-size: clamp(2.3rem, 6vw, 4.2rem);
+  line-height: 1.08;
+  letter-spacing: 0.5px;
+  margin-bottom: 1.1rem;
+  animation: fa-fade-up 0.9s ease 0.15s both;
+}
+
+.fa-hero-title span {
+  color: var(--fa-sage);
+}
+
+.fa-hero-tagline {
+  font-size: 1.15rem;
+  color: rgba(243, 239, 228, 0.85);
+  max-width: 36rem;
+  margin: 0 auto 2.4rem;
+  animation: fa-fade-up 0.9s ease 0.3s both;
+}
+
+.fa-hero-ctas {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 3.25rem;
+  animation: fa-fade-up 0.9s ease 0.45s both;
+}
+
+.fa-btn {
+  font-family: var(--fa-font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.85rem 2.1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, color 0.25s ease;
+}
+
+.fa-btn-fill {
+  background: var(--fa-sage);
+  color: var(--fa-green-dark);
+  box-shadow: 0 8px 20px rgba(156, 175, 136, 0.25);
+}
+
+.fa-btn-fill::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--fa-parchment);
+  transform: translateX(-100%);
+  transition: transform 0.35s ease;
+  z-index: -1;
+}
+
+.fa-btn-fill:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(156, 175, 136, 0.35);
+}
+
+.fa-btn-fill:hover::before {
+  transform: translateX(0);
+}
+
+.fa-btn-ghost {
+  border: 1.5px solid var(--fa-parchment);
+  color: var(--fa-parchment);
+  background: transparent;
+}
+
+.fa-btn-ghost:hover {
+  background: var(--fa-parchment);
+  color: var(--fa-green-dark);
+  transform: translateY(-3px);
+}
+
+.fa-btn:active{
+  transform: scale(0.94) translateY(1px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+.fa-hero-stats {
+  display: flex;
+  gap: 2.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: fa-fade-up 0.9s ease 0.6s both;
+}
+
+.fa-stat {
+  text-align: center;
+  padding: 0.4rem 1.3rem;
+  border-left: 1px solid rgba(156, 175, 136, 0.3);
+  transition: transform 0.2s ease;
+}
+
+.fa-stat:first-child {
+  border-left: none;
+}
+
+.fa-stat:hover {
+  transform: translateY(-2px);
+}
+
+.fa-stat-num {
+  display: block;
+  font-family: var(--fa-font-mono);
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: var(--fa-sage);
+}
+
+.fa-stat-label {
+  font-size: 0.68rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(243, 239, 228, 0.7);
+}
+
+.fa-scroll-cue {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  width: 26px;
+  height: 42px;
+  border: 2px solid rgba(243, 239, 228, 0.55);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  padding-top: 6px;
+}
+
+.fa-scroll-cue span {
+  width: 4px;
+  height: 8px;
+  border-radius: 2px;
+  background: var(--fa-sage);
+  animation: fa-scroll-dot 1.8s ease infinite;
+}
+
+@keyframes fa-scroll-dot {
+  0%   { transform: translateY(0); opacity: 1; }
+  70%  { transform: translateY(14px); opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@keyframes fa-fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fa-fade-down {
+  from { opacity: 0; transform: translateY(-16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 767.98px) {
+  .fa-hero { min-height: 82vh; }
+  .fa-hero-ctas { flex-direction: column; align-items: stretch; }
+  .fa-btn { width: 100%; text-align: center; }
+  .fa-hero-stats { gap: 1.4rem; }
+  .fa-stat { padding: 0.3rem 0.9rem; }
+}
+
+@media (max-width: 575.98px) {
+  .fa-scroll-cue { display: none; }
+}
+
+/* =========================================================
+   HERO ADD-ONS — banner, slideshow
+========================================================= */
+
+.fa-hero-banner{
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  z-index: 3;
+  background: rgba(12, 32, 19, 0.78);
+  border-bottom: 1px solid rgba(156, 175, 136, 0.3);
+  overflow: hidden;
+  padding: 7px 0;
+  backdrop-filter: blur(3px);
+}
+
+.fa-hero-banner-track{
+  display: flex;
+  gap: 36px;
+  white-space: nowrap;
+  width: max-content;
+  animation: fa-banner-scroll 22s linear infinite;
+}
+
+.fa-hero-banner-track span{
+  font-family: var(--fa-font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  color: var(--fa-sage);
+  text-transform: uppercase;
+}
+
+@keyframes fa-banner-scroll{
+  from{ transform: translateX(0); }
+  to{ transform: translateX(-50%); }
+}
+
+.fa-hero-slide-2{
+  background-image: url('https://images.unsplash.com/photo-1763656444626-ceffe6761596?fm=jpg&q=80&w=1920&auto=format&fit=crop');
+  opacity: 0;
+  animation: fa-hero-zoom 24s ease-in-out infinite alternate,
+             fa-slide-cross 24s ease-in-out infinite;
+}
+
+.fa-hero-slide-3{
+  background-image: url('https://images.unsplash.com/photo-1539003945029-b79e0b538bfb?fm=jpg&q=80&w=1920&auto=format&fit=crop');
+  opacity: 0;
+  animation: fa-hero-zoom 24s ease-in-out infinite alternate,
+             fa-slide-cross 24s ease-in-out infinite;
+  animation-delay: 12s, 12s;
+}
+
+@keyframes fa-slide-cross{
+  0%   { opacity: 0; }
+  8%   { opacity: 1; }
+  25%  { opacity: 1; }
+  33%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* ---------- "Get in Touch" card — plays once on load, then click-to-toggle ---------- */
+
+/* Wrap: lower on the hero, pinned flush to the right screen edge */
+.fa-notify-wrap{
+  position: absolute;
+  top: 64%;
+  right: 0;
+  z-index: 5;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+}
+
+.fa-notify-input{
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+/* Base = closed state. This is the state the card returns to
+   once the one-time intro animation finishes (no "forwards" used,
+   so the animation releases control back to these normal styles). */
+.fa-notify-card{
+  width: 240px;
+  margin-right: 4%;
+  background: var(--fa-parchment);
+  color: #22301f;
+  border-radius: 10px;
+  padding: 18px 18px 16px;
+  box-shadow: 0 16px 34px rgba(0,0,0,0.35);
+
+  transform: translateX(60px);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+
+  /* Plays ONCE on load: slides in, holds, slides out.
+     No "forwards" — once it ends, control reverts to the
+     transform/opacity declared above (closed), or to
+     :checked below (open) depending on the checkbox. */
+  animation: fa-notify-intro 4s ease-in-out 1;
+}
+
+.fa-notify-header{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--fa-font-display);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--fa-green-dark);
+  border-bottom: 1px dashed rgba(22,51,31,0.25);
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+}
+
+.fa-notify-dot{
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: #4ade80;
+  flex-shrink: 0;
+  animation: fa-notify-pulse 1.6s infinite;
+}
+
+@keyframes fa-notify-pulse{
+  0%{ box-shadow: 0 0 0 0 rgba(74,222,128,.6); }
+  70%{ box-shadow: 0 0 0 7px rgba(74,222,128,0); }
+  100%{ box-shadow: 0 0 0 0 rgba(74,222,128,0); }
+}
+
+.fa-notify-list{
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12px;
+}
+
+.fa-notify-list li{
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 0.78rem;
+  color: #3a4a37;
+  padding: 5px 0;
+}
+
+.fa-notify-icon{
+  font-size: 0.85rem;
+  color: var(--fa-green);
+  flex-shrink: 0;
+}
+
+.fa-notify-cta{
+  display: inline-block;
+  font-family: var(--fa-font-display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--fa-green-dark);
+  background: var(--fa-sage);
+  padding: 8px 14px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.fa-notify-cta:hover{
+  background: var(--fa-parchment);
+  outline: 1.5px solid var(--fa-sage);
+  transform: translateY(-2px);
+}
+
+/* One-time intro animation: slides in, holds briefly, slides back out */
+@keyframes fa-notify-intro{
+  0%   { transform: translateX(60px); opacity: 0; }
+  15%  { transform: translateX(0);    opacity: 1; }
+  70%  { transform: translateX(0);    opacity: 1; }
+  100% { transform: translateX(60px); opacity: 0; }
+}
+
+/* Manual toggle: works independently of the intro animation,
+   since the animation is not "forwards" and releases the
+   properties once it finishes. */
+.fa-notify-input:checked ~ .fa-notify-card{
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Arrow tab — embedded flush into the right edge, only a sliver visible */
+.fa-notify-arrow{
+  cursor: pointer;
+  flex-shrink: 0;
+  order: 2;
+  width: 22px;
+  height: 40px;
+  border-radius: 6px 0 0 6px;
+  background: var(--fa-sage);
+  color: var(--fa-green-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: -3px 0 10px rgba(0,0,0,0.3);
+  transition: background 0.25s ease, width 0.25s ease;
+}
+
+.fa-notify-arrow:hover{
+  background: var(--fa-parchment);
+  width: 26px;
+}
+
+.fa-notify-arrow-icon{
+  font-size: 0.75rem;
+  line-height: 1;
+  display: inline-block;
+  transition: transform 0.35s ease;
+}
+
+.fa-notify-input:checked ~ .fa-notify-arrow .fa-notify-arrow-icon{
+  transform: rotate(180deg);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 767.98px){
+  .fa-hero-content{ padding-top: 7rem; }
+  .fa-hero-banner-track span{ font-size: 0.62rem; }
+
+  .fa-notify-wrap{ top: 68%; }
+  .fa-notify-card{ width: 190px; padding: 14px 14px 12px; margin-right: 3%; }
+  .fa-notify-header{ font-size: 0.72rem; }
+  .fa-notify-list li{ font-size: 0.7rem; }
+  .fa-notify-arrow{ width: 18px; height: 34px; }
+
+  .fa-crest-ring{ width: 42px; height: 42px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fa-hero-img,
+  .fa-hero-badge,
+  .fa-hero-title,
+  .fa-hero-tagline,
+  .fa-hero-ctas,
+  .fa-hero-stats,
+  .fa-scroll-cue span,
+  .fa-hero-banner-track,
+  .fa-hero-slide-2,
+  .fa-hero-slide-3,
+  .fa-notify-dot {
+    animation: none !important;
+  }
+  .fa-notify-card{
+    animation: none !important;
+    transform: translateX(60px);
+    opacity: 0;
+  }
+  .fa-notify-input:checked ~ .fa-notify-card{
+    transform: translateX(0);
+    opacity: 1;
+  }
+  * {
+    transition: none !important;
+  }
+}
