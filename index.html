@@ -1,25 +1,188 @@
+<!-- ============================================================
+     FORCES ACADEMY - Home Page (index.html)
+     ============================================================ -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Forces Academy Faisalabad</title>
-<!-- Bootstrap 5 CSS -->
-<link
-href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.
-css"
-rel="stylesheet" />
-<!-- Your custom CSS (always AFTER Bootstrap) -->
-<link rel="stylesheet" href="css/style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forces Academy Faisalabad</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap"
+        rel="stylesheet"
+    />
+
+    <!-- Our custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-<!-- page content goes here -->
-<!-- Bootstrap 5 JS Bundle -->
-<script
-src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.
-min.js">
-</script>
-<!-- Your custom JS (always AFTER Bootstrap JS) -->
-<script src="js/main.js"></script>
+
+    <!-- ==================== NAVIGATION BAR ==================== -->
+    <nav class="navbar navbar-expand-lg sticky-top fa-navbar">
+        <div class="container">
+
+            <a class="navbar-brand fa-brand" href="index.html">
+                <span class="fa-crest-ring">
+                    <img
+                        src="images/LOGO.png"
+                        alt="Forces Academy crest"
+                        class="fa-crest"
+                    />
+                </span>
+                <span class="fa-brand-text">
+                    FORCES ACADEMY<br />
+                    <small> FAISALABAD</small>
+                </span>
+            </a>
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#mainNavbar"
+                aria-controls="mainNavbar"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center fa-roster-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="courses.html">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admissions.html">Admissions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="results.html">Results</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item ms-lg-4 mt-3 mt-lg-0">
+                        <a href="portal.html" class="fa-clearance-badge">
+                            <span class="fa-clearance-dot"></span>
+                            Student Portal
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- ================== END NAVBAR ================== -->
+
+    <!-- ============ HERO ============ -->
+    <section class="fa-hero">
+
+        <!-- Scrolling admissions banner -->
+        <div class="fa-hero-banner">
+            <div class="fa-hero-banner-track">
+                <span>ADMISSIONS OPEN &mdash; 2026 INTAKE</span>
+                <span>&bull;</span>
+                <span>LIMITED SEATS AVAILABLE</span>
+                <span>&bull;</span>
+                <span>APPLY BEFORE 31 AUGUST</span>
+                <span>&bull;</span>
+                <span>ADMISSIONS OPEN &mdash; 2026 INTAKE</span>
+                <span>&bull;</span>
+                <span>LIMITED SEATS AVAILABLE</span>
+                <span>&bull;</span>
+                <span>APPLY BEFORE 31 AUGUST</span>
+                <span>&bull;</span>
+            </div>
+        </div>
+
+        <div class="fa-hero-media">
+            <div class="fa-hero-img"></div>
+            <div class="fa-hero-img fa-hero-slide-2"></div>
+            <div class="fa-hero-img fa-hero-slide-3"></div>
+            <div class="fa-hero-overlay"></div>
+        </div>
+
+        <!-- "Get in Touch" card: plays once on load, then click-to-toggle -->
+        <div class="fa-notify-wrap">
+            <input type="checkbox" id="faNotifyToggle" class="fa-notify-input">
+
+            <div class="fa-notify-card">
+                <div class="fa-notify-header">
+                    <span class="fa-notify-dot"></span>
+                    Get in Touch
+                </div>
+                <ul class="fa-notify-list">
+                    <li><span class="fa-notify-icon">&#9742;</span>+92 41 111 222 333</li>
+                    <li><span class="fa-notify-icon">&#9993;</span>info@forcesacademy.edu.pk</li>
+                    <li><span class="fa-notify-icon">&#128205;</span>Susan Road, Faisalabad</li>
+                </ul>
+                <a href="contact.html" class="fa-notify-cta">Contact Us &rarr;</a>
+            </div>
+
+            <label for="faNotifyToggle" class="fa-notify-arrow" aria-label="Toggle contact card">
+                <span class="fa-notify-arrow-icon">&#8249;</span>
+            </label>
+        </div>
+
+        <div class="container fa-hero-content">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-9">
+
+                    <span class="fa-hero-badge">FAISALABAD&rsquo;S PREMIER FORCES ACADEMY</span>
+
+                    <h1 class="fa-hero-title">Forces Academy <span>Faisalabad</span></h1>
+
+                    <p class="fa-hero-tagline">
+                        Excellence in education, preparing tomorrow&rsquo;s leaders today.
+                    </p>
+
+                    <div class="fa-hero-ctas">
+                        <a href="admissions.html" class="fa-btn fa-btn-fill">Apply Now</a>
+                        <a href="about.html" class="fa-btn fa-btn-ghost">Learn More</a>
+                    </div>
+
+                    <div class="fa-hero-stats">
+                        <div class="fa-stat">
+                            <span class="fa-stat-num">14+</span>
+                            <span class="fa-stat-label">Years</span>
+                        </div>
+                        <div class="fa-stat">
+                            <span class="fa-stat-num">68%</span>
+                            <span class="fa-stat-label">Selection Rate</span>
+                        </div>
+                        <div class="fa-stat">
+                            <span class="fa-stat-num">2,100+</span>
+                            <span class="fa-stat-label">Cadets Trained</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <span class="fa-scroll-cue" aria-hidden="true"><span></span></span>
+    </section>
+    <!-- ============ END HERO ============ -->
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
