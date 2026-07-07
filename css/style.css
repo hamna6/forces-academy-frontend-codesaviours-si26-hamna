@@ -456,7 +456,6 @@ body {
 
 /* ---------- "Get in Touch" card — plays once on load, then click-to-toggle ---------- */
 
-/* Wrap: lower on the hero, pinned flush to the right screen edge */
 .fa-notify-wrap{
   position: absolute;
   top: 64%;
@@ -474,9 +473,6 @@ body {
   height: 1px;
 }
 
-/* Base = closed state. This is the state the card returns to
-   once the one-time intro animation finishes (no "forwards" used,
-   so the animation releases control back to these normal styles). */
 .fa-notify-card{
   width: 240px;
   margin-right: 4%;
@@ -491,10 +487,6 @@ body {
   pointer-events: none;
   transition: transform 0.5s ease, opacity 0.5s ease;
 
-  /* Plays ONCE on load: slides in, holds, slides out.
-     No "forwards" — once it ends, control reverts to the
-     transform/opacity declared above (closed), or to
-     :checked below (open) depending on the checkbox. */
   animation: fa-notify-intro 4s ease-in-out 1;
 }
 
@@ -569,7 +561,6 @@ body {
   transform: translateY(-2px);
 }
 
-/* One-time intro animation: slides in, holds briefly, slides back out */
 @keyframes fa-notify-intro{
   0%   { transform: translateX(60px); opacity: 0; }
   15%  { transform: translateX(0);    opacity: 1; }
@@ -577,16 +568,12 @@ body {
   100% { transform: translateX(60px); opacity: 0; }
 }
 
-/* Manual toggle: works independently of the intro animation,
-   since the animation is not "forwards" and releases the
-   properties once it finishes. */
 .fa-notify-input:checked ~ .fa-notify-card{
   transform: translateX(0);
   opacity: 1;
   pointer-events: auto;
 }
 
-/* Arrow tab — embedded flush into the right edge, only a sliver visible */
 .fa-notify-arrow{
   cursor: pointer;
   flex-shrink: 0;
@@ -619,7 +606,7 @@ body {
   transform: rotate(180deg);
 }
 
-/* ---------- Responsive ---------- */
+/* ---------- Responsive (hero add-ons) ---------- */
 @media (max-width: 767.98px){
   .fa-hero-content{ padding-top: 7rem; }
   .fa-hero-banner-track span{ font-size: 0.62rem; }
@@ -658,5 +645,324 @@ body {
   }
   * {
     transition: none !important;
+  }
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.fa-footer{
+  background: var(--fa-green-dark);
+  color: rgba(243, 239, 228, 0.85);
+  position: relative;
+}
+
+.fa-footer::before{
+  content: '';
+  display: block;
+  height: 4px;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      var(--fa-sage) 0px,
+      var(--fa-sage) 18px,
+      transparent 18px,
+      transparent 26px
+    );
+}
+
+.fa-footer-top{
+  padding: 3.5rem 0 2.5rem;
+}
+
+.fa-footer-grid{
+  display: grid;
+  grid-template-columns: 1.3fr auto 1fr 1fr 1.2fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.fa-footer-col{
+  min-width: 0;
+}
+
+.fa-footer-brand{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  margin-bottom: 1rem;
+}
+
+.fa-footer-crest-ring{
+  width: 44px;
+  height: 44px;
+}
+
+.fa-footer-brand-text{
+  font-family: var(--fa-font-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: 1px;
+  color: var(--fa-parchment);
+  line-height: 1.15;
+}
+
+.fa-footer-brand-text small{
+  display: block;
+  font-size: 0.58rem;
+  letter-spacing: 1.8px;
+  color: var(--fa-sage);
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.fa-footer-tagline{
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: rgba(243, 239, 228, 0.65);
+  max-width: 24rem;
+  margin-bottom: 0.9rem;
+}
+
+.fa-footer-description{
+  font-size: 0.82rem;
+  line-height: 1.7;
+  color: rgba(243, 239, 228, 0.55);
+  max-width: 26rem;
+  margin-bottom: 0;
+}
+
+.fa-footer-dispatch-divider{
+  align-self: stretch;
+  width: 1px;
+  background: repeating-linear-gradient(
+    180deg,
+    rgba(156, 175, 136, 0.45) 0px,
+    rgba(156, 175, 136, 0.45) 6px,
+    transparent 6px,
+    transparent 12px
+  );
+}
+
+.fa-footer-heading{
+  font-family: var(--fa-font-display);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: var(--fa-sage);
+  margin-bottom: 1.1rem;
+  position: relative;
+  padding-bottom: 8px;
+}
+
+.fa-footer-heading::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 26px;
+  height: 2px;
+  background: var(--fa-sage);
+}
+
+.fa-footer-links{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.fa-footer-links li{
+  margin-bottom: 0.65rem;
+}
+
+.fa-footer-links a{
+  color: rgba(243, 239, 228, 0.75);
+  text-decoration: none;
+  font-size: 0.88rem;
+  position: relative;
+  padding-left: 14px;
+  transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.fa-footer-links a::before{
+  content: '\203A';
+  position: absolute;
+  left: 0;
+  color: var(--fa-sage);
+  font-weight: 700;
+}
+
+.fa-footer-links a:hover{
+  color: var(--fa-parchment);
+  padding-left: 19px;
+}
+
+.fa-footer-contact{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.fa-footer-contact li{
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.85rem;
+  color: rgba(243, 239, 228, 0.78);
+  margin-bottom: 0.85rem;
+  line-height: 1.4;
+}
+
+.fa-footer-icon{
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(156, 175, 136, 0.15);
+  color: var(--fa-sage);
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+}
+
+.fa-footer-note{
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: rgba(243, 239, 228, 0.65);
+  margin-bottom: 1.1rem;
+}
+
+/* ---------- Follow Us: circular icon badges with true brand colors on hover ---------- */
+.fa-footer-social{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.fa-social-icon{
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--fa-parchment);
+  color: var(--fa-green-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+  transition: background 0.25s ease, color 0.25s ease,
+              transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.fa-social-icon svg{
+  pointer-events: none;
+}
+
+/* Default hover/focus lift (fallback if a brand-specific rule below doesn't apply) */
+.fa-social-icon:hover,
+.fa-social-icon:focus-visible{
+  color: var(--fa-green-dark);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.35);
+}
+
+/* Brand-true colors: each icon lights up in its own platform color on hover/focus/click */
+.fa-social-facebook:hover,
+.fa-social-facebook:focus-visible,
+.fa-social-facebook:active{
+  background: #1877f2;
+  color: #ffffff;
+  box-shadow: 0 8px 18px rgba(24, 119, 242, 0.45);
+}
+
+.fa-social-instagram:hover,
+.fa-social-instagram:focus-visible,
+.fa-social-instagram:active{
+  background: radial-gradient(circle at 30% 110%,
+      #ffdb73 0%, #fdb92c 12%, #ee2a7b 42%, #d92e83 55%, #6228d7 75%, #4361d1 100%);
+  color: #ffffff;
+  box-shadow: 0 8px 18px rgba(214, 43, 130, 0.45);
+}
+
+.fa-social-youtube:hover,
+.fa-social-youtube:focus-visible,
+.fa-social-youtube:active{
+  background: #ff0000;
+  color: #ffffff;
+  box-shadow: 0 8px 18px rgba(255, 0, 0, 0.4);
+}
+
+.fa-social-whatsapp:hover,
+.fa-social-whatsapp:focus-visible,
+.fa-social-whatsapp:active{
+  background: #25d366;
+  color: #ffffff;
+  box-shadow: 0 8px 18px rgba(37, 211, 102, 0.45);
+}
+
+.fa-footer-bottom{
+  border-top: 1px solid rgba(156, 175, 136, 0.2);
+  background: #081409;
+  padding: 1rem 0;
+}
+
+.fa-footer-bottom-inner{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  font-size: 0.76rem;
+  color: rgba(243, 239, 228, 0.55);
+}
+
+.fa-footer-legal{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--fa-font-mono);
+  letter-spacing: 0.3px;
+}
+
+.fa-footer-legal a{
+  color: rgba(156, 175, 136, 0.85);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.fa-footer-legal a:hover{
+  color: var(--fa-parchment);
+  text-decoration: underline;
+}
+
+.fa-footer-legal-sep{
+  color: rgba(156, 175, 136, 0.4);
+}
+
+@media (max-width: 1199.98px){
+  .fa-footer-grid{
+    grid-template-columns: 1fr 1fr;
+    row-gap: 2.5rem;
+  }
+  .fa-footer-dispatch-divider{ display: none; }
+  .fa-footer-brand-col{ grid-column: 1 / -1; }
+}
+
+@media (max-width: 575.98px){
+  .fa-footer-grid{
+    grid-template-columns: 1fr;
+  }
+  .fa-footer-bottom-inner{
+    flex-direction: column;
+    text-align: center;
+  }
+  .fa-footer-social{
+    justify-content: center;
   }
 }
