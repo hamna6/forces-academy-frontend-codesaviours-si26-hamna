@@ -1,77 +1,56 @@
+<!-- ============================================================
+     FORCES ACADEMY - Admissions Page (admissions.html)
+     ============================================================ -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admissions | Forces Academy Faisalabad</title>
+    <title>Admissions — Forces Academy Faisalabad</title>
 
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-    />
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap"
-        rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/style.css" />
-</head>
-<body>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet" />
 
-    <!-- ==================== NAVIGATION BAR ==================== -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/admissions.css" />
+</head>
+<body class="fa-admissions-page">
+
+    <!-- ==================== NAVBAR ==================== -->
     <nav class="navbar navbar-expand-lg sticky-top fa-navbar">
         <div class="container">
-
             <a class="navbar-brand fa-brand" href="index.html">
                 <span class="fa-crest-ring">
-                    <img
-                        src="images/LOGO.png"
-                        alt="Forces Academy crest"
-                        class="fa-crest"
-                    />
+                    <img src="images/LOGO.png" alt="Forces Academy crest" class="fa-crest" />
                 </span>
                 <span class="fa-brand-text">
                     FORCES ACADEMY<br />
-                    <small> FAISALABAD</small>
+                    <small>FAISALABAD</small>
                 </span>
             </a>
 
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#mainNavbar"
-                aria-controls="mainNavbar"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-            >
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+                aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="mainNavbar">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center fa-roster-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="courses.html">Courses</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="admissions.html">Admissions</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="results.html">Results</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="gallery.html">Gallery</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="admissions.html">Admissions</a></li>
+                    <li class="nav-item"><a class="nav-link" href="results.html">Results</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                     <li class="nav-item ms-lg-4 mt-3 mt-lg-0">
                         <a href="portal.html" class="fa-clearance-badge">
                             <span class="fa-clearance-dot"></span>
@@ -84,7 +63,767 @@
     </nav>
     <!-- ================== END NAVBAR ================== -->
 
+    <!-- ==================== ADMISSIONS HERO ==================== -->
+    <header class="fa-adm-hero" id="admHero">
 
+        <div class="fa-adm-hero-bg">
+            <div class="fa-hero-layer fa-hero-glow"></div>
+            <div class="fa-hero-layer fa-hero-stripes"></div>
+
+            <!-- 3D perspective floor grid -->
+            <div class="fa-hero-floor"></div>
+
+            <!-- Floating glow orbs (depth) -->
+            <div class="fa-hero-orbs">
+                <span class="fa-orb fa-orb-gold"></span>
+                <span class="fa-orb fa-orb-sage"></span>
+                <span class="fa-orb fa-orb-sm"></span>
+            </div>
+
+            <!-- Radar sweep (thematic replacement for the old scanline) -->
+            <div class="fa-hero-radar">
+                <div class="fa-hero-radar-sweep"></div>
+            </div>
+
+            <div class="fa-hero-particles">
+                <span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span>
+            </div>
+            <div class="fa-adm-hero-overlay"></div>
+        </div>
+
+        <span class="fa-hud-corner fa-hud-tl" aria-hidden="true"></span>
+        <span class="fa-hud-corner fa-hud-tr" aria-hidden="true"></span>
+        <span class="fa-hud-corner fa-hud-bl" aria-hidden="true"></span>
+        <span class="fa-hud-corner fa-hud-br" aria-hidden="true"></span>
+
+        <div class="fa-hero-stamp" aria-hidden="true">
+            <span>Open<br />Enrollment</span>
+        </div>
+
+        <div class="container fa-adm-hero-content">
+            <span class="fa-hero-badge"><span class="fa-live-dot"></span>ENROLLMENT 2026 &mdash; SESSION OPEN</span>
+            <h1 class="fa-adm-hero-title">Your Path Into <span>Forces Academy Starts Here</span></h1>
+            <p class="fa-adm-hero-tagline">
+                A clear, four-step process, transparent fees, and mentors ready to guide you from
+                your first enquiry to your first day of class.
+            </p>
+
+            <div class="fa-hero-stats">
+                <div class="fa-hero-stat">
+                    <strong>04</strong>
+                    <span>Simple Steps</span>
+                </div>
+                <div class="fa-hero-stat-divider" aria-hidden="true"></div>
+                <div class="fa-hero-stat">
+                    <strong>48h</strong>
+                    <span>Avg. Response</span>
+                </div>
+                <div class="fa-hero-stat-divider" aria-hidden="true"></div>
+                <div class="fa-hero-stat">
+                    <strong>06</strong>
+                    <span>Programmes</span>
+                </div>
+            </div>
+
+            <div class="fa-hero-actions">
+                <a href="#how-to-apply" class="fa-btn fa-btn-fill">Start Application <i class="bi bi-arrow-right"></i></a>
+                <a href="#fees" class="fa-btn fa-btn-ghost">View Fee Structure</a>
+            </div>
+        </div>
+
+        <a href="#how-to-apply" class="fa-hero-scroll-cue" aria-label="Scroll to admissions details">
+            <i class="bi bi-chevron-down"></i>
+        </a>
+    </header>
+    <!-- ================== END ADMISSIONS HERO ================== -->
+
+    <!-- ==================== TIMELINE NAV ==================== -->
+    <nav class="fa-adm-subnav" id="admSubnav" aria-label="Admissions sections">
+        <div class="container fa-adm-subnav-inner">
+            <a href="#how-to-apply" data-target="how-to-apply">01. How to Apply</a>
+            <a href="#eligibility" data-target="eligibility">02. Eligibility</a>
+            <a href="#documents" data-target="documents">03. Documents</a>
+            <a href="#fees" data-target="fees">04. Fee Structure</a>
+            <a href="#apply-cta" data-target="apply-cta">05. Apply Now</a>
+        </div>
+    </nav>
+    <!-- ================== END TIMELINE NAV ================== -->
+
+    <!-- ==================== SECTION 1: HOW TO APPLY ==================== -->
+    <section id="how-to-apply" class="fa-adm-section">
+        <div class="container">
+            <div class="text-center mb-5 fa-reveal">
+                <span class="fa-section-eyebrow">Step by Step</span>
+                <h2 class="fa-section-title">How to Apply</h2>
+                <p class="fa-section-lead mx-auto" style="max-width: 44rem;">
+                    Choose your track below &mdash; the process is streamlined either way, and most
+                    candidates complete registration and testing within a week.
+                </p>
+            </div>
+
+            <!-- Track toggle (Bootstrap pills) -->
+            <ul class="nav fa-track-toggle justify-content-center mb-5 fa-reveal" id="applyTrackTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="regular-tab" data-bs-toggle="pill" data-bs-target="#regular-track"
+                        type="button" role="tab" aria-controls="regular-track" aria-selected="true">
+                        <i class="bi bi-mortarboard"></i> Regular Admission
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="forces-tab" data-bs-toggle="pill" data-bs-target="#forces-track"
+                        type="button" role="tab" aria-controls="forces-track" aria-selected="false">
+                        <i class="bi bi-shield-check"></i> Armed Forces Track
+                    </button>
+                </li>
+            </ul>
+
+            <div class="tab-content" id="applyTrackContent">
+
+                <div class="tab-pane fade show active" id="regular-track" role="tabpanel" tabindex="0">
+                    <ol class="fa-timeline">
+                        <li class="fa-timeline-step fa-reveal">
+                            <div class="fa-timeline-node"><span>01</span></div>
+                            <div class="fa-timeline-body">
+                                <i class="bi bi-file-earmark-text"></i>
+                                <h6>Submit Enquiry Form</h6>
+                                <p>Fill the online enquiry form or visit our Susan Road campus front desk with basic student details.</p>
+                            </div>
+                        </li>
+                        <li class="fa-timeline-step fa-reveal">
+                            <div class="fa-timeline-node"><span>02</span></div>
+                            <div class="fa-timeline-body">
+                                <i class="bi bi-clipboard-check"></i>
+                                <h6>Document Verification</h6>
+                                <p>Submit required documents for verification and receive your provisional registration slip.</p>
+                            </div>
+                        </li>
+                        <li class="fa-timeline-step fa-reveal">
+                            <div class="fa-timeline-node"><span>03</span></div>
+                            <div class="fa-timeline-body">
+                                <i class="bi bi-pencil-square"></i>
+                                <h6>Entry Assessment</h6>
+                                <p>Sit a short placement test in core subjects &mdash; used for streaming and mentor allocation, not rejection.</p>
+                            </div>
+                        </li>
+                        <li class="fa-timeline-step fa-reveal">
+                            <div class="fa-timeline-node"><span>04</span></div>
+                            <div class="fa-timeline-body">
+                                <i class="bi bi-cash-coin"></i>
+                                <h6>Fee Submission &amp; Confirmation</h6>
+                                <p>Pay the admission fee at our accounts office or via bank transfer to confirm your seat.</p>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="tab-pane fade" id="forces-track" role="tabpanel" tabindex="0">
+                    <ol class="fa-timeline">
+                        <li class="fa-timeline-step fa-reveal">
+                            <div class="fa-timeline-node"><span>01</span></div>
+                            <div class="fa-timeline-body">
+                                <i class="bi bi-file-earmark-text"></i>
+                                <h6>Enquiry &amp; Domicile Check</h6>
+                                <p>Register your interest and confirm domicile eligibility for the armed forces entry test track.</p>
+                            </div>
+                        </li>
+                        <li class="fa-timeline-step fa-reveal">
+                            <div class="fa-timeline-node"><span>02</span></div>
+                            <div class="fa-timeline-body">
+                                <i class="bi bi-clipboard-check"></i>
+                                <h6>Document &amp; Medical Screening</h6>
+                                <p>Submit documents plus a basic fitness/medical self-declaration for mentor allocation.</p>
+                            </div>
+                        </li>
+                        <li class="fa-timeline-step fa-reveal">
+                            <div class="fa-timeline-node"><span>03</span></div>
+                            <div class="fa-timeline-body">
+                                <i class="bi bi-graph-up-arrow"></i>
+                                <h6>Diagnostic Test</h6>
+                                <p>Sit a diagnostic covering academic and intelligence-test style questions to plan your prep schedule.</p>
+                            </div>
+                        </li>
+                        <li class="fa-timeline-step fa-reveal">
+                            <div class="fa-timeline-node"><span>04</span></div>
+                            <div class="fa-timeline-body">
+                                <i class="bi bi-cash-coin"></i>
+                                <h6>Fee Submission &amp; Batch Assignment</h6>
+                                <p>Confirm your seat and get assigned to a dedicated entry-test preparation batch.</p>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- ================== END SECTION 1 ================== -->
+
+    <!-- ==================== SECTION 2: ELIGIBILITY ==================== -->
+    <section id="eligibility" class="fa-adm-section fa-adm-section-alt">
+        <div class="container">
+            <div class="text-center mb-5 fa-reveal">
+                <span class="fa-section-eyebrow">Who Can Apply</span>
+                <h2 class="fa-section-title">Eligibility Criteria</h2>
+                <p class="fa-section-lead mx-auto" style="max-width: 42rem;">
+                    Filter by track below, then hover (or tap) a card to see the full requirement.
+                    If you're unsure where you fit, our counsellors are happy to advise during your enquiry visit.
+                </p>
+            </div>
+
+            <!-- Pure-CSS category filter -->
+            <div class="fa-elig-filter fa-reveal">
+                <input type="radio" name="elig-filter" id="filter-all" checked>
+                <label for="filter-all">All Tracks</label>
+
+                <input type="radio" name="elig-filter" id="filter-medical">
+                <label for="filter-medical">Pre-Medical / Eng</label>
+
+                <input type="radio" name="elig-filter" id="filter-science">
+                <label for="filter-science">Matric Science</label>
+
+                <input type="radio" name="elig-filter" id="filter-arts">
+                <label for="filter-arts">Matric Arts</label>
+
+                <input type="radio" name="elig-filter" id="filter-test">
+                <label for="filter-test">Test Prep</label>
+
+                <input type="radio" name="elig-filter" id="filter-foundation">
+                <label for="filter-foundation">Foundation</label>
+
+                <div class="row g-4 fa-elig-grid">
+
+                    <div class="col-md-6 col-lg-4 fa-elig-col fa-reveal" data-cat="medical">
+                        <div class="fa-flip-card">
+                            <span class="fa-ribbon">Most Popular</span>
+                            <div class="fa-flip-inner">
+                                <div class="fa-flip-front">
+                                    <i class="bi bi-heart-pulse"></i>
+                                    <h6>FSc Pre-Medical / Pre-Engineering</h6>
+                                    <span class="fa-flip-hint" aria-hidden="true"><i class="bi bi-arrow-repeat"></i></span>
+                                </div>
+                                <div class="fa-flip-back">
+                                    <h6>Requirement</h6>
+                                    <ul>
+                                        <li>Passed Matriculation (Science Group), min. 60% marks</li>
+                                        <li>Biology or Computer Science background accepted</li>
+                                        <li>Seats limited &mdash; priority given to early registration</li>
+                                        <li>Merit scholarship available for 80%+ scorers</li>
+                                    </ul>
+                                    <a href="contact.html" class="fa-flip-link">Enquire Now <i class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 fa-elig-col fa-reveal" data-cat="science">
+                        <div class="fa-flip-card">
+                            <div class="fa-flip-inner">
+                                <div class="fa-flip-front">
+                                    <i class="bi bi-clipboard-data"></i>
+                                    <h6>Matric Science</h6>
+                                    <span class="fa-flip-hint" aria-hidden="true"><i class="bi bi-arrow-repeat"></i></span>
+                                </div>
+                                <div class="fa-flip-back">
+                                    <h6>Requirement</h6>
+                                    <ul>
+                                        <li>Passed 8th grade / completed middle schooling</li>
+                                        <li>Science subject background preferred</li>
+                                        <li>Small batch sizes for focused attention</li>
+                                        <li>Direct pathway into FSc Pre-Medical/Engineering</li>
+                                    </ul>
+                                    <a href="contact.html" class="fa-flip-link">Enquire Now <i class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 fa-elig-col fa-reveal" data-cat="arts">
+                        <div class="fa-flip-card">
+                            <div class="fa-flip-inner">
+                                <div class="fa-flip-front">
+                                    <i class="bi bi-book"></i>
+                                    <h6>Matric Arts</h6>
+                                    <span class="fa-flip-hint" aria-hidden="true"><i class="bi bi-arrow-repeat"></i></span>
+                                </div>
+                                <div class="fa-flip-back">
+                                    <h6>Requirement</h6>
+                                    <ul>
+                                        <li>Passed 8th grade / completed middle schooling</li>
+                                        <li>Open to any group, no science background required</li>
+                                        <li>Strong focus on English, Urdu &amp; general knowledge</li>
+                                        <li>Mentor-guided study planning included</li>
+                                    </ul>
+                                    <a href="contact.html" class="fa-flip-link">Enquire Now <i class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 fa-elig-col fa-reveal" data-cat="test">
+                        <div class="fa-flip-card">
+                            <span class="fa-ribbon">Fast Track</span>
+                            <div class="fa-flip-inner">
+                                <div class="fa-flip-front">
+                                    <i class="bi bi-shield-check"></i>
+                                    <h6>Entry Test Preparation</h6>
+                                    <span class="fa-flip-hint" aria-hidden="true"><i class="bi bi-arrow-repeat"></i></span>
+                                </div>
+                                <div class="fa-flip-back">
+                                    <h6>Requirement</h6>
+                                    <ul>
+                                        <li>Intermediate (FSc/ICS) students or graduates</li>
+                                        <li>Weekly mock tests with performance tracking</li>
+                                        <li>Dedicated intelligence-test &amp; academic coaching</li>
+                                        <li>New batch starts every month</li>
+                                    </ul>
+                                    <a href="contact.html" class="fa-flip-link">Enquire Now <i class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 fa-elig-col fa-reveal" data-cat="foundation">
+                        <div class="fa-flip-card">
+                            <div class="fa-flip-inner">
+                                <div class="fa-flip-front">
+                                    <i class="bi bi-graph-up-arrow"></i>
+                                    <h6>Foundation &amp; Bridge Course</h6>
+                                    <span class="fa-flip-hint" aria-hidden="true"><i class="bi bi-arrow-repeat"></i></span>
+                                </div>
+                                <div class="fa-flip-back">
+                                    <h6>Requirement</h6>
+                                    <ul>
+                                        <li>Open to students switching boards, cities, or streams</li>
+                                        <li>No minimum grade requirement</li>
+                                        <li>Personalised subject bridging plan</li>
+                                        <li>Fast 6&ndash;8 week turnaround</li>
+                                    </ul>
+                                    <a href="contact.html" class="fa-flip-link">Enquire Now <i class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 fa-elig-col fa-reveal" data-cat="general">
+                        <div class="fa-flip-card">
+                            <div class="fa-flip-inner">
+                                <div class="fa-flip-front">
+                                    <i class="bi bi-person-check"></i>
+                                    <h6>General Requirement</h6>
+                                    <span class="fa-flip-hint" aria-hidden="true"><i class="bi bi-arrow-repeat"></i></span>
+                                </div>
+                                <div class="fa-flip-back">
+                                    <h6>Applies to All Tracks</h6>
+                                    <ul>
+                                        <li>Must be able to attend classes on-campus at Susan Road</li>
+                                        <li>Valid CNIC/B-Form &amp; guardian CNIC required</li>
+                                        <li>Character certificate from previous institute</li>
+                                        <li>Discipline &amp; attendance policy applies to all students</li>
+                                    </ul>
+                                    <a href="contact.html" class="fa-flip-link">Enquire Now <i class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ================== END SECTION 2 ================== -->
+
+    <!-- ==================== SECTION 3: REQUIRED DOCUMENTS ==================== -->
+    <section id="documents" class="fa-adm-section">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-5 fa-reveal order-lg-2">
+                    <span class="fa-section-eyebrow">Paperwork</span>
+                    <h2 class="fa-section-title">Required Documents</h2>
+                    <p class="fa-section-lead">
+                        Keep photocopies and originals ready for verification. Incomplete files will
+                        delay your provisional registration. Tick items off as you prepare your file.
+                    </p>
+                </div>
+                <div class="col-lg-7 fa-reveal order-lg-1">
+                    <ul class="fa-doc-checklist list-unstyled">
+                        <li class="fa-doc-item">
+                            <input type="checkbox" id="doc1" class="fa-doc-check">
+                            <label for="doc1"><span class="fa-doc-box"></span> Original + photocopy of Matriculation / previous result card</label>
+                        </li>
+                        <li class="fa-doc-item">
+                            <input type="checkbox" id="doc2" class="fa-doc-check">
+                            <label for="doc2"><span class="fa-doc-box"></span> School Leaving Certificate (SLC)</label>
+                        </li>
+                        <li class="fa-doc-item">
+                            <input type="checkbox" id="doc3" class="fa-doc-check">
+                            <label for="doc3"><span class="fa-doc-box"></span> Copy of student's B-Form or CNIC</label>
+                        </li>
+                        <li class="fa-doc-item">
+                            <input type="checkbox" id="doc4" class="fa-doc-check">
+                            <label for="doc4"><span class="fa-doc-box"></span> Copy of father's / guardian's CNIC</label>
+                        </li>
+                        <li class="fa-doc-item">
+                            <input type="checkbox" id="doc5" class="fa-doc-check">
+                            <label for="doc5"><span class="fa-doc-box"></span> 4 recent passport-size photographs</label>
+                        </li>
+                        <li class="fa-doc-item">
+                            <input type="checkbox" id="doc6" class="fa-doc-check">
+                            <label for="doc6"><span class="fa-doc-box"></span> Character certificate from previous institute</label>
+                        </li>
+                        <li class="fa-doc-item">
+                            <input type="checkbox" id="doc7" class="fa-doc-check">
+                            <label for="doc7"><span class="fa-doc-box"></span> Domicile certificate (for armed forces entry test track)</label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ================== END SECTION 3 ================== -->
+
+    <!-- ==================== SECTION 4: FEE STRUCTURE ==================== -->
+    <section id="fees" class="fa-adm-section fa-adm-section-alt">
+        <div class="container">
+            <div class="text-center mb-5 fa-reveal">
+                <span class="fa-section-eyebrow">Investment</span>
+                <h2 class="fa-section-title">Fee Structure</h2>
+                <p class="fa-section-lead mx-auto" style="max-width: 40rem;">
+                    Transparent, all-inclusive fees &mdash; no hidden charges. Toggle below to switch
+                    between the monthly rate and a full-course estimate.
+                </p>
+            </div>
+
+            <div class="fa-fee-toggle-group">
+                <input type="checkbox" id="feeToggle" class="fa-fee-switch-input">
+
+                <div class="fa-fee-toggle-wrap fa-reveal">
+                    <span class="fa-fee-toggle-label">Monthly Fee</span>
+                    <label for="feeToggle" class="fa-fee-switch-track">
+                        <span class="fa-fee-switch-thumb"></span>
+                    </label>
+                    <span class="fa-fee-toggle-label">Full Course Estimate</span>
+                </div>
+
+                <div class="fa-fee-views">
+
+                    <div class="fa-fee-table-wrap fa-fee-view fa-fee-view-monthly fa-reveal">
+                        <table class="table fa-fee-table">
+                            <thead>
+                                <tr>
+                                    <th>Course</th>
+                                    <th>Admission Fee</th>
+                                    <th>Monthly Fee</th>
+                                    <th>Duration</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>FSc Pre-Medical <span class="fa-fee-badge">Popular</span></td>
+                                    <td>Rs. 8,000</td>
+                                    <td>Rs. 6,500</td>
+                                    <td>2 Years</td>
+                                </tr>
+                                <tr>
+                                    <td>FSc Pre-Engineering</td>
+                                    <td>Rs. 8,000</td>
+                                    <td>Rs. 6,500</td>
+                                    <td>2 Years</td>
+                                </tr>
+                                <tr>
+                                    <td>Matric Science</td>
+                                    <td>Rs. 6,000</td>
+                                    <td>Rs. 5,000</td>
+                                    <td>2 Years</td>
+                                </tr>
+                                <tr>
+                                    <td>Matric Arts</td>
+                                    <td>Rs. 5,000</td>
+                                    <td>Rs. 4,000</td>
+                                    <td>2 Years</td>
+                                </tr>
+                                <tr>
+                                    <td>Entry Test Preparation <span class="fa-fee-badge">Fast Track</span></td>
+                                    <td>Rs. 5,000</td>
+                                    <td>Rs. 5,500</td>
+                                    <td>3&ndash;6 Months</td>
+                                </tr>
+                                <tr>
+                                    <td>Foundation &amp; Bridge Course</td>
+                                    <td>Rs. 3,000</td>
+                                    <td>Rs. 4,000</td>
+                                    <td>6&ndash;8 Weeks</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="fa-fee-table-wrap fa-fee-view fa-fee-view-total fa-reveal">
+                        <table class="table fa-fee-table">
+                            <thead>
+                                <tr>
+                                    <th>Course</th>
+                                    <th>Admission Fee</th>
+                                    <th>Est. Total Cost*</th>
+                                    <th>Duration</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>FSc Pre-Medical <span class="fa-fee-badge">Popular</span></td>
+                                    <td>Rs. 8,000</td>
+                                    <td>Rs. 164,000</td>
+                                    <td>2 Years</td>
+                                </tr>
+                                <tr>
+                                    <td>FSc Pre-Engineering</td>
+                                    <td>Rs. 8,000</td>
+                                    <td>Rs. 164,000</td>
+                                    <td>2 Years</td>
+                                </tr>
+                                <tr>
+                                    <td>Matric Science</td>
+                                    <td>Rs. 6,000</td>
+                                    <td>Rs. 126,000</td>
+                                    <td>2 Years</td>
+                                </tr>
+                                <tr>
+                                    <td>Matric Arts</td>
+                                    <td>Rs. 5,000</td>
+                                    <td>Rs. 101,000</td>
+                                    <td>2 Years</td>
+                                </tr>
+                                <tr>
+                                    <td>Entry Test Preparation <span class="fa-fee-badge">Fast Track</span></td>
+                                    <td>Rs. 5,000</td>
+                                    <td>Rs. 21,500 &ndash; 38,000</td>
+                                    <td>3&ndash;6 Months</td>
+                                </tr>
+                                <tr>
+                                    <td>Foundation &amp; Bridge Course</td>
+                                    <td>Rs. 3,000</td>
+                                    <td>Rs. 9,000 &ndash; 11,000</td>
+                                    <td>6&ndash;8 Weeks</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+
+            <p class="fa-fee-note fa-reveal">
+                <i class="bi bi-info-circle"></i>
+                Sibling and merit-based scholarships available &mdash; ask our counsellors during registration.
+                <span class="fa-fee-footnote">*Estimates use the average monthly fee over the stated duration; actual amounts may vary.</span>
+            </p>
+        </div>
+    </section>
+    <!-- ================== END SECTION 4 ================== -->
+
+    <!-- ==================== SECTION 5: APPLY NOW CTA ==================== -->
+    <section id="apply-cta" class="fa-adm-cta">
+        <div class="fa-adm-cta-media">
+            <div class="fa-hero-layer fa-hero-glow"></div>
+            <div class="fa-adm-cta-overlay"></div>
+        </div>
+        <div class="container fa-adm-cta-content fa-reveal">
+            <span class="fa-hero-badge fa-cta-badge"><span class="fa-live-dot"></span>SEATS ARE LIMITED EACH SESSION</span>
+            <h2>Seats Are Filling for the 2026 Session</h2>
+            <p>Secure your place at Forces Academy today &mdash; enquiry takes less than two minutes.</p>
+            <div class="fa-adm-cta-actions">
+                <a href="contact.html" class="fa-btn fa-btn-fill">Apply Now <i class="bi bi-arrow-right"></i></a>
+                <a href="tel:+9241111222333" class="fa-btn fa-btn-ghost"><i class="bi bi-telephone"></i> Call Admissions Office</a>
+            </div>
+        </div>
+    </section>
+    <!-- ================== END SECTION 5 ================== -->
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="fa-footer">
+        <div class="fa-footer-top">
+            <div class="container">
+                <div class="fa-footer-grid">
+
+                    <!-- Brand column -->
+                    <div class="fa-footer-col fa-footer-brand-col">
+                        <a href="index.html" class="fa-footer-brand">
+                            <span class="fa-crest-ring fa-footer-crest-ring">
+                                <img src="images/LOGO.png" alt="Forces Academy crest" class="fa-crest" />
+                            </span>
+                            <span class="fa-footer-brand-text">
+                                FORCES ACADEMY<br />
+                                <small>FAISALABAD</small>
+                            </span>
+                        </a>
+                        <p class="fa-footer-tagline">
+                            Excellence in education, preparing tomorrow&rsquo;s leaders today.
+                        </p>
+                        <p class="fa-footer-description">
+                            Forces Academy Faisalabad is committed to preparing aspiring candidates through professional training, mentorship, and disciplined guidance.
+                        </p>
+                    </div>
+
+                    <!-- Divider (dispatch style) -->
+                    <div class="fa-footer-dispatch-divider" aria-hidden="true"></div>
+
+                    <!-- Quick Links -->
+                    <div class="fa-footer-col">
+                        <h6 class="fa-footer-heading">Quick Links</h6>
+                        <ul class="fa-footer-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="courses.html">Courses</a></li>
+                            <li><a href="admissions.html">Admissions</a></li>
+                            <li><a href="results.html">Results</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Contact -->
+                    <div class="fa-footer-col">
+                        <h6 class="fa-footer-heading">Get in Touch</h6>
+                        <ul class="fa-footer-contact">
+                            <li>
+                                <span class="fa-footer-icon">&#9742;</span>
+                                <span>+92 41 111 222 333</span>
+                            </li>
+                            <li>
+                                <span class="fa-footer-icon">&#9993;</span>
+                                <span>info@forcesacademy.edu.pk</span>
+                            </li>
+                            <li>
+                                <span class="fa-footer-icon">&#128205;</span>
+                                <span>Susan Road, Faisalabad, Pakistan</span>
+                            </li>
+                            <li>
+                                <span class="fa-footer-icon">&#128337;</span>
+                                <span>Mon &ndash; Sat: 8:00 AM &ndash; 4:00 PM</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Follow Us -->
+                    <div class="fa-footer-col">
+                        <h6 class="fa-footer-heading">Follow Us</h6>
+                        <p class="fa-footer-note">
+                            Stay updated with academy news, events, and admissions announcements.
+                        </p>
+                        <div class="fa-footer-social">
+                            <a href="https://www.facebook.com/forcesacademyfaisalabad/" class="fa-social-icon fa-social-facebook" title="Facebook" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M13.5 9H15V6.5h-1.75C11.6 6.5 10.5 7.6 10.5 9.25V11H9v2.5h1.5V21h2.5v-7.5H15L15.5 11h-2V9.5c0-.35.15-.5.5-.5z"/></svg>
+                            </a>
+                            <a href="https://www.instagram.com/forcesacademyfaisalabad/" class="fa-social-icon fa-social-instagram" title="Instagram" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 8.8a3.2 3.2 0 1 0 0 6.4 3.2 3.2 0 0 0 0-6.4zm0 5.3a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zM16.9 6.1a.9.9 0 1 1-1.8 0 .9.9 0 0 1 1.8 0zM21 7.2c-.06-1.2-.33-2.27-1.2-3.14-.87-.87-1.94-1.14-3.14-1.2C15.4 2.8 8.6 2.8 7.34 2.86c-1.2.06-2.26.33-3.14 1.2-.87.87-1.13 1.94-1.2 3.14C2.94 8.6 2.94 15.4 3 16.66c.06 1.2.33 2.27 1.2 3.14.87.87 1.94 1.13 3.14 1.2 1.26.06 8.06.06 9.32 0 1.2-.06 2.27-.33 3.14-1.2.87-.87 1.14-1.94 1.2-3.14.06-1.26.06-8.06 0-9.32zm-1.8 11.02c-.26.66-.77 1.17-1.43 1.44-1 .4-3.36.3-4.77.3s-3.78.1-4.77-.3a2.55 2.55 0 0 1-1.44-1.44c-.4-1-.3-3.36-.3-4.77s-.1-3.78.3-4.77c.26-.66.77-1.17 1.43-1.44 1-.4 3.36-.3 4.77-.3s3.78-.1 4.77.3c.66.26 1.17.77 1.44 1.43.4 1 .3 3.36.3 4.77s.1 3.78-.3 4.78z"/></svg>
+                            </a>
+                            <a href="https://www.youtube.com/channel/UCRF74RQe3TiQl-_qyFZb-2w" class="fa-social-icon fa-social-youtube" title="YouTube" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M21.6 7.5s-.2-1.5-.85-2.16c-.8-.86-1.7-.86-2.12-.9C15.6 4.2 12 4.2 12 4.2s-3.6 0-6.63.24c-.4.04-1.3.04-2.12.9C2.6 6 2.4 7.5 2.4 7.5S2.2 9.25 2.2 11v1.9c0 1.75.2 3.5.2 3.5s.2 1.5.85 2.16c.8.86 1.86.83 2.34.92 1.7.17 7.21.24 7.21.24s3.6 0 6.63-.25c.4-.04 1.3-.04 2.12-.9.65-.66.85-2.16.85-2.16s.2-1.75.2-3.5V11c0-1.75-.2-3.5-.2-3.5zM9.9 14.7V8.8l5.4 2.95-5.4 2.95z"/></svg>
+                            </a>
+                            <a href="https://wa.me/923166954383" class="fa-social-icon fa-social-whatsapp" title="WhatsApp" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.94-.27-.1-.46-.15-.66.15-.2.3-.75.94-.92 1.13-.17.2-.34.22-.63.08-.3-.15-1.24-.46-2.37-1.47-.87-.78-1.47-1.75-1.64-2.04-.17-.3-.02-.46.13-.6.13-.14.3-.34.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.66-1.6-.9-2.18-.24-.58-.48-.5-.66-.5h-.56c-.2 0-.52.07-.79.37s-1.04 1.02-1.04 2.48 1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.5.71.3 1.26.48 1.7.62.71.23 1.36.2 1.87.12.57-.08 1.7-.7 1.94-1.37.24-.68.24-1.26.17-1.38-.07-.13-.27-.2-.57-.35zM12.02 3C7.05 3 3 7.03 3 12c0 1.6.42 3.1 1.15 4.4L3 21l4.75-1.1A9 9 0 0 0 12.02 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm0 16.3a7.28 7.28 0 0 1-3.72-1.02l-.27-.16-2.82.66.65-2.75-.17-.28A7.28 7.28 0 1 1 19.3 12a7.3 7.3 0 0 1-7.28 7.3z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="fa-footer-bottom">
+            <div class="container fa-footer-bottom-inner">
+                <span>&copy; <span id="faYear">2026</span> Forces Academy Faisalabad. All Rights Reserved.</span>
+                <span class="fa-footer-legal">
+                    <a href="terms.html">Terms of Use</a>
+                    <span class="fa-footer-legal-sep">&bull;</span>
+                    <a href="privacy.html">Privacy Policy</a>
+                </span>
+            </div>
+        </div>
+    </footer>
+    <!-- ================== END FOOTER ================== -->
+
+    <!-- Back to top -->
+    <a href="#admHero" class="fa-back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="bi bi-arrow-up"></i>
+    </a>
+
+    <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Page scripts: year, reveal-on-scroll, subnav active state, back-to-top -->
+    <script>
+        document.getElementById('faYear').textContent = new Date().getFullYear();
+
+        // Scroll-reveal
+        const revealEls = document.querySelectorAll('.fa-reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fa-reveal-in');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+        revealEls.forEach(el => revealObserver.observe(el));
+
+        // Sub-nav active-section highlight
+        // Scroll-position based (not IntersectionObserver) so it reliably
+        // keeps up as you scroll through sections of very different heights.
+        const subnavLinks = document.querySelectorAll('#admSubnav a[data-target]');
+        const subnavSections = Array.from(subnavLinks)
+            .map(a => document.getElementById(a.dataset.target))
+            .filter(Boolean);
+        const navbarEl = document.querySelector('.fa-navbar');
+        const subnavEl = document.querySelector('.fa-adm-subnav');
+
+        let subnavTicking = false;
+
+        function updateActiveSubnav() {
+            const offset = (navbarEl ? navbarEl.offsetHeight : 0) + (subnavEl ? subnavEl.offsetHeight : 0) + 24;
+
+            // Special-case: if we're within a few px of the bottom of the page,
+            // force the last section active (its content may be shorter than the viewport).
+            const nearBottom = (window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 4);
+
+            let current = subnavSections[0];
+            if (nearBottom) {
+                current = subnavSections[subnavSections.length - 1];
+            } else {
+                for (const sec of subnavSections) {
+                    if (sec.getBoundingClientRect().top - offset <= 0) {
+                        current = sec;
+                    }
+                }
+            }
+
+            subnavLinks.forEach(l => l.classList.remove('fa-subnav-active'));
+            const activeLink = document.querySelector(`#admSubnav a[data-target="${current.id}"]`);
+            if (activeLink) activeLink.classList.add('fa-subnav-active');
+
+            subnavTicking = false;
+        }
+
+        function onSubnavScroll() {
+            if (!subnavTicking) {
+                window.requestAnimationFrame(updateActiveSubnav);
+                subnavTicking = true;
+            }
+        }
+
+        window.addEventListener('scroll', onSubnavScroll, { passive: true });
+        window.addEventListener('resize', updateActiveSubnav);
+        updateActiveSubnav();
+
+        // Back-to-top visibility
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 480) {
+                backToTop.classList.add('fa-visible');
+            } else {
+                backToTop.classList.remove('fa-visible');
+            }
+        });
+    </script>
 </body>
 </html>
