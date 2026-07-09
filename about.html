@@ -1,23 +1,38 @@
+<!-- ============================================================
+     FORCES ACADEMY - About Page (about.html)
+     ============================================================ -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Us | Forces Academy Faisalabad</title>
+    <title>About Us — Forces Academy Faisalabad</title>
 
+    <!-- Bootstrap 5 CSS -->
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
         rel="stylesheet"
     />
+
+    <!-- Bootstrap Icons -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+        rel="stylesheet"
+    />
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&family=Caveat:wght@500;700&display=swap"
         rel="stylesheet"
     />
+
+    <!-- Our custom CSS -->
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/about.css" />
 </head>
-<body>
+<body class="fa-about-page">
 
     <!-- ==================== NAVIGATION BAR ==================== -->
     <nav class="navbar navbar-expand-lg sticky-top fa-navbar">
@@ -84,8 +99,505 @@
     </nav>
     <!-- ================== END NAVBAR ================== -->
 
-   
+    <!-- ============================================================
+         HERO
+    ============================================================ -->
+    <header class="fa-hero" id="hero">
+        <div class="container">
+            <div class="fa-hero-inner">
 
+                <!-- Left: intro copy -->
+                <div class="fa-hero-copy">
+                    <h1 class="fa-hero-title">
+                        Shaping Future Leaders Through <em>Excellence</em> and Discipline
+                    </h1>
+                    <p class="fa-hero-text">
+                        Forces Academy Faisalabad prepares students for the academic and
+                        professional challenges ahead through structured learning, expert
+                        mentorship, and a culture built on discipline and integrity.
+                    </p>
+                    <div class="fa-hero-actions">
+                        <a href="courses.html" class="fa-btn-gold">Explore Programs</a>
+                        <a href="admissions.html" class="fa-btn-outline-light">Admissions</a>
+                    </div>
+                </div>
+
+                <!-- Right: carousel with animated checklist slides -->
+                <div class="fa-hero-media">
+                    <span class="fa-frame-corner tl" aria-hidden="true"></span>
+                    <span class="fa-frame-corner tr" aria-hidden="true"></span>
+                    <span class="fa-frame-corner bl" aria-hidden="true"></span>
+                    <span class="fa-frame-corner br" aria-hidden="true"></span>
+
+                    <div id="aboutCarousel" class="carousel slide fa-carousel" data-bs-ride="carousel" data-bs-interval="4500">
+                        <div class="carousel-inner">
+
+                            <!-- SLIDE 1 — Academic Standards checklist -->
+                            <div class="carousel-item active">
+                                <div class="fa-carousel-slide fa-slide-checklist-wrap">
+                                    <p class="fa-slide-heading">Academic Standards</p>
+                                    <ul class="fa-auto-checklist">
+                                        <li class="fa-check-item">
+                                            <span class="fa-check-circle"><i class="bi bi-check-lg"></i></span>
+                                            <span class="fa-check-text">Quality Education Programs</span>
+                                        </li>
+                                        <li class="fa-check-item">
+                                            <span class="fa-check-circle"><i class="bi bi-check-lg"></i></span>
+                                            <span class="fa-check-text">Experienced &amp; Qualified Faculty</span>
+                                        </li>
+                                        <li class="fa-check-item">
+                                            <span class="fa-check-circle"><i class="bi bi-check-lg"></i></span>
+                                            <span class="fa-check-text">Structured Academic Curriculum</span>
+                                        </li>
+                                        <li class="fa-check-item">
+                                            <span class="fa-check-circle"><i class="bi bi-check-lg"></i></span>
+                                            <span class="fa-check-text">Student-Focused Learning Approach</span>
+                                        </li>
+                                        <li class="fa-check-item">
+                                            <span class="fa-check-circle"><i class="bi bi-check-lg"></i></span>
+                                            <span class="fa-check-text">Regular Performance Assessment</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- SLIDE 2 — Forces Preparation checklist -->
+                            <div class="carousel-item">
+                                <div class="fa-carousel-slide fa-slide-checklist-wrap">
+                                    <p class="fa-slide-heading">Forces Preparation</p>
+                                    <ul class="fa-auto-checklist">
+                                        <li class="fa-check-item">
+                                            <span class="fa-check-circle"><i class="bi bi-check-lg"></i></span>
+                                            <span class="fa-check-text">Pakistan Army Entry Test</span>
+                                        </li>
+                                        <li class="fa-check-item">
+                                            <span class="fa-check-circle"><i class="bi bi-check-lg"></i></span>
+                                            <span class="fa-check-text">Air Force Aptitude Coaching</span>
+                                        </li>
+                                        <li class="fa-check-item">
+                                            <span class="fa-check-circle"><i class="bi bi-check-lg"></i></span>
+                                            <span class="fa-check-text">Navy Recruitment Preparation</span>
+                                        </li>
+                                        <li class="fa-check-item">
+                                            <span class="fa-check-circle"><i class="bi bi-check-lg"></i></span>
+                                            <span class="fa-check-text">ISSB Interview Guidance</span>
+                                        </li>
+                                        <li class="fa-check-item">
+                                            <span class="fa-check-circle"><i class="bi bi-check-lg"></i></span>
+                                            <span class="fa-check-text">Physical Fitness Training Plans</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- SLIDE 3 — Image slide
+                                 Replace the src below with your own image path,
+                                 e.g. src="images/campus-photo.jpg"
+                            -->
+                            <div class="carousel-item">
+                                <div class="fa-carousel-slide fa-slide-image-wrap">
+                                    <img
+                                        src="images/army.png"
+                                        alt="Forces Academy Faisalabad"
+                                        class="fa-slide-img"
+                                    />
+                                    <span class="fa-slide-overlay" aria-hidden="true"></span>
+                                    <div class="fa-slide-caption">
+                                        <span class="fa-slide-num">03</span>
+                                        <span class="fa-slide-name">Our Academy</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <button class="carousel-control-prev" type="button" data-bs-target="#aboutCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#aboutCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Highlights dock -->
+            <div class="fa-hero-highlights">
+                <div class="fa-highlight-chip">
+                    <div class="fa-chip-icon"><i class="bi bi-mortarboard-fill"></i></div>
+                    <div class="fa-chip-label">Academic<br />Excellence</div>
+                </div>
+                <div class="fa-highlight-chip">
+                    <div class="fa-chip-icon"><i class="bi bi-award-fill"></i></div>
+                    <div class="fa-chip-label">Leadership<br />Development</div>
+                </div>
+                <div class="fa-highlight-chip">
+                    <div class="fa-chip-icon"><i class="bi bi-person-video3"></i></div>
+                    <div class="fa-chip-label">Expert<br />Faculty</div>
+                </div>
+                <div class="fa-highlight-chip">
+                    <div class="fa-chip-icon"><i class="bi bi-trophy-fill"></i></div>
+                    <div class="fa-chip-label">Student<br />Success</div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ================== END HERO ================== -->
+
+    <!-- ============================================================
+         ABOUT / HISTORY
+    ============================================================ -->
+    <section class="fa-history" id="about">
+        <div class="container">
+            <div class="fa-history-grid">
+
+                <!-- Left: framed photo + sticky note -->
+                <div class="fa-history-media">
+                    <span class="fa-frame-corner tl" aria-hidden="true"></span>
+                    <span class="fa-frame-corner tr" aria-hidden="true"></span>
+                    <span class="fa-frame-corner bl" aria-hidden="true"></span>
+                    <span class="fa-frame-corner br" aria-hidden="true"></span>
+
+                    <div class="fa-history-photo">
+                        <!-- Replace src with your own campus image, e.g. images/campus-photo.jpg -->
+                        <img
+                            src="images/pak.png"
+                            alt="Forces Academy Faisalabad campus"
+                            class="fa-history-img"
+                        />
+                    </div>
+
+                    <div class="fa-sticky-note">
+                        <span class="fa-sticky-tape" aria-hidden="true"></span>
+                        <span class="fa-sticky-title">Quick Facts</span>
+                        <div class="fa-sticky-fact"><i class="bi bi-geo-alt-fill"></i> Susan Road, Faisalabad</div>
+                        <div class="fa-sticky-fact"><i class="bi bi-mortarboard-fill"></i> Academic + Leadership Training</div>
+                        <div class="fa-sticky-fact"><i class="bi bi-shield-check"></i> Discipline-first environment</div>
+                        <div class="fa-sticky-fact"><i class="bi bi-quote"></i> &ldquo;Discipline. Excellence. Leadership.&rdquo;</div>
+                        <span class="fa-sticky-divider"></span>
+                        <div class="fa-sticky-check"><i class="bi bi-check-lg"></i> Quality Education</div>
+                        <div class="fa-sticky-check"><i class="bi bi-check-lg"></i> Professional Guidance</div>
+                        <div class="fa-sticky-check"><i class="bi bi-check-lg"></i> Leadership Development</div>
+                        <div class="fa-sticky-check"><i class="bi bi-check-lg"></i> Student Success</div>
+                    </div>
+                </div>
+
+                <!-- Right: history copy -->
+                <div class="fa-history-copy">
+                    <div class="fa-eyebrow-gold">Our Story</div>
+                    <h2 class="fa-title-dark">About Forces Academy Faisalabad</h2>
+                    <p class="fa-lede-dark">
+                        <strong>Forces Academy Faisalabad</strong> was established with a clear purpose:
+                        to provide quality education, professional guidance, and a disciplined
+                        environment that prepares students for the challenges of academic and
+                        professional life. Over the years, the academy has grown into one of the
+                        region's trusted institutions for structured learning and career preparation.
+                    </p>
+                    <p class="fa-lede-dark">
+                        Our approach combines a demanding academic curriculum with mentorship from
+                        experienced instructors, helping every student build the confidence,
+                        discipline, and skills needed to achieve their educational and career goals.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         MISSION & VISION
+    ============================================================ -->
+    <section class="fa-mv-section" id="mission-vision">
+        <div class="container">
+            <div class="fa-mv-heading-wrap">
+                <div class="fa-eyebrow-gold">What Drives Us</div>
+                <h2 class="fa-title-dark">Mission &amp; Vision</h2>
+            </div>
+
+            <div class="fa-mv-grid">
+                <div class="fa-glass-card">
+                    <div class="fa-glass-icon"><i class="bi bi-bullseye"></i></div>
+                    <h3>Our Mission</h3>
+                    <p>
+                        To provide quality education, professional mentorship, and a disciplined
+                        learning environment that empowers students to achieve academic excellence
+                        and personal growth.
+                    </p>
+                </div>
+                <div class="fa-glass-card">
+                    <div class="fa-glass-icon"><i class="bi bi-eye-fill"></i></div>
+                    <h3>Our Vision</h3>
+                    <p>
+                        To become a leading educational institution recognized for developing
+                        confident, capable, and future-ready individuals equipped for lasting success.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         WHY CHOOSE US
+    ============================================================ -->
+    <section class="fa-why-section" id="why-us">
+        <div class="container">
+            <div class="fa-why-heading-wrap">
+                <div class="fa-eyebrow-gold">The Standard</div>
+                <h2 class="fa-title-dark">Why Choose Us</h2>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card fa-feature-card">
+                        <div class="card-body">
+                            <div class="fa-feature-icon"><i class="bi bi-shield-check"></i></div>
+                            <h5 class="card-title">Discipline</h5>
+                            <p class="card-text">
+                                We foster responsibility, commitment, and strong character through
+                                a structured learning environment.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card fa-feature-card">
+                        <div class="card-body">
+                            <div class="fa-feature-icon"><i class="bi bi-person-video3"></i></div>
+                            <h5 class="card-title">Qualified Faculty</h5>
+                            <p class="card-text">
+                                Our experienced educators provide expert guidance and personalized
+                                support for every student.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card fa-feature-card">
+                        <div class="card-body">
+                            <div class="fa-feature-icon"><i class="bi bi-graph-up-arrow"></i></div>
+                            <h5 class="card-title">Proven Results</h5>
+                            <p class="card-text">
+                                A track record of student achievement demonstrates our dedication
+                                to educational excellence.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card fa-feature-card">
+                        <div class="card-body">
+                            <div class="fa-feature-icon"><i class="bi bi-building"></i></div>
+                            <h5 class="card-title">Modern Facilities</h5>
+                            <p class="card-text">
+                                Well-equipped classrooms and learning resources create an
+                                effective educational experience.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         LEADERSHIP TEAM
+    ============================================================ -->
+    <section class="fa-leadership-section" id="leadership">
+        <div class="container">
+            <div class="fa-leadership-heading-wrap">
+                <div class="fa-eyebrow-gold">Chain Of Command</div>
+                <h2 class="fa-title-dark">Leadership Team</h2>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="fa-team-card">
+                        <div class="fa-team-photo"><i class="bi bi-person-fill"></i></div>
+                        <h4>Muhammad Ahmed</h4>
+                        <span class="fa-team-role">Director</span>
+                        <p>Leading the academy with dedication, discipline, and a vision for student success.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="fa-team-card">
+                        <div class="fa-team-photo"><i class="bi bi-person-fill"></i></div>
+                        <h4>Dr. Sadia Farooq</h4>
+                        <span class="fa-team-role">Academic Coordinator</span>
+                        <p>Overseeing curriculum standards and academic performance across every grade.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="fa-team-card">
+                        <div class="fa-team-photo"><i class="bi bi-person-fill"></i></div>
+                        <h4>Imran Sheikh</h4>
+                        <span class="fa-team-role">Senior Instructor</span>
+                        <p>Delivering expert instruction and personalized mentorship to every student.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="fa-team-card">
+                        <div class="fa-team-photo"><i class="bi bi-person-fill"></i></div>
+                        <h4>Ayesha Malik</h4>
+                        <span class="fa-team-role">Administration Manager</span>
+                        <p>Coordinating operations, schedules, and support services across the academy.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="fa-footer">
+        <div class="fa-footer-top">
+            <div class="container">
+                <div class="fa-footer-grid">
+
+                    <!-- Brand column -->
+                    <div class="fa-footer-col fa-footer-brand-col">
+                        <a href="index.html" class="fa-footer-brand">
+                            <span class="fa-crest-ring fa-footer-crest-ring">
+                                <img src="images/LOGO.png" alt="Forces Academy crest" class="fa-crest" />
+                            </span>
+                            <span class="fa-footer-brand-text">
+                                FORCES ACADEMY<br />
+                                <small>FAISALABAD</small>
+                            </span>
+                        </a>
+                        <p class="fa-footer-tagline">
+                            Excellence in education, preparing tomorrow&rsquo;s leaders today.
+                        </p>
+                        <p class="fa-footer-description">
+                            Forces Academy Faisalabad is committed to preparing aspiring candidates through professional training, mentorship, and disciplined guidance.
+                        </p>
+                    </div>
+
+                    <!-- Divider (dispatch style) -->
+                    <div class="fa-footer-dispatch-divider" aria-hidden="true"></div>
+
+                    <!-- Quick Links -->
+                    <div class="fa-footer-col">
+                        <h6 class="fa-footer-heading">Quick Links</h6>
+                        <ul class="fa-footer-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="courses.html">Courses</a></li>
+                            <li><a href="admissions.html">Admissions</a></li>
+                            <li><a href="results.html">Results</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Contact -->
+                    <div class="fa-footer-col">
+                        <h6 class="fa-footer-heading">Get in Touch</h6>
+                        <ul class="fa-footer-contact">
+                            <li>
+                                <span class="fa-footer-icon">&#9742;</span>
+                                <span>+92 41 111 222 333</span>
+                            </li>
+                            <li>
+                                <span class="fa-footer-icon">&#9993;</span>
+                                <span>info@forcesacademy.edu.pk</span>
+                            </li>
+                            <li>
+                                <span class="fa-footer-icon">&#128205;</span>
+                                <span>Susan Road, Faisalabad, Pakistan</span>
+                            </li>
+                            <li>
+                                <span class="fa-footer-icon">&#128337;</span>
+                                <span>Mon &ndash; Sat: 8:00 AM &ndash; 4:00 PM</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Follow Us: icon-only circular badges, brand colors on hover -->
+                    <div class="fa-footer-col">
+                        <h6 class="fa-footer-heading">Follow Us</h6>
+                        <p class="fa-footer-note">
+                            Stay updated with academy news, events, and admissions announcements.
+                        </p>
+                        <div class="fa-footer-social">
+                            <a
+                                href="https://www.facebook.com/forcesacademyfaisalabad/"
+                                class="fa-social-icon fa-social-facebook"
+                                title="Facebook"
+                                aria-label="Facebook"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M13.5 9H15V6.5h-1.75C11.6 6.5 10.5 7.6 10.5 9.25V11H9v2.5h1.5V21h2.5v-7.5H15L15.5 11h-2V9.5c0-.35.15-.5.5-.5z"/></svg>
+                            </a>
+                            <a
+                                href="https://www.instagram.com/forcesacademyfaisalabad/"
+                                class="fa-social-icon fa-social-instagram"
+                                title="Instagram"
+                                aria-label="Instagram"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 8.8a3.2 3.2 0 1 0 0 6.4 3.2 3.2 0 0 0 0-6.4zm0 5.3a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zM16.9 6.1a.9.9 0 1 1-1.8 0 .9.9 0 0 1 1.8 0zM21 7.2c-.06-1.2-.33-2.27-1.2-3.14-.87-.87-1.94-1.14-3.14-1.2C15.4 2.8 8.6 2.8 7.34 2.86c-1.2.06-2.26.33-3.14 1.2-.87.87-1.13 1.94-1.2 3.14C2.94 8.6 2.94 15.4 3 16.66c.06 1.2.33 2.27 1.2 3.14.87.87 1.94 1.13 3.14 1.2 1.26.06 8.06.06 9.32 0 1.2-.06 2.27-.33 3.14-1.2.87-.87 1.14-1.94 1.2-3.14.06-1.26.06-8.06 0-9.32zm-1.8 11.02c-.26.66-.77 1.17-1.43 1.44-1 .4-3.36.3-4.77.3s-3.78.1-4.77-.3a2.55 2.55 0 0 1-1.44-1.44c-.4-1-.3-3.36-.3-4.77s-.1-3.78.3-4.77c.26-.66.77-1.17 1.43-1.44 1-.4 3.36-.3 4.77-.3s3.78-.1 4.77.3c.66.26 1.17.77 1.44 1.43.4 1 .3 3.36.3 4.77s.1 3.78-.3 4.78z"/></svg>
+                            </a>
+                            <a
+                                href="https://www.youtube.com/channel/UCRF74RQe3TiQl-_qyFZb-2w"
+                                class="fa-social-icon fa-social-youtube"
+                                title="YouTube"
+                                aria-label="YouTube"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M21.6 7.5s-.2-1.5-.85-2.16c-.8-.86-1.7-.86-2.12-.9C15.6 4.2 12 4.2 12 4.2s-3.6 0-6.63.24c-.4.04-1.3.04-2.12.9C2.6 6 2.4 7.5 2.4 7.5S2.2 9.25 2.2 11v1.9c0 1.75.2 3.5.2 3.5s.2 1.5.85 2.16c.8.86 1.86.83 2.34.92 1.7.17 7.21.24 7.21.24s3.6 0 6.63-.25c.4-.04 1.3-.04 2.12-.9.65-.66.85-2.16.85-2.16s.2-1.75.2-3.5V11c0-1.75-.2-3.5-.2-3.5zM9.9 14.7V8.8l5.4 2.95-5.4 2.95z"/></svg>
+                            </a>
+                            <a
+                                href="https://wa.me/923166954383"
+                                class="fa-social-icon fa-social-whatsapp"
+                                title="WhatsApp"
+                                aria-label="WhatsApp"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.94-.27-.1-.46-.15-.66.15-.2.3-.75.94-.92 1.13-.17.2-.34.22-.63.08-.3-.15-1.24-.46-2.37-1.47-.87-.78-1.47-1.75-1.64-2.04-.17-.3-.02-.46.13-.6.13-.14.3-.34.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.66-1.6-.9-2.18-.24-.58-.48-.5-.66-.5h-.56c-.2 0-.52.07-.79.37s-1.04 1.02-1.04 2.48 1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.5.71.3 1.26.48 1.7.62.71.23 1.36.2 1.87.12.57-.08 1.7-.7 1.94-1.37.24-.68.24-1.26.17-1.38-.07-.13-.27-.2-.57-.35zM12.02 3C7.05 3 3 7.03 3 12c0 1.6.42 3.1 1.15 4.4L3 21l4.75-1.1A9 9 0 0 0 12.02 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm0 16.3a7.28 7.28 0 0 1-3.72-1.02l-.27-.16-2.82.66.65-2.75-.17-.28A7.28 7.28 0 1 1 19.3 12a7.3 7.3 0 0 1-7.28 7.3z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="fa-footer-bottom">
+            <div class="container fa-footer-bottom-inner">
+                <span>&copy; <span id="faYear">2026</span> Forces Academy Faisalabad. All Rights Reserved.</span>
+                <span class="fa-footer-legal">
+                    <a href="terms.html">Terms of Use</a>
+                    <span class="fa-footer-legal-sep">&bull;</span>
+                    <a href="privacy.html">Privacy Policy</a>
+                </span>
+            </div>
+        </div>
+    </footer>
+    <!-- ================== END FOOTER ================== -->
+
+    <!-- Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('faYear').textContent = new Date().getFullYear();
+
+        // Replay checklist animations each time a checklist slide becomes active
+        document.getElementById('aboutCarousel').addEventListener('slid.bs.carousel', function (e) {
+            const items = e.relatedTarget.querySelectorAll('.fa-check-item');
+            items.forEach(function (item) {
+                item.classList.remove('fa-check-animate');
+                void item.offsetWidth; // force reflow so the animation restarts
+                item.classList.add('fa-check-animate');
+            });
+        });
+
+        // Trigger initial animation on page load for slide 1
+        document.querySelectorAll('.carousel-item.active .fa-check-item').forEach(function (item) {
+            item.classList.add('fa-check-animate');
+        });
+    </script>
 </body>
 </html>
