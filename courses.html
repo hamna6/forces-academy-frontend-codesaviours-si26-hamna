@@ -1,77 +1,56 @@
+<!-- ============================================================
+     FORCES ACADEMY - Courses Page (courses.html)
+     ============================================================ -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Courses | Forces Academy Faisalabad</title>
+    <title>Courses — Forces Academy Faisalabad</title>
 
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-    />
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap"
-        rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/style.css" />
-</head>
-<body>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet" />
 
-    <!-- ==================== NAVIGATION BAR ==================== -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/courses.css" />
+</head>
+<body class="fa-courses-page">
+
+    <!-- ==================== NAVBAR ==================== -->
     <nav class="navbar navbar-expand-lg sticky-top fa-navbar">
         <div class="container">
-
             <a class="navbar-brand fa-brand" href="index.html">
                 <span class="fa-crest-ring">
-                    <img
-                        src="images/LOGO.png"
-                        alt="Forces Academy crest"
-                        class="fa-crest"
-                    />
+                    <img src="images/LOGO.png" alt="Forces Academy crest" class="fa-crest" />
                 </span>
                 <span class="fa-brand-text">
                     FORCES ACADEMY<br />
-                    <small> FAISALABAD</small>
+                    <small>FAISALABAD</small>
                 </span>
             </a>
 
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#mainNavbar"
-                aria-controls="mainNavbar"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-            >
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+                aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="mainNavbar">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center fa-roster-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="courses.html">Courses</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="admissions.html">Admissions</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="results.html">Results</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="gallery.html">Gallery</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="courses.html">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="admissions.html">Admissions</a></li>
+                    <li class="nav-item"><a class="nav-link" href="results.html">Results</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                     <li class="nav-item ms-lg-4 mt-3 mt-lg-0">
                         <a href="portal.html" class="fa-clearance-badge">
                             <span class="fa-clearance-dot"></span>
@@ -84,8 +63,332 @@
     </nav>
     <!-- ================== END NAVBAR ================== -->
 
+    <!-- ==================== COURSES HERO ==================== -->
+    <header class="fa-courses-hero">
+        <div class="fa-courses-hero-media">
+            <div class="fa-courses-hero-img"></div>
+            <div class="fa-courses-hero-overlay"></div>
+        </div>
+        <div class="container fa-courses-hero-content">
+            <span class="fa-hero-badge">PROGRAM CATALOG</span>
+            <h1 class="fa-courses-hero-title">Training Tracks <span>Built for Rank Advancement</span></h1>
+            <p class="fa-courses-hero-tagline">
+                From Matric foundations to specialised entry-test drilling, every course at Forces
+                Academy is structured, mentor-led, and outcome driven. Choose the track that matches
+                your ambition and let's get to work.
+            </p>
+        </div>
+    </header>
+    <!-- ================== END COURSES HERO ================== -->
 
+    <!-- ==================== COURSES INTRO ==================== -->
+    <section class="fa-courses-intro">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-8">
+                    <span class="fa-section-eyebrow">What We Offer</span>
+                    <h2 class="fa-section-title">Six Tracks. One Standard of Discipline.</h2>
+                    <p class="fa-section-lead">
+                        Every programme below is taught by subject specialists who understand board
+                        exams and entry tests inside-out. Class sizes stay small, progress is tracked
+                        weekly, and every student gets a personal mentor for the full academic year.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ================== END COURSES INTRO ================== -->
 
+    <!-- ==================== COURSE CARDS GRID ==================== -->
+    <section class="fa-courses-grid-section">
+        <div class="container">
+            <div class="row g-4">
+
+                <!-- Card 1 -->
+                <div class="col-md-6 col-lg-4 fa-reveal">
+                    <div class="card fa-course-card">
+                        <div class="fa-course-card-top">
+                            <span class="fa-course-icon"><i class="bi bi-heart-pulse"></i></span>
+                            <span class="fa-course-tag">Intermediate</span>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="fa-course-name">FSc Pre-Medical</h3>
+                            <p class="fa-course-desc">
+                                Biology, Chemistry and Physics taught with MDCAT-aligned depth,
+                                building the conceptual base future doctors need from day one.
+                            </p>
+                            <ul class="fa-course-meta">
+                                <li><i class="bi bi-clock-history"></i> 2 Years (11th &amp; 12th)</li>
+                                <li><i class="bi bi-people"></i> Matric science students aiming for medical college</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer fa-course-footer">
+                            <a href="admissions.html" class="fa-btn fa-btn-card">Learn More <i class="bi bi-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-md-6 col-lg-4 fa-reveal">
+                    <div class="card fa-course-card">
+                        <div class="fa-course-card-top">
+                            <span class="fa-course-icon"><i class="bi bi-gear-wide-connected"></i></span>
+                            <span class="fa-course-tag">Intermediate</span>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="fa-course-name">FSc Pre-Engineering</h3>
+                            <p class="fa-course-desc">
+                                Mathematics, Physics and Chemistry delivered with an ECAT-focused
+                                problem-solving approach and weekly practice tests.
+                            </p>
+                            <ul class="fa-course-meta">
+                                <li><i class="bi bi-clock-history"></i> 2 Years (11th &amp; 12th)</li>
+                                <li><i class="bi bi-people"></i> Matric science students aiming for engineering</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer fa-course-footer">
+                            <a href="admissions.html" class="fa-btn fa-btn-card">Learn More <i class="bi bi-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col-md-6 col-lg-4 fa-reveal">
+                    <div class="card fa-course-card">
+                        <div class="fa-course-card-top">
+                            <span class="fa-course-icon"><i class="bi bi-flask"></i></span>
+                            <span class="fa-course-tag">Matriculation</span>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="fa-course-name">Matric Science</h3>
+                            <p class="fa-course-desc">
+                                Full board-syllabus coverage in Physics, Chemistry, Biology and Maths,
+                                paired with disciplined test-taking drills from day one.
+                            </p>
+                            <ul class="fa-course-meta">
+                                <li><i class="bi bi-clock-history"></i> 2 Years (9th &amp; 10th)</li>
+                                <li><i class="bi bi-people"></i> Students continuing into science FSc streams</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer fa-course-footer">
+                            <a href="admissions.html" class="fa-btn fa-btn-card">Learn More <i class="bi bi-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="col-md-6 col-lg-4 fa-reveal">
+                    <div class="card fa-course-card">
+                        <div class="fa-course-card-top">
+                            <span class="fa-course-icon"><i class="bi bi-book"></i></span>
+                            <span class="fa-course-tag">Matriculation</span>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="fa-course-name">Matric Arts</h3>
+                            <p class="fa-course-desc">
+                                Solid grounding in Civics, Economics, History and English, guided by
+                                mentors who help students think, argue and write clearly.
+                            </p>
+                            <ul class="fa-course-meta">
+                                <li><i class="bi bi-clock-history"></i> 2 Years (9th &amp; 10th)</li>
+                                <li><i class="bi bi-people"></i> Students pursuing arts &amp; humanities streams</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer fa-course-footer">
+                            <a href="admissions.html" class="fa-btn fa-btn-card">Learn More <i class="bi bi-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="col-md-6 col-lg-4 fa-reveal">
+                    <div class="card fa-course-card">
+                        <div class="fa-course-card-top">
+                            <span class="fa-course-icon"><i class="bi bi-shield-check"></i></span>
+                            <span class="fa-course-tag">Entry Test</span>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="fa-course-name">Entry Test Preparation</h3>
+                            <p class="fa-course-desc">
+                                Focused prep for ISSB, PMA, PAF, Navy and university entry tests —
+                                verbal, quantitative, analytical and current affairs, all in one track.
+                            </p>
+                            <ul class="fa-course-meta">
+                                <li><i class="bi bi-clock-history"></i> 3 &ndash; 6 Months</li>
+                                <li><i class="bi bi-people"></i> Candidates preparing for armed forces &amp; university entry</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer fa-course-footer">
+                            <a href="admissions.html" class="fa-btn fa-btn-card">Learn More <i class="bi bi-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="col-md-6 col-lg-4 fa-reveal">
+                    <div class="card fa-course-card">
+                        <div class="fa-course-card-top">
+                            <span class="fa-course-icon"><i class="bi bi-graph-up-arrow"></i></span>
+                            <span class="fa-course-tag">Foundation</span>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="fa-course-name">Foundation &amp; Bridge Course</h3>
+                            <p class="fa-course-desc">
+                                A short bridging track for students moving between boards or streams,
+                                closing conceptual gaps before the main academic year begins.
+                            </p>
+                            <ul class="fa-course-meta">
+                                <li><i class="bi bi-clock-history"></i> 6 &ndash; 8 Weeks</li>
+                                <li><i class="bi bi-people"></i> Students transferring boards, streams or cities</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer fa-course-footer">
+                            <a href="admissions.html" class="fa-btn fa-btn-card">Learn More <i class="bi bi-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- ================== END COURSE CARDS GRID ================== -->
+
+    <!-- ==================== COURSES CTA STRIP ==================== -->
+    <section class="fa-courses-cta">
+        <div class="container">
+            <div class="fa-courses-cta-inner">
+                <div>
+                    <h3>Not sure which track fits you?</h3>
+                    <p>Talk to our academic counsellors — we'll map a course plan around your goals.</p>
+                </div>
+                <a href="admissions.html" class="fa-btn fa-btn-fill">Start Admission <i class="bi bi-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+    <!-- ================== END COURSES CTA STRIP ================== -->
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="fa-footer">
+        <div class="fa-footer-top">
+            <div class="container">
+                <div class="fa-footer-grid">
+
+                    <!-- Brand column -->
+                    <div class="fa-footer-col fa-footer-brand-col">
+                        <a href="index.html" class="fa-footer-brand">
+                            <span class="fa-crest-ring fa-footer-crest-ring">
+                                <img src="images/LOGO.png" alt="Forces Academy crest" class="fa-crest" />
+                            </span>
+                            <span class="fa-footer-brand-text">
+                                FORCES ACADEMY<br />
+                                <small>FAISALABAD</small>
+                            </span>
+                        </a>
+                        <p class="fa-footer-tagline">
+                            Excellence in education, preparing tomorrow&rsquo;s leaders today.
+                        </p>
+                        <p class="fa-footer-description">
+                            Forces Academy Faisalabad is committed to preparing aspiring candidates through professional training, mentorship, and disciplined guidance.
+                        </p>
+                    </div>
+
+                    <!-- Divider (dispatch style) -->
+                    <div class="fa-footer-dispatch-divider" aria-hidden="true"></div>
+
+                    <!-- Quick Links -->
+                    <div class="fa-footer-col">
+                        <h6 class="fa-footer-heading">Quick Links</h6>
+                        <ul class="fa-footer-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="courses.html">Courses</a></li>
+                            <li><a href="admissions.html">Admissions</a></li>
+                            <li><a href="results.html">Results</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Contact -->
+                    <div class="fa-footer-col">
+                        <h6 class="fa-footer-heading">Get in Touch</h6>
+                        <ul class="fa-footer-contact">
+                            <li>
+                                <span class="fa-footer-icon">&#9742;</span>
+                                <span>+92 41 111 222 333</span>
+                            </li>
+                            <li>
+                                <span class="fa-footer-icon">&#9993;</span>
+                                <span>info@forcesacademy.edu.pk</span>
+                            </li>
+                            <li>
+                                <span class="fa-footer-icon">&#128205;</span>
+                                <span>Susan Road, Faisalabad, Pakistan</span>
+                            </li>
+                            <li>
+                                <span class="fa-footer-icon">&#128337;</span>
+                                <span>Mon &ndash; Sat: 8:00 AM &ndash; 4:00 PM</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Follow Us -->
+                    <div class="fa-footer-col">
+                        <h6 class="fa-footer-heading">Follow Us</h6>
+                        <p class="fa-footer-note">
+                            Stay updated with academy news, events, and admissions announcements.
+                        </p>
+                        <div class="fa-footer-social">
+                            <a href="https://www.facebook.com/forcesacademyfaisalabad/" class="fa-social-icon fa-social-facebook" title="Facebook" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M13.5 9H15V6.5h-1.75C11.6 6.5 10.5 7.6 10.5 9.25V11H9v2.5h1.5V21h2.5v-7.5H15L15.5 11h-2V9.5c0-.35.15-.5.5-.5z"/></svg>
+                            </a>
+                            <a href="https://www.instagram.com/forcesacademyfaisalabad/" class="fa-social-icon fa-social-instagram" title="Instagram" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 8.8a3.2 3.2 0 1 0 0 6.4 3.2 3.2 0 0 0 0-6.4zm0 5.3a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zM16.9 6.1a.9.9 0 1 1-1.8 0 .9.9 0 0 1 1.8 0zM21 7.2c-.06-1.2-.33-2.27-1.2-3.14-.87-.87-1.94-1.14-3.14-1.2C15.4 2.8 8.6 2.8 7.34 2.86c-1.2.06-2.26.33-3.14 1.2-.87.87-1.13 1.94-1.2 3.14C2.94 8.6 2.94 15.4 3 16.66c.06 1.2.33 2.27 1.2 3.14.87.87 1.94 1.13 3.14 1.2 1.26.06 8.06.06 9.32 0 1.2-.06 2.27-.33 3.14-1.2.87-.87 1.14-1.94 1.2-3.14.06-1.26.06-8.06 0-9.32zm-1.8 11.02c-.26.66-.77 1.17-1.43 1.44-1 .4-3.36.3-4.77.3s-3.78.1-4.77-.3a2.55 2.55 0 0 1-1.44-1.44c-.4-1-.3-3.36-.3-4.77s-.1-3.78.3-4.77c.26-.66.77-1.17 1.43-1.44 1-.4 3.36-.3 4.77-.3s3.78-.1 4.77.3c.66.26 1.17.77 1.44 1.43.4 1 .3 3.36.3 4.77s.1 3.78-.3 4.78z"/></svg>
+                            </a>
+                            <a href="https://www.youtube.com/channel/UCRF74RQe3TiQl-_qyFZb-2w" class="fa-social-icon fa-social-youtube" title="YouTube" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M21.6 7.5s-.2-1.5-.85-2.16c-.8-.86-1.7-.86-2.12-.9C15.6 4.2 12 4.2 12 4.2s-3.6 0-6.63.24c-.4.04-1.3.04-2.12.9C2.6 6 2.4 7.5 2.4 7.5S2.2 9.25 2.2 11v1.9c0 1.75.2 3.5.2 3.5s.2 1.5.85 2.16c.8.86 1.86.83 2.34.92 1.7.17 7.21.24 7.21.24s3.6 0 6.63-.25c.4-.04 1.3-.04 2.12-.9.65-.66.85-2.16.85-2.16s.2-1.75.2-3.5V11c0-1.75-.2-3.5-.2-3.5zM9.9 14.7V8.8l5.4 2.95-5.4 2.95z"/></svg>
+                            </a>
+                            <a href="https://wa.me/923166954383" class="fa-social-icon fa-social-whatsapp" title="WhatsApp" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.94-.27-.1-.46-.15-.66.15-.2.3-.75.94-.92 1.13-.17.2-.34.22-.63.08-.3-.15-1.24-.46-2.37-1.47-.87-.78-1.47-1.75-1.64-2.04-.17-.3-.02-.46.13-.6.13-.14.3-.34.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.66-1.6-.9-2.18-.24-.58-.48-.5-.66-.5h-.56c-.2 0-.52.07-.79.37s-1.04 1.02-1.04 2.48 1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.5.71.3 1.26.48 1.7.62.71.23 1.36.2 1.87.12.57-.08 1.7-.7 1.94-1.37.24-.68.24-1.26.17-1.38-.07-.13-.27-.2-.57-.35zM12.02 3C7.05 3 3 7.03 3 12c0 1.6.42 3.1 1.15 4.4L3 21l4.75-1.1A9 9 0 0 0 12.02 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm0 16.3a7.28 7.28 0 0 1-3.72-1.02l-.27-.16-2.82.66.65-2.75-.17-.28A7.28 7.28 0 1 1 19.3 12a7.3 7.3 0 0 1-7.28 7.3z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="fa-footer-bottom">
+            <div class="container fa-footer-bottom-inner">
+                <span>&copy; <span id="faYear">2026</span> Forces Academy Faisalabad. All Rights Reserved.</span>
+                <span class="fa-footer-legal">
+                    <a href="terms.html">Terms of Use</a>
+                    <span class="fa-footer-legal-sep">&bull;</span>
+                    <a href="privacy.html">Privacy Policy</a>
+                </span>
+            </div>
+        </div>
+    </footer>
+    <!-- ================== END FOOTER ================== -->
+
+    <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Scroll reveal for course cards -->
+    <script>
+        document.getElementById('faYear').textContent = new Date().getFullYear();
+
+        const revealEls = document.querySelectorAll('.fa-reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.transitionDelay = (i % 3) * 0.1 + 's';
+                    entry.target.classList.add('fa-reveal-in');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+        revealEls.forEach(el => revealObserver.observe(el));
+    </script>
 </body>
 </html>
