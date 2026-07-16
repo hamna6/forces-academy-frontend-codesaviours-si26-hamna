@@ -1,3 +1,7 @@
+<!-- ============================================================
+     FORCES ACADEMY - Gallery Page (gallery.html)
+     "Field Archive" — matches site's green/sage/gold palette
+     ============================================================ -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,73 +9,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gallery | Forces Academy Faisalabad</title>
 
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap"
-        rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/style.css" />
-</head>
-<body>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet" />
 
-    <!-- ==================== NAVIGATION BAR ==================== -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/gallery.css" />
+</head>
+<body class="fa-gallery-page">
+
+    <!-- ==================== NAVIGATION BAR (unchanged) ==================== -->
     <nav class="navbar navbar-expand-lg sticky-top fa-navbar">
         <div class="container">
-
             <a class="navbar-brand fa-brand" href="index.html">
                 <span class="fa-crest-ring">
-                    <img
-                        src="images/LOGO.png"
-                        alt="Forces Academy crest"
-                        class="fa-crest"
-                    />
+                    <img src="images/LOGO.png" alt="Forces Academy crest" class="fa-crest" />
                 </span>
-                <span class="fa-brand-text">
-                    FORCES ACADEMY<br />
-                    <small> FAISALABAD</small>
-                </span>
+                <span class="fa-brand-text">FORCES ACADEMY<br /><small> FAISALABAD</small></span>
             </a>
-
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#mainNavbar"
-                aria-controls="mainNavbar"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-            >
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
             <div class="collapse navbar-collapse" id="mainNavbar">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center fa-roster-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="courses.html">Courses</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="admissions.html">Admissions</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="results.html">Results</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="gallery.html">Gallery</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="admissions.html">Admissions</a></li>
+                    <li class="nav-item"><a class="nav-link" href="results.html">Results</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                     <li class="nav-item ms-lg-4 mt-3 mt-lg-0">
                         <a href="portal.html" class="fa-clearance-badge">
                             <span class="fa-clearance-dot"></span>
@@ -82,65 +53,452 @@
             </div>
         </div>
     </nav>
-    <!-- ================== END NAVBAR ================== -->
 
-
-    <!-- ==================== GALLERY CONTENT ==================== -->
-    <main>
-        <section class="fa-gallery-hero py-5 text-center">
-            <div class="container">
-                <p class="fa-eyebrow mb-2">CAMPUS LIFE</p>
-                <h1 class="fa-page-title mb-3">Gallery</h1>
-                <p class="fa-page-subtitle mx-auto">
-                    A visual record of academics, drills, ceremonies, and campus life at Forces Academy Faisalabad.
+     <!-- ==================== GALLERY HERO ==================== -->
+    <header class="fa-gal-hero">
+        <div class="fa-gal-hero-bg"></div>
+        <div class="fa-gal-hero-overlay"></div>
+        <div class="container fa-gal-hero-content">
+            <div class="fa-gal-hero-text">
+                <span class="fa-hero-badge">
+                    <span class="fa-live-dot"></span>
+                    RECORDS &amp; ARCHIVES DIVISION
+                </span>
+                <h1 class="fa-gal-hero-title">Field Archive</h1>
+                <p class="fa-gal-hero-tagline">
+                    A running log of academy life &mdash; parades, playing fields, and classrooms &mdash;
+                    catalogued as it happens. Filter by channel, search by name, or open any file for the full frame.
                 </p>
-            </div>
-        </section>
-
-        <section class="fa-gallery-grid-section py-5">
-            <div class="container">
-                <div class="row g-4">
-                    <!-- Gallery images go here -->
-                    <div class="col-12">
-                        <p class="text-center text-muted">Gallery images coming soon.</p>
+                <div class="fa-hero-stats">
+                    <div class="fa-hero-stat">
+                        <strong id="fgVisibleCount">12</strong>
+                        <span>Files Logged</span>
+                    </div>
+                    <div class="fa-hero-stat-divider"></div>
+                    <div class="fa-hero-stat">
+                        <strong>3</strong>
+                        <span>Channels</span>
+                    </div>
+                    <div class="fa-hero-stat-divider"></div>
+                    <div class="fa-hero-stat">
+                        <strong>2026</strong>
+                        <span>Latest Batch</span>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
-    <!-- ================== END GALLERY CONTENT ================== -->
 
+            <aside class="fa-gal-sticky-note" aria-label="Archivist's note">
+                <span class="fa-gal-sticky-tape"></span>
+                <span class="fa-gal-sticky-pin"></span>
+                <span class="fa-gal-sticky-label">Field Tip</span>
+                <p class="fa-gal-sticky-text">
+                    Every thumbnail opens as a full, uncropped photo. Use the on-screen arrows
+                    or swipe to move to the next file &mdash; no pinching or scrolling needed.
+                </p>
+                <span class="fa-gal-sticky-sign">&mdash; Gallery Desk</span>
+            </aside>
+        </div>
+    </header>
 
-    <!-- ==================== FOOTER ==================== -->
+    <!-- ==================== FEATURED SPOTLIGHT (new widget) ==================== -->
+    <section class="fa-gal-spotlight">
+        <div class="container fa-gal-spotlight-eyebrow-row">
+            <span class="fa-gal-spotlight-label">
+                <span class="fa-live-dot"></span> Spotlight Files
+            </span>
+        </div>
+        <div class="fa-gal-spotlight-track" id="fgSpotlight">
+            <!-- IMAGE LINK: replace src below with your own photo -->
+            <div class="fa-gal-slide is-active" data-slide="0">
+                <div class="fa-gal-slide-frame">
+                    <img src="https://images.unsplash.com/photo-1761144316432-b80be05e0d04?q=75&amp;w=1032&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Passing-out parade" />
+                </div>
+                <div class="fa-gal-slide-caption">
+                    <span class="fa-gal-slide-eyebrow">FA&ndash;EVT&ndash;014 / Events</span>
+                    <h2 class="fa-gal-slide-title">Passing-Out Parade</h2>
+                </div>
+            </div>
+            <!-- IMAGE LINK: replace src below with your own photo -->
+            <div class="fa-gal-slide" data-slide="1">
+                <div class="fa-gal-slide-frame">
+                    <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&amp;fit=crop&amp;w=1600&amp;q=75" alt="Morning physical training" />
+                </div>
+                <div class="fa-gal-slide-caption">
+                    <span class="fa-gal-slide-eyebrow">FA&ndash;SPT&ndash;031 / Sports</span>
+                    <h2 class="fa-gal-slide-title">Morning Physical Training</h2>
+                </div>
+            </div>
+            <!-- IMAGE LINK: replace src below with your own photo -->
+            <div class="fa-gal-slide" data-slide="2">
+                <div class="fa-gal-slide-frame">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&amp;fit=crop&amp;w=1600&amp;q=75" alt="Lecture hall briefing" />
+                </div>
+                <div class="fa-gal-slide-caption">
+                    <span class="fa-gal-slide-eyebrow">FA&ndash;ACD&ndash;002 / Academic</span>
+                    <h2 class="fa-gal-slide-title">Lecture Hall Briefing</h2>
+                </div>
+            </div>
+            <div class="fa-gal-dots" id="fgSpotlightDots">
+                <button type="button" class="fa-gal-dot is-active" data-goto="0" aria-label="Slide 1" aria-selected="true"></button>
+                <button type="button" class="fa-gal-dot" data-goto="1" aria-label="Slide 2" aria-selected="false"></button>
+                <button type="button" class="fa-gal-dot" data-goto="2" aria-label="Slide 3" aria-selected="false"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== STICKY CONTROLS ==================== -->
+    <section class="fa-gal-controls">
+        <div class="container fa-gal-controls-inner">
+
+            <div class="fa-gal-filters" role="group" aria-label="Filter gallery by category">
+                <button type="button" class="fa-gal-filter-btn is-active" data-filter="all" aria-pressed="true">
+                    <span class="fa-gal-filter-led"></span>
+                    All Files
+                    <span class="fa-gal-filter-count">12</span>
+                </button>
+                <button type="button" class="fa-gal-filter-btn" data-filter="events" aria-pressed="false">
+                    <span class="fa-gal-filter-led"></span>
+                    Events
+                    <span class="fa-gal-filter-count">4</span>
+                </button>
+                <button type="button" class="fa-gal-filter-btn" data-filter="sports" aria-pressed="false">
+                    <span class="fa-gal-filter-led"></span>
+                    Sports
+                    <span class="fa-gal-filter-count">4</span>
+                </button>
+                <button type="button" class="fa-gal-filter-btn" data-filter="academic" aria-pressed="false">
+                    <span class="fa-gal-filter-led"></span>
+                    Academic
+                    <span class="fa-gal-filter-count">4</span>
+                </button>
+                <span class="fa-gal-filter-indicator" aria-hidden="true"></span>
+            </div>
+
+            <div class="fa-gal-tools">
+                <label class="fa-gal-search">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    <input type="search" id="fgSearch" placeholder="Search files&hellip;" aria-label="Search gallery" />
+                </label>
+
+                <div class="fa-gal-sort" role="group" aria-label="Sort files">
+                    <button type="button" class="fa-gal-sort-btn is-active" data-sort="default" aria-pressed="true">Newest</button>
+                    <button type="button" class="fa-gal-sort-btn" data-sort="az" aria-pressed="false">A&ndash;Z</button>
+                </div>
+
+                <div class="fa-gal-view-switch">
+                    <span class="fa-gal-view-label fa-gal-view-label-grid">Grid</span>
+                    <input type="checkbox" id="fgViewToggle" class="fa-gal-view-switch-input" />
+                    <label for="fgViewToggle" class="fa-gal-view-switch-track">
+                        <span class="fa-gal-view-switch-thumb"></span>
+                    </label>
+                    <span class="fa-gal-view-label fa-gal-view-label-masonry">Masonry</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==================== GALLERY GRID ==================== -->
+    <section class="fa-gal-section">
+        <div class="container">
+
+            <div class="fa-gal-meta-bar">
+                <span>Showing <strong id="fgShowingCount">8</strong> of <strong id="fgTotalCount">12</strong> files</span>
+                <span id="fgActiveFilterLabel">Channel: All Files</span>
+            </div>
+
+            <div class="fa-gal-grid" id="fgGrid">
+
+                <!-- === EVENTS (4) === -->
+                <!-- IMAGE LINK: replace src/href below with your own photo -->
+                <div class="fa-gal-item" data-category="events" data-title="passing-out parade" data-order="1">
+                    <a href="https://images.unsplash.com/photo-1761144316432-b80be05e0d04?q=80&amp;w=1032&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="fa-gal-glightbox" data-type="image" data-gallery="fa-gallery" data-title="Passing-Out Parade &mdash; Main Ground" data-description="Cadets on final review before the reviewing officer.">
+                        <article class="fa-gal-card">
+                            <span class="fa-gal-ribbon">Featured</span>
+                            <div class="fa-gal-card-media">
+                                <img src="https://images.unsplash.com/photo-1761144316432-b80be05e0d04?q=70&amp;w=800&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Passing-out parade on the main ground" loading="lazy" />
+                                <div class="fa-gal-card-overlay">
+                                    <span class="fa-gal-view-btn">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="fa-gal-card-body">
+                                <span class="fa-gal-card-tag">Events</span>
+                                <h3 class="fa-gal-card-title">Passing-Out Parade</h3>
+                                <span class="fa-gal-card-code">FA&ndash;EVT&ndash;014</span>
+                            </div>
+                        </article>
+                    </a>
+                </div>
+
+                <!-- IMAGE LINK: replace src/href below with your own photo -->
+                <div class="fa-gal-item" data-category="events" data-title="annual convocation" data-order="2">
+                    <a href="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" class="fa-gal-glightbox" data-type="image" data-gallery="fa-gallery" data-title="Convocation &mdash; Auditorium" data-description="Graduating batch receiving academic honours.">
+                        <article class="fa-gal-card">
+                            <div class="fa-gal-card-media">
+                                <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="Convocation ceremony in the auditorium" loading="lazy" />
+                                <div class="fa-gal-card-overlay">
+                                    <span class="fa-gal-view-btn">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="fa-gal-card-body">
+                                <span class="fa-gal-card-tag">Events</span>
+                                <h3 class="fa-gal-card-title">Annual Convocation</h3>
+                                <span class="fa-gal-card-code">FA&ndash;EVT&ndash;015</span>
+                            </div>
+                        </article>
+                    </a>
+                </div>
+
+                <!-- IMAGE LINK: replace src/href below with your own photo -->
+                <div class="fa-gal-item" data-category="events" data-title="prize distribution" data-order="3">
+                    <a href="https://images.unsplash.com/photo-1508385082359-f38ae991e8f2?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" class="fa-gal-glightbox" data-type="image" data-gallery="fa-gallery" data-title="Prize Distribution &mdash; Main Hall" data-description="Top cadets called forward for merit awards.">
+                        <article class="fa-gal-card">
+                            <div class="fa-gal-card-media">
+                                <img src="https://images.unsplash.com/photo-1508385082359-f38ae991e8f2?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="Prize distribution ceremony" loading="lazy" />
+                                <div class="fa-gal-card-overlay">
+                                    <span class="fa-gal-view-btn">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="fa-gal-card-body">
+                                <span class="fa-gal-card-tag">Events</span>
+                                <h3 class="fa-gal-card-title">Prize Distribution</h3>
+                                <span class="fa-gal-card-code">FA&ndash;EVT&ndash;016</span>
+                            </div>
+                        </article>
+                    </a>
+                </div>
+
+                <!-- IMAGE LINK: replace src/href below with your own photo -->
+                <div class="fa-gal-item" data-category="events" data-title="orientation day" data-order="4">
+                    <a href="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" class="fa-gal-glightbox" data-type="image" data-gallery="fa-gallery" data-title="Orientation Day &mdash; New Intake" data-description="Incoming cadets briefed on academy protocol.">
+                        <article class="fa-gal-card">
+                            <div class="fa-gal-card-media">
+                                <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="Orientation day briefing for new cadets" loading="lazy" />
+                                <div class="fa-gal-card-overlay">
+                                    <span class="fa-gal-view-btn">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="fa-gal-card-body">
+                                <span class="fa-gal-card-tag">Events</span>
+                                <h3 class="fa-gal-card-title">Orientation Day</h3>
+                                <span class="fa-gal-card-code">FA&ndash;EVT&ndash;017</span>
+                            </div>
+                        </article>
+                    </a>
+                </div>
+
+                <!-- === SPORTS (4) === -->
+                <!-- IMAGE LINK: replace src/href below with your own photo -->
+                <div class="fa-gal-item" data-category="sports" data-title="morning physical training" data-order="5">
+                    <a href="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" class="fa-gal-glightbox" data-type="image" data-gallery="fa-gallery" data-title="Morning PT &mdash; Track" data-description="Physical training session at first light.">
+                        <article class="fa-gal-card">
+                            <span class="fa-gal-ribbon">Featured</span>
+                            <div class="fa-gal-card-media">
+                                <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="Cadets running on the track during morning PT" loading="lazy" />
+                                <div class="fa-gal-card-overlay">
+                                    <span class="fa-gal-view-btn">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="fa-gal-card-body">
+                                <span class="fa-gal-card-tag">Sports</span>
+                                <h3 class="fa-gal-card-title">Morning Physical Training</h3>
+                                <span class="fa-gal-card-code">FA&ndash;SPT&ndash;031</span>
+                            </div>
+                        </article>
+                    </a>
+                </div>
+
+                <!-- IMAGE LINK: replace src/href below with your own photo -->
+                <div class="fa-gal-item" data-category="sports" data-title="inter-house basketball" data-order="6">
+                    <a href="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" class="fa-gal-glightbox" data-type="image" data-gallery="fa-gallery" data-title="Inter-House Basketball Final" data-description="House teams contest the annual trophy.">
+                        <article class="fa-gal-card">
+                            <div class="fa-gal-card-media">
+                                <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="Inter-house basketball final match" loading="lazy" />
+                                <div class="fa-gal-card-overlay">
+                                    <span class="fa-gal-view-btn">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="fa-gal-card-body">
+                                <span class="fa-gal-card-tag">Sports</span>
+                                <h3 class="fa-gal-card-title">Inter-House Basketball</h3>
+                                <span class="fa-gal-card-code">FA&ndash;SPT&ndash;032</span>
+                            </div>
+                        </article>
+                    </a>
+                </div>
+
+                <!-- IMAGE LINK: replace src/href below with your own photo -->
+                <div class="fa-gal-item" data-category="sports" data-title="obstacle course" data-order="7">
+                    <a href="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" class="fa-gal-glightbox" data-type="image" data-gallery="fa-gallery" data-title="Field Day &mdash; Obstacle Course" data-description="Endurance course run as part of field week.">
+                        <article class="fa-gal-card">
+                            <div class="fa-gal-card-media">
+                                <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="Cadets on the field day obstacle course" loading="lazy" />
+                                <div class="fa-gal-card-overlay">
+                                    <span class="fa-gal-view-btn">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="fa-gal-card-body">
+                                <span class="fa-gal-card-tag">Sports</span>
+                                <h3 class="fa-gal-card-title">Obstacle Course</h3>
+                                <span class="fa-gal-card-code">FA&ndash;SPT&ndash;033</span>
+                            </div>
+                        </article>
+                    </a>
+                </div>
+
+                <!-- IMAGE LINK: replace src/href below with your own photo -->
+                <div class="fa-gal-item" data-category="sports" data-title="annual sports gala" data-order="8">
+                    <a href="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" class="fa-gal-glightbox" data-type="image" data-gallery="fa-gallery" data-title="Annual Sports Gala" data-description="Track and field events on gala day.">
+                        <article class="fa-gal-card">
+                            <div class="fa-gal-card-media">
+                                <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="Annual sports gala track events" loading="lazy" />
+                                <div class="fa-gal-card-overlay">
+                                    <span class="fa-gal-view-btn">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="fa-gal-card-body">
+                                <span class="fa-gal-card-tag">Sports</span>
+                                <h3 class="fa-gal-card-title">Annual Sports Gala</h3>
+                                <span class="fa-gal-card-code">FA&ndash;SPT&ndash;034</span>
+                            </div>
+                        </article>
+                    </a>
+                </div>
+
+                <!-- === ACADEMIC (4) === -->
+                <!-- IMAGE LINK: replace src/href below with your own photo -->
+                <div class="fa-gal-item" data-category="academic" data-title="lecture hall briefing" data-order="9">
+                    <a href="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" class="fa-gal-glightbox" data-type="image" data-gallery="fa-gallery" data-title="Lecture Hall Briefing" data-description="Senior faculty conducting a strategy briefing.">
+                        <article class="fa-gal-card">
+                            <span class="fa-gal-ribbon">Featured</span>
+                            <div class="fa-gal-card-media">
+                                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="Lecture hall briefing session" loading="lazy" />
+                                <div class="fa-gal-card-overlay">
+                                    <span class="fa-gal-view-btn">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="fa-gal-card-body">
+                                <span class="fa-gal-card-tag">Academic</span>
+                                <h3 class="fa-gal-card-title">Lecture Hall Briefing</h3>
+                                <span class="fa-gal-card-code">FA&ndash;ACD&ndash;002</span>
+                            </div>
+                        </article>
+                    </a>
+                </div>
+
+                <!-- IMAGE LINK: replace src/href below with your own photo -->
+                <div class="fa-gal-item" data-category="academic" data-title="library study group" data-order="10">
+                    <a href="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" class="fa-gal-glightbox" data-type="image" data-gallery="fa-gallery" data-title="Study Group &mdash; Library Wing" data-description="Cadets in a peer study session before exams.">
+                        <article class="fa-gal-card">
+                            <div class="fa-gal-card-media">
+                                <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="Study group in the library wing" loading="lazy" />
+                                <div class="fa-gal-card-overlay">
+                                    <span class="fa-gal-view-btn">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="fa-gal-card-body">
+                                <span class="fa-gal-card-tag">Academic</span>
+                                <h3 class="fa-gal-card-title">Library Study Group</h3>
+                                <span class="fa-gal-card-code">FA&ndash;ACD&ndash;003</span>
+                            </div>
+                        </article>
+                    </a>
+                </div>
+
+                <!-- IMAGE LINK: replace src/href below with your own photo -->
+                <div class="fa-gal-item" data-category="academic" data-title="classroom instruction" data-order="11">
+                    <a href="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" class="fa-gal-glightbox" data-type="image" data-gallery="fa-gallery" data-title="Classroom Instruction &mdash; Block B" data-description="Core subject instruction in progress.">
+                        <article class="fa-gal-card">
+                            <div class="fa-gal-card-media">
+                                <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="Classroom instruction in Block B" loading="lazy" />
+                                <div class="fa-gal-card-overlay">
+                                    <span class="fa-gal-view-btn">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="fa-gal-card-body">
+                                <span class="fa-gal-card-tag">Academic</span>
+                                <h3 class="fa-gal-card-title">Classroom Instruction</h3>
+                                <span class="fa-gal-card-code">FA&ndash;ACD&ndash;004</span>
+                            </div>
+                        </article>
+                    </a>
+                </div>
+
+                <!-- IMAGE LINK: replace src/href below with your own photo -->
+                <div class="fa-gal-item" data-category="academic" data-title="graduating batch" data-order="12">
+                    <a href="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" class="fa-gal-glightbox" data-type="image" data-gallery="fa-gallery" data-title="Batch Photo &mdash; Academic Block" data-description="Graduating batch outside the academic block.">
+                        <article class="fa-gal-card">
+                            <div class="fa-gal-card-media">
+                                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="Batch photo outside the academic block" loading="lazy" />
+                                <div class="fa-gal-card-overlay">
+                                    <span class="fa-gal-view-btn">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="fa-gal-card-body">
+                                <span class="fa-gal-card-tag">Academic</span>
+                                <h3 class="fa-gal-card-title">Graduating Batch</h3>
+                                <span class="fa-gal-card-code">FA&ndash;ACD&ndash;005</span>
+                            </div>
+                        </article>
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="fa-gal-empty" id="fgEmpty" role="status" aria-live="polite" hidden>
+                <span class="fa-gal-empty-code">NO&nbsp;RECORDS</span>
+                <p>No files match this search or channel yet. Try a different filter.</p>
+            </div>
+
+            <div class="fa-gal-loadmore-wrap">
+                <button type="button" class="fa-btn fa-btn-ghost fa-gal-loadmore-btn" id="fgLoadMore">Load More Files</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER (unchanged) ==================== -->
     <footer class="fa-footer">
         <div class="fa-footer-top">
             <div class="container">
                 <div class="fa-footer-grid">
-
-                    <!-- Brand column -->
                     <div class="fa-footer-col fa-footer-brand-col">
                         <a href="index.html" class="fa-footer-brand">
                             <span class="fa-crest-ring fa-footer-crest-ring">
                                 <img src="images/LOGO.png" alt="Forces Academy crest" class="fa-crest" />
                             </span>
-                            <span class="fa-footer-brand-text">
-                                FORCES ACADEMY<br />
-                                <small>FAISALABAD</small>
-                            </span>
+                            <span class="fa-footer-brand-text">FORCES ACADEMY<br /><small>FAISALABAD</small></span>
                         </a>
-                        <p class="fa-footer-tagline">
-                            Excellence in education, preparing tomorrow&rsquo;s leaders today.
-                        </p>
-                        <p class="fa-footer-description">
-                            Forces Academy Faisalabad is committed to preparing aspiring candidates through professional training, mentorship, and disciplined guidance.
-
-                        </p>
+                        <p class="fa-footer-tagline">Excellence in education, preparing tomorrow&rsquo;s leaders today.</p>
+                        <p class="fa-footer-description">Forces Academy Faisalabad is committed to preparing aspiring candidates through professional training, mentorship, and disciplined guidance.</p>
                     </div>
 
-                    <!-- Divider (dispatch style) -->
                     <div class="fa-footer-dispatch-divider" aria-hidden="true"></div>
 
-                    <!-- Quick Links -->
                     <div class="fa-footer-col">
                         <h6 class="fa-footer-heading">Quick Links</h6>
                         <ul class="fa-footer-links">
@@ -154,79 +512,34 @@
                         </ul>
                     </div>
 
-                    <!-- Contact -->
                     <div class="fa-footer-col">
                         <h6 class="fa-footer-heading">Get in Touch</h6>
                         <ul class="fa-footer-contact">
-                            <li>
-                                <span class="fa-footer-icon">&#9742;</span>
-                                <span>+92 41 111 222 333</span>
-                            </li>
-                            <li>
-                                <span class="fa-footer-icon">&#9993;</span>
-                                <span>info@forcesacademy.edu.pk</span>
-                            </li>
-                            <li>
-                                <span class="fa-footer-icon">&#128205;</span>
-                                <span>Susan Road, Faisalabad, Pakistan</span>
-                            </li>
-                            <li>
-                                <span class="fa-footer-icon">&#128337;</span>
-                                <span>Mon &ndash; Sat: 8:00 AM &ndash; 4:00 PM</span>
-                            </li>
+                            <li><span class="fa-footer-icon">&#9742;</span><span>+92 41 111 222 333</span></li>
+                            <li><span class="fa-footer-icon">&#9993;</span><span>info@forcesacademy.edu.pk</span></li>
+                            <li><span class="fa-footer-icon">&#128205;</span><span>Susan Road, Faisalabad, Pakistan</span></li>
+                            <li><span class="fa-footer-icon">&#128337;</span><span>Mon &ndash; Sat: 8:00 AM &ndash; 4:00 PM</span></li>
                         </ul>
                     </div>
 
-                    <!-- Follow Us: icon-only circular badges, brand colors on hover -->
                     <div class="fa-footer-col">
                         <h6 class="fa-footer-heading">Follow Us</h6>
-                        <p class="fa-footer-note">
-                            Stay updated with academy news, events, and admissions announcements.
-                        </p>
+                        <p class="fa-footer-note">Stay updated with academy news, events, and admissions announcements.</p>
                         <div class="fa-footer-social">
-                            <a
-                                href="https://www.facebook.com/forcesacademyfaisalabad/"
-                                class="fa-social-icon fa-social-facebook"
-                                title="Facebook"
-                                aria-label="Facebook"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
+                            <a href="https://www.facebook.com/forcesacademyfaisalabad/" class="fa-social-icon fa-social-facebook" title="Facebook" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
                                 <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M13.5 9H15V6.5h-1.75C11.6 6.5 10.5 7.6 10.5 9.25V11H9v2.5h1.5V21h2.5v-7.5H15L15.5 11h-2V9.5c0-.35.15-.5.5-.5z"/></svg>
                             </a>
-                            <a
-                                href="https://www.instagram.com/forcesacademyfaisalabad/"
-                                class="fa-social-icon fa-social-instagram"
-                                title="Instagram"
-                                aria-label="Instagram"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
+                            <a href="https://www.instagram.com/forcesacademyfaisalabad/" class="fa-social-icon fa-social-instagram" title="Instagram" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
                                 <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 8.8a3.2 3.2 0 1 0 0 6.4 3.2 3.2 0 0 0 0-6.4zm0 5.3a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zM16.9 6.1a.9.9 0 1 1-1.8 0 .9.9 0 0 1 1.8 0zM21 7.2c-.06-1.2-.33-2.27-1.2-3.14-.87-.87-1.94-1.14-3.14-1.2C15.4 2.8 8.6 2.8 7.34 2.86c-1.2.06-2.26.33-3.14 1.2-.87.87-1.13 1.94-1.2 3.14C2.94 8.6 2.94 15.4 3 16.66c.06 1.2.33 2.27 1.2 3.14.87.87 1.94 1.13 3.14 1.2 1.26.06 8.06.06 9.32 0 1.2-.06 2.27-.33 3.14-1.2.87-.87 1.14-1.94 1.2-3.14.06-1.26.06-8.06 0-9.32zm-1.8 11.02c-.26.66-.77 1.17-1.43 1.44-1 .4-3.36.3-4.77.3s-3.78.1-4.77-.3a2.55 2.55 0 0 1-1.44-1.44c-.4-1-.3-3.36-.3-4.77s-.1-3.78.3-4.77c.26-.66.77-1.17 1.43-1.44 1-.4 3.36-.3 4.77-.3s3.78-.1 4.77.3c.66.26 1.17.77 1.44 1.43.4 1 .3 3.36.3 4.77s.1 3.78-.3 4.78z"/></svg>
                             </a>
-                            <a
-                                href="https://www.youtube.com/channel/UCRF74RQe3TiQl-_qyFZb-2w"
-                                class="fa-social-icon fa-social-youtube"
-                                title="YouTube"
-                                aria-label="YouTube"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
+                            <a href="https://www.youtube.com/channel/UCRF74RQe3TiQl-_qyFZb-2w" class="fa-social-icon fa-social-youtube" title="YouTube" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
                                 <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M21.6 7.5s-.2-1.5-.85-2.16c-.8-.86-1.7-.86-2.12-.9C15.6 4.2 12 4.2 12 4.2s-3.6 0-6.63.24c-.4.04-1.3.04-2.12.9C2.6 6 2.4 7.5 2.4 7.5S2.2 9.25 2.2 11v1.9c0 1.75.2 3.5.2 3.5s.2 1.5.85 2.16c.8.86 1.86.83 2.34.92 1.7.17 7.21.24 7.21.24s3.6 0 6.63-.25c.4-.04 1.3-.04 2.12-.9.65-.66.85-2.16.85-2.16s.2-1.75.2-3.5V11c0-1.75-.2-3.5-.2-3.5zM9.9 14.7V8.8l5.4 2.95-5.4 2.95z"/></svg>
                             </a>
-                            <a
-                                href="https://wa.me/923166954383"
-                                class="fa-social-icon fa-social-whatsapp"
-                                title="WhatsApp"
-                                aria-label="WhatsApp"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
+                            <a href="https://wa.me/923166954383" class="fa-social-icon fa-social-whatsapp" title="WhatsApp" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
                                 <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.94-.27-.1-.46-.15-.66.15-.2.3-.75.94-.92 1.13-.17.2-.34.22-.63.08-.3-.15-1.24-.46-2.37-1.47-.87-.78-1.47-1.75-1.64-2.04-.17-.3-.02-.46.13-.6.13-.14.3-.34.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.66-1.6-.9-2.18-.24-.58-.48-.5-.66-.5h-.56c-.2 0-.52.07-.79.37s-1.04 1.02-1.04 2.48 1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.5.71.3 1.26.48 1.7.62.71.23 1.36.2 1.87.12.57-.08 1.7-.7 1.94-1.37.24-.68.24-1.26.17-1.38-.07-.13-.27-.2-.57-.35zM12.02 3C7.05 3 3 7.03 3 12c0 1.6.42 3.1 1.15 4.4L3 21l4.75-1.1A9 9 0 0 0 12.02 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm0 16.3a7.28 7.28 0 0 1-3.72-1.02l-.27-.16-2.82.66.65-2.75-.17-.28A7.28 7.28 0 1 1 19.3 12a7.3 7.3 0 0 1-7.28 7.3z"/></svg>
                             </a>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -242,8 +555,211 @@
             </div>
         </div>
     </footer>
-    <!-- ================== END FOOTER ================== -->
+
+    <!-- Back to top (new widget, reuses site's .fa-back-to-top styling) -->
+    <a href="#" class="fa-back-to-top" id="fgBackToTop" aria-label="Back to top">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+    </a>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
+    <script>
+        document.getElementById('faYear').textContent = new Date().getFullYear();
+
+        /* ---------------------------------------------------------
+           GLightbox
+        --------------------------------------------------------- */
+        GLightbox({
+            selector: '.fa-gal-glightbox',
+            touchNavigation: true,
+            loop: true,
+            zoomable: true,
+            draggable: true,
+            closeButton: true,
+            descPosition: 'bottom',
+            moreLength: 0
+        });
+
+        /* ---------------------------------------------------------
+           Gallery state: filter + search + sort + view + pagination
+        --------------------------------------------------------- */
+        (function () {
+            const PAGE_SIZE = 8;
+            const grid = document.getElementById('fgGrid');
+            const items = Array.from(document.querySelectorAll('.fa-gal-item'));
+            const filterBtns = document.querySelectorAll('.fa-gal-filter-btn');
+            const sortBtns = document.querySelectorAll('.fa-gal-sort-btn');
+            const searchInput = document.getElementById('fgSearch');
+            const viewToggle = document.getElementById('fgViewToggle');
+            const loadMoreBtn = document.getElementById('fgLoadMore');
+            const empty = document.getElementById('fgEmpty');
+            const indicator = document.querySelector('.fa-gal-filter-indicator');
+            const showingCountEl = document.getElementById('fgShowingCount');
+            const totalCountEl = document.getElementById('fgTotalCount');
+            const heroCountEl = document.getElementById('fgVisibleCount');
+            const activeLabelEl = document.getElementById('fgActiveFilterLabel');
+
+            let state = { filter: 'all', search: '', sort: 'default', limit: PAGE_SIZE };
+
+            function moveIndicator(btn) {
+                if (!indicator || !btn) return;
+                indicator.style.width = btn.offsetWidth + 'px';
+                indicator.style.transform = 'translateX(' + btn.offsetLeft + 'px)';
+            }
+
+            function render() {
+                const term = state.search.trim().toLowerCase();
+
+                const matched = items.filter((item) => {
+                    const catOk = state.filter === 'all' || item.dataset.category === state.filter;
+                    const searchOk = !term || item.dataset.title.includes(term);
+                    return catOk && searchOk;
+                });
+
+                if (state.sort === 'az') {
+                    matched.sort((a, b) => a.dataset.title.localeCompare(b.dataset.title));
+                } else {
+                    matched.sort((a, b) => Number(a.dataset.order) - Number(b.dataset.order));
+                }
+
+                // FIX: reorder the actual DOM nodes to reflect filter + sort,
+                // rather than relying on CSS `order` (which is ignored by the
+                // Masonry view's `column-count` layout and would silently
+                // break sorting whenever Masonry was active).
+                const matchedSet = new Set(matched);
+                const fragment = document.createDocumentFragment();
+                matched.forEach((item) => fragment.appendChild(item));
+                items.forEach((item) => {
+                    if (!matchedSet.has(item)) fragment.appendChild(item);
+                });
+                grid.appendChild(fragment);
+
+                const visibleSlice = matched.slice(0, state.limit);
+                const visibleSet = new Set(visibleSlice);
+
+                let delay = 0;
+                items.forEach((item) => {
+                    if (visibleSet.has(item)) {
+                        item.classList.remove('fa-gal-item-hidden');
+                        item.style.transitionDelay = (delay * 40) + 'ms';
+                        delay++;
+                        requestAnimationFrame(() => item.classList.add('fa-gal-item-visible'));
+                    } else {
+                        item.classList.remove('fa-gal-item-visible');
+                        item.style.transitionDelay = '0ms';
+                        item.classList.add('fa-gal-item-hidden');
+                    }
+                });
+
+                showingCountEl.textContent = visibleSlice.length;
+                totalCountEl.textContent = matched.length;
+                heroCountEl.textContent = items.length;
+                empty.hidden = matched.length !== 0;
+                loadMoreBtn.style.display = matched.length > visibleSlice.length ? 'inline-flex' : 'none';
+
+                const activeBtn = document.querySelector('.fa-gal-filter-btn[data-filter="' + state.filter + '"]');
+                const filterLabel = activeBtn ? activeBtn.textContent.trim().replace(/\d+$/, '').trim() : 'All Files';
+                activeLabelEl.textContent = 'Channel: ' + filterLabel;
+            }
+
+            filterBtns.forEach((btn) => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach((b) => { b.classList.remove('is-active'); b.setAttribute('aria-pressed', 'false'); });
+                    btn.classList.add('is-active');
+                    btn.setAttribute('aria-pressed', 'true');
+                    moveIndicator(btn);
+                    state.filter = btn.dataset.filter;
+                    state.limit = PAGE_SIZE;
+                    render();
+                });
+            });
+
+            sortBtns.forEach((btn) => {
+                btn.addEventListener('click', () => {
+                    sortBtns.forEach((b) => { b.classList.remove('is-active'); b.setAttribute('aria-pressed', 'false'); });
+                    btn.classList.add('is-active');
+                    btn.setAttribute('aria-pressed', 'true');
+                    state.sort = btn.dataset.sort;
+                    render();
+                });
+            });
+
+            let searchDebounce;
+            searchInput.addEventListener('input', (e) => {
+                clearTimeout(searchDebounce);
+                searchDebounce = setTimeout(() => {
+                    state.search = e.target.value;
+                    state.limit = PAGE_SIZE;
+                    render();
+                }, 150);
+            });
+
+            viewToggle.addEventListener('change', () => {
+                grid.classList.toggle('fa-gal-grid--masonry', viewToggle.checked);
+            });
+
+            loadMoreBtn.addEventListener('click', () => {
+                state.limit += PAGE_SIZE;
+                render();
+            });
+
+            // Position the sliding filter indicator immediately (styles are already
+            // loaded via <link> in <head>, so offsets are correct right away) and
+            // again on load/resize as a safety net for late font/layout shifts.
+            moveIndicator(document.querySelector('.fa-gal-filter-btn.is-active'));
+            window.addEventListener('load', () => moveIndicator(document.querySelector('.fa-gal-filter-btn.is-active')));
+            window.addEventListener('resize', () => moveIndicator(document.querySelector('.fa-gal-filter-btn.is-active')));
+
+            render();
+        })();
+
+        /* ---------------------------------------------------------
+           Featured spotlight carousel
+        --------------------------------------------------------- */
+        (function () {
+            const slides = document.querySelectorAll('.fa-gal-slide');
+            const dots = document.querySelectorAll('.fa-gal-dot');
+            let active = 0;
+            let timer;
+
+            function goTo(index) {
+                slides[active].classList.remove('is-active');
+                dots[active].classList.remove('is-active');
+                dots[active].setAttribute('aria-selected', 'false');
+                active = index;
+                slides[active].classList.add('is-active');
+                dots[active].classList.add('is-active');
+                dots[active].setAttribute('aria-selected', 'true');
+            }
+
+            function next() { goTo((active + 1) % slides.length); }
+
+            function resetTimer() {
+                clearInterval(timer);
+                timer = setInterval(next, 4500);
+            }
+
+            dots.forEach((dot, i) => {
+                dot.addEventListener('click', () => { goTo(i); resetTimer(); });
+            });
+
+            if (slides.length > 1) resetTimer();
+        })();
+
+        /* ---------------------------------------------------------
+           Back to top
+        --------------------------------------------------------- */
+        (function () {
+            const btn = document.getElementById('fgBackToTop');
+            window.addEventListener('scroll', () => {
+                btn.classList.toggle('fa-visible', window.scrollY > 500);
+            });
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        })();
+    </script>
 </body>
 </html>
