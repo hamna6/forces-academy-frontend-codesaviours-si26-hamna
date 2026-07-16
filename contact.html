@@ -1,249 +1,852 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact | Forces Academy Faisalabad</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Forces Academy Faisalabad</title>
 
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap"
-        rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/style.css" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/contact.css">
 </head>
 <body>
 
-    <!-- ==================== NAVIGATION BAR ==================== -->
-    <nav class="navbar navbar-expand-lg sticky-top fa-navbar">
-        <div class="container">
+<!-- Scroll progress -->
+<div class="fa-scroll-progress" id="scrollProgress"></div>
 
-            <a class="navbar-brand fa-brand" href="index.html">
-                <span class="fa-crest-ring">
-                    <img
-                        src="images/LOGO.png"
-                        alt="Forces Academy crest"
-                        class="fa-crest"
-                    />
-                </span>
-                <span class="fa-brand-text">
-                    FORCES ACADEMY<br />
-                    <small> FAISALABAD</small>
-                </span>
-            </a>
+<!-- ==================== NAVBAR ==================== -->
+<nav class="navbar navbar-expand-lg sticky-top fa-navbar">
+  <div class="container">
+    <a class="navbar-brand fa-brand" href="index.html">
+      <span class="fa-crest-ring">
+        <img src="images/LOGO.png" alt="Forces Academy crest" class="fa-crest" />
+      </span>
+      <span class="fa-brand-text">
+        FORCES ACADEMY<br />
+        <small>FAISALABAD</small>
+      </span>
+    </a>
 
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#mainNavbar"
-                aria-controls="mainNavbar"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-            >
-                <span class="navbar-toggler-icon"></span>
-            </button>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+      aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-            <div class="collapse navbar-collapse" id="mainNavbar">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center fa-roster-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="courses.html">Courses</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="admissions.html">Admissions</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="results.html">Results</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="gallery.html">Gallery</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="contact.html">Contact</a>
-                    </li>
-                    <li class="nav-item ms-lg-4 mt-3 mt-lg-0">
-                        <a href="portal.html" class="fa-clearance-badge">
-                            <span class="fa-clearance-dot"></span>
-                            Student Portal
-                        </a>
-                    </li>
-                </ul>
+    <div class="collapse navbar-collapse" id="mainNavbar">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center fa-roster-nav">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+        <li class="nav-item"><a class="nav-link" href="admissions.html">Admissions</a></li>
+        <li class="nav-item"><a class="nav-link" href="results.html">Results</a></li>
+        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="contact.html">Contact</a></li>
+        <li class="nav-item ms-lg-4 mt-3 mt-lg-0">
+          <a href="portal.html" class="fa-clearance-badge">
+            <span class="fa-clearance-dot"></span>
+            Student Portal
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- ================== END NAVBAR ================== -->
+
+<main>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="fa-gallery-hero py-5 text-center">
+    <div class="fa-hero-bg"></div>
+    <div class="fa-hero-grid"></div>
+    <div class="container position-relative">
+      <p class="fa-eyebrow mb-2"><i class="bi bi-headset"></i> Get in Touch</p>
+      <h1 class="fa-page-title mb-3">Contact <span>Us</span></h1>
+      <p class="fa-page-subtitle mx-auto">Have a question about admissions, courses, or campus life? We&rsquo;d love to hear from you — reach out below.</p>
+    </div>
+  </section>
+
+  <section class="fa-contact-grid-section">
+
+    <!-- ===== SECTION 1 — TABLET CONTACT FORM ===== -->
+    <div class="container fa-section">
+      <div class="fa-section-head" data-reveal>
+        <span class="fa-sec-tag">MESSAGE DETAILS</span>
+        <h2>Send Us a <span>Message</span></h2>
+        <p>All fields are validated live. The form is displayed in our interactive academy terminal below.</p>
+      </div>
+
+      <!-- TABLET FRAME -->
+      <div class="fa-tablet-scene" data-reveal>
+        <div class="fa-tablet">
+
+          <!-- tablet camera notch -->
+          <div class="fa-tablet-notch">
+            <span class="fa-tablet-cam"></span>
+          </div>
+
+          <!-- tablet status bar -->
+          <div class="fa-tablet-statusbar">
+            <div class="fa-tsb-left">
+              <i class="bi bi-wifi"></i>
+              <i class="bi bi-reception-4"></i>
             </div>
-        </div>
-    </nav>
-    <!-- ================== END NAVBAR ================== -->
-
-
-    <!-- ==================== CONTACT CONTENT ==================== -->
-    <main>
-        <section class="fa-gallery-hero py-5 text-center">
-            <div class="container">
-                <p class="fa-eyebrow mb-2">GET IN TOUCH</p>
-                <h1 class="fa-page-title mb-3">Contact Us</h1>
-                <p class="fa-page-subtitle mx-auto">
-                    Have a question about admissions, courses, or campus life? We'd love to hear from you.
-                </p>
+            <div class="fa-tsb-center">
+              <span class="fa-tsb-url"><i class="bi bi-lock-fill"></i> forcesacademyfsd.edu.pk/contact</span>
             </div>
-        </section>
+            <div class="fa-tsb-right">
+              <span class="fa-tsb-battery"><i class="bi bi-battery-half"></i> 78%</span>
+              <span class="fa-tsb-time" id="tabletTime">--:--</span>
+            </div>
+          </div>
 
-        <section class="fa-contact-grid-section py-5">
-            <div class="container">
-                <div class="row g-4">
-                    <!-- Contact form / details go here -->
+          <!-- tab bar -->
+          <div class="fa-tablet-tabbar" role="tablist" aria-label="Contact tablet sections">
+            <button class="fa-tab active" data-tab="form" role="tab" aria-selected="true"><i class="bi bi-envelope-fill"></i> <span>Send Message</span></button>
+            <button class="fa-tab" data-tab="info" role="tab" aria-selected="false"><i class="bi bi-info-circle-fill"></i> <span>Contact Info</span></button>
+            <button class="fa-tab" data-tab="hours" role="tab" aria-selected="false"><i class="bi bi-clock-fill"></i> <span>Office Hours</span></button>
+          </div>
+
+          <!-- auto-advance progress: fills up under the active tab, then the widget moves to the next one on its own -->
+          <div class="fa-tab-progress" id="tabProgress" aria-hidden="true">
+            <span class="fa-tab-progress-seg" data-seg="form"><i class="fa-tab-progress-fill"></i></span>
+            <span class="fa-tab-progress-seg" data-seg="info"><i class="fa-tab-progress-fill"></i></span>
+            <span class="fa-tab-progress-seg" data-seg="hours"><i class="fa-tab-progress-fill"></i></span>
+          </div>
+
+          <!-- tablet screen body -->
+          <div class="fa-tablet-screen">
+
+            <!-- TAB: FORM -->
+            <div class="fa-tab-panel active" id="tabPanel-form">
+              <div class="fa-tp-inner">
+
+                <div class="fa-pref-toggle" role="group" aria-label="Preferred contact method">
+                  <span class="fa-pref-label">Preferred reply via</span>
+                  <div class="fa-pill-group">
+                    <button type="button" class="fa-pill active" data-pref="email"><i class="bi bi-envelope-fill"></i> Email</button>
+                    <button type="button" class="fa-pill" data-pref="phone"><i class="bi bi-telephone-fill"></i> Phone</button>
+                  </div>
+                </div>
+
+                <form id="contactForm" novalidate>
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <label class="fa-form-label">Full Name <span>*</span></label>
+                      <div class="fa-input-wrap">
+                        <i class="bi bi-person-fill fa-input-icon"></i>
+                        <input type="text" class="form-control fa-input" id="cName" placeholder="Enter your full name">
+                        <i class="bi fa-valid-icon"></i>
+                      </div>
+                      <div class="fa-error" id="errName"></div>
+                    </div>
+
+                    <div class="col-md-6" id="emailField">
+                      <label class="fa-form-label">Email Address <span>*</span></label>
+                      <div class="fa-input-wrap">
+                        <i class="bi bi-envelope-fill fa-input-icon"></i>
+                        <input type="email" class="form-control fa-input" id="cEmail" placeholder="you@example.com">
+                        <i class="bi fa-valid-icon"></i>
+                      </div>
+                      <div class="fa-error" id="errEmail"></div>
+                    </div>
+
+                    <div class="col-md-6" id="phoneField">
+                      <label class="fa-form-label">Phone Number <span>*</span></label>
+                      <div class="fa-input-wrap">
+                        <i class="bi bi-telephone-fill fa-input-icon"></i>
+                        <input type="tel" class="form-control fa-input" id="cPhone" placeholder="+92 3XX XXXXXXX">
+                        <i class="bi fa-valid-icon"></i>
+                      </div>
+                      <div class="fa-error" id="errPhone"></div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <label class="fa-form-label">Subject <span>*</span></label>
+                      <div class="fa-input-wrap">
+                        <i class="bi bi-tag-fill fa-input-icon"></i>
+                        <input type="text" class="form-control fa-input" id="cSubject" placeholder="What is this about?">
+                        <i class="bi fa-valid-icon"></i>
+                      </div>
+                      <div class="fa-error" id="errSubject"></div>
+                    </div>
+
                     <div class="col-12">
-                        <p class="text-center text-muted">Contact form and details coming soon.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-    <!-- ================== END CONTACT CONTENT ================== -->
-
-
-    <!-- ==================== FOOTER ==================== -->
-    <footer class="fa-footer">
-        <div class="fa-footer-top">
-            <div class="container">
-                <div class="fa-footer-grid">
-
-                    <!-- Brand column -->
-                    <div class="fa-footer-col fa-footer-brand-col">
-                        <a href="index.html" class="fa-footer-brand">
-                            <span class="fa-crest-ring fa-footer-crest-ring">
-                                <img src="images/LOGO.png" alt="Forces Academy crest" class="fa-crest" />
-                            </span>
-                            <span class="fa-footer-brand-text">
-                                FORCES ACADEMY<br />
-                                <small>FAISALABAD</small>
-                            </span>
-                        </a>
-                        <p class="fa-footer-tagline">
-                            Excellence in education, preparing tomorrow&rsquo;s leaders today.
-                        </p>
-                        <p class="fa-footer-description">
-                            Forces Academy Faisalabad is committed to preparing aspiring candidates through professional training, mentorship, and disciplined guidance.
-
-                        </p>
+                      <label class="fa-form-label">Message <span>*</span></label>
+                      <div class="fa-input-wrap fa-input-wrap-area">
+                        <i class="bi bi-chat-left-text-fill fa-input-icon"></i>
+                        <textarea class="form-control fa-input fa-textarea" id="cMessage" rows="4" maxlength="400" placeholder="Write your message here..."></textarea>
+                      </div>
+                      <div class="d-flex justify-content-between">
+                        <div class="fa-error" id="errMessage"></div>
+                        <small class="fa-char-count"><span id="charCount">0</span>/400</small>
+                      </div>
                     </div>
 
-                    <!-- Divider (dispatch style) -->
-                    <div class="fa-footer-dispatch-divider" aria-hidden="true"></div>
-
-                    <!-- Quick Links -->
-                    <div class="fa-footer-col">
-                        <h6 class="fa-footer-heading">Quick Links</h6>
-                        <ul class="fa-footer-links">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="courses.html">Courses</a></li>
-                            <li><a href="admissions.html">Admissions</a></li>
-                            <li><a href="results.html">Results</a></li>
-                            <li><a href="gallery.html">Gallery</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                        </ul>
+                    <div class="col-12">
+                      <button type="submit" class="fa-submit-btn" id="submitBtn">
+                        <span class="fa-submit-text"><i class="bi bi-send-fill"></i> Send Message</span>
+                        <span class="fa-submit-spinner"><span class="fa-spinner"></span> Sending...</span>
+                      </button>
                     </div>
 
-                    <!-- Contact -->
-                    <div class="fa-footer-col">
-                        <h6 class="fa-footer-heading">Get in Touch</h6>
-                        <ul class="fa-footer-contact">
-                            <li>
-                                <span class="fa-footer-icon">&#9742;</span>
-                                <span>+92 41 111 222 333</span>
-                            </li>
-                            <li>
-                                <span class="fa-footer-icon">&#9993;</span>
-                                <span>info@forcesacademy.edu.pk</span>
-                            </li>
-                            <li>
-                                <span class="fa-footer-icon">&#128205;</span>
-                                <span>Susan Road, Faisalabad, Pakistan</span>
-                            </li>
-                            <li>
-                                <span class="fa-footer-icon">&#128337;</span>
-                                <span>Mon &ndash; Sat: 8:00 AM &ndash; 4:00 PM</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Follow Us: icon-only circular badges, brand colors on hover -->
-                    <div class="fa-footer-col">
-                        <h6 class="fa-footer-heading">Follow Us</h6>
-                        <p class="fa-footer-note">
-                            Stay updated with academy news, events, and admissions announcements.
-                        </p>
-                        <div class="fa-footer-social">
-                            <a
-                                href="https://www.facebook.com/forcesacademyfaisalabad/"
-                                class="fa-social-icon fa-social-facebook"
-                                title="Facebook"
-                                aria-label="Facebook"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M13.5 9H15V6.5h-1.75C11.6 6.5 10.5 7.6 10.5 9.25V11H9v2.5h1.5V21h2.5v-7.5H15L15.5 11h-2V9.5c0-.35.15-.5.5-.5z"/></svg>
-                            </a>
-                            <a
-                                href="https://www.instagram.com/forcesacademyfaisalabad/"
-                                class="fa-social-icon fa-social-instagram"
-                                title="Instagram"
-                                aria-label="Instagram"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 8.8a3.2 3.2 0 1 0 0 6.4 3.2 3.2 0 0 0 0-6.4zm0 5.3a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zM16.9 6.1a.9.9 0 1 1-1.8 0 .9.9 0 0 1 1.8 0zM21 7.2c-.06-1.2-.33-2.27-1.2-3.14-.87-.87-1.94-1.14-3.14-1.2C15.4 2.8 8.6 2.8 7.34 2.86c-1.2.06-2.26.33-3.14 1.2-.87.87-1.13 1.94-1.2 3.14C2.94 8.6 2.94 15.4 3 16.66c.06 1.2.33 2.27 1.2 3.14.87.87 1.94 1.13 3.14 1.2 1.26.06 8.06.06 9.32 0 1.2-.06 2.27-.33 3.14-1.2.87-.87 1.14-1.94 1.2-3.14.06-1.26.06-8.06 0-9.32zm-1.8 11.02c-.26.66-.77 1.17-1.43 1.44-1 .4-3.36.3-4.77.3s-3.78.1-4.77-.3a2.55 2.55 0 0 1-1.44-1.44c-.4-1-.3-3.36-.3-4.77s-.1-3.78.3-4.77c.26-.66.77-1.17 1.43-1.44 1-.4 3.36-.3 4.77-.3s3.78-.1 4.77.3c.66.26 1.17.77 1.44 1.43.4 1 .3 3.36.3 4.77s.1 3.78-.3 4.78z"/></svg>
-                            </a>
-                            <a
-                                href="https://www.youtube.com/channel/UCRF74RQe3TiQl-_qyFZb-2w"
-                                class="fa-social-icon fa-social-youtube"
-                                title="YouTube"
-                                aria-label="YouTube"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M21.6 7.5s-.2-1.5-.85-2.16c-.8-.86-1.7-.86-2.12-.9C15.6 4.2 12 4.2 12 4.2s-3.6 0-6.63.24c-.4.04-1.3.04-2.12.9C2.6 6 2.4 7.5 2.4 7.5S2.2 9.25 2.2 11v1.9c0 1.75.2 3.5.2 3.5s.2 1.5.85 2.16c.8.86 1.86.83 2.34.92 1.7.17 7.21.24 7.21.24s3.6 0 6.63-.25c.4-.04 1.3-.04 2.12-.9.65-.66.85-2.16.85-2.16s.2-1.75.2-3.5V11c0-1.75-.2-3.5-.2-3.5zM9.9 14.7V8.8l5.4 2.95-5.4 2.95z"/></svg>
-                            </a>
-                            <a
-                                href="https://wa.me/923166954383"
-                                class="fa-social-icon fa-social-whatsapp"
-                                title="WhatsApp"
-                                aria-label="WhatsApp"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.94-.27-.1-.46-.15-.66.15-.2.3-.75.94-.92 1.13-.17.2-.34.22-.63.08-.3-.15-1.24-.46-2.37-1.47-.87-.78-1.47-1.75-1.64-2.04-.17-.3-.02-.46.13-.6.13-.14.3-.34.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.66-1.6-.9-2.18-.24-.58-.48-.5-.66-.5h-.56c-.2 0-.52.07-.79.37s-1.04 1.02-1.04 2.48 1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.5.71.3 1.26.48 1.7.62.71.23 1.36.2 1.87.12.57-.08 1.7-.7 1.94-1.37.24-.68.24-1.26.17-1.38-.07-.13-.27-.2-.57-.35zM12.02 3C7.05 3 3 7.03 3 12c0 1.6.42 3.1 1.15 4.4L3 21l4.75-1.1A9 9 0 0 0 12.02 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm0 16.3a7.28 7.28 0 0 1-3.72-1.02l-.27-.16-2.82.66.65-2.75-.17-.28A7.28 7.28 0 1 1 19.3 12a7.3 7.3 0 0 1-7.28 7.3z"/></svg>
-                            </a>
+                    <div class="col-12">
+                      <div class="fa-form-success" id="formSuccess">
+                        <i class="bi bi-check-circle-fill"></i>
+                        <div>
+                          <strong>Message sent successfully!</strong>
+                          <p>We&rsquo;ll get back to you within 24 hours.</p>
                         </div>
+                      </div>
                     </div>
+                  </div>
+                </form>
+              </div>
+            </div>
 
+            <!-- TAB: INFO -->
+            <div class="fa-tab-panel" id="tabPanel-info">
+              <div class="fa-tp-inner">
+                <div class="fa-info-list">
+                  <div class="fa-info-item">
+                    <div class="fa-info-icon"><i class="bi bi-geo-alt-fill"></i></div>
+                    <div>
+                      <h5>Address</h5>
+                      <p>Faisal Town, Canal Road, near Susan Road, Faisalabad, Punjab, Pakistan</p>
+                    </div>
+                  </div>
+                  <div class="fa-info-item">
+                    <div class="fa-info-icon"><i class="bi bi-telephone-fill"></i></div>
+                    <div>
+                      <h5>Phone</h5>
+                      <p><a href="tel:+923156954383">+92 315 6954383</a><br><a href="tel:+924111222333">+92 41 111 222 333</a></p>
+                    </div>
+                  </div>
+                  <div class="fa-info-item">
+                    <div class="fa-info-icon"><i class="bi bi-envelope-fill"></i></div>
+                    <div>
+                      <h5>Email</h5>
+                      <p><a href="mailto:info@forcesacademyfsd.edu.pk">info@forcesacademyfsd.edu.pk</a></p>
+                    </div>
+                  </div>
+                  <div class="fa-info-item">
+                    <div class="fa-info-icon"><i class="bi bi-whatsapp"></i></div>
+                    <div>
+                      <h5>WhatsApp</h5>
+                      <p><a href="https://wa.me/923156954383" target="_blank" rel="noopener">+92 315 6954383</a></p>
+                    </div>
+                  </div>
                 </div>
+              </div>
             </div>
+
+            <!-- TAB: HOURS -->
+            <div class="fa-tab-panel" id="tabPanel-hours">
+              <div class="fa-tp-inner">
+                <div class="fa-hours-grid">
+                  <div class="fa-hours-row fa-hours-header">
+                    <span>Day</span><span>Opens</span><span>Closes</span><span>Status</span>
+                  </div>
+                  <div class="fa-hours-row" data-day="1"><span>Monday</span><span>08:00 AM</span><span>04:00 PM</span><span class="fa-day-badge"></span></div>
+                  <div class="fa-hours-row" data-day="2"><span>Tuesday</span><span>08:00 AM</span><span>04:00 PM</span><span class="fa-day-badge"></span></div>
+                  <div class="fa-hours-row" data-day="3"><span>Wednesday</span><span>08:00 AM</span><span>04:00 PM</span><span class="fa-day-badge"></span></div>
+                  <div class="fa-hours-row" data-day="4"><span>Thursday</span><span>08:00 AM</span><span>04:00 PM</span><span class="fa-day-badge"></span></div>
+                  <div class="fa-hours-row" data-day="5"><span>Friday</span><span>08:00 AM</span><span>04:00 PM</span><span class="fa-day-badge"></span></div>
+                  <div class="fa-hours-row" data-day="6"><span>Saturday</span><span>09:00 AM</span><span>02:00 PM</span><span class="fa-day-badge"></span></div>
+                  <div class="fa-hours-row fa-closed-row" data-day="0"><span>Sunday</span><span>—</span><span>—</span><span class="fa-day-badge fa-badge-closed">Closed</span></div>
+                </div>
+                <div class="fa-hours-note">
+                  <span class="fa-status-badge" id="officeStatus2">Checking...</span>
+                  <span>Academy is currently closed </span>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- /fa-tablet-screen -->
+
+          <!-- tablet home bar -->
+          <div class="fa-tablet-homebar"></div>
+        </div><!-- /fa-tablet -->
+
+        <!-- ambient glows behind tablet -->
+        <div class="fa-tablet-glow fa-glow-1" aria-hidden="true"></div>
+        <div class="fa-tablet-glow fa-glow-2" aria-hidden="true"></div>
+      </div><!-- /fa-tablet-scene -->
+    </div>
+
+    <!-- ===== SECTION 2 — FLIP INFO CARDS ===== -->
+    <div class="container fa-section">
+      <div class="fa-section-head" data-reveal>
+        <span class="fa-sec-tag">DETAILS</span>
+        <h2>Reach Us <span>Directly</span></h2>
+        <p>Hover a card to flip it and reveal contact details. Tap the copy icon to grab it instantly.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-6 col-lg-3" data-reveal>
+          <div class="fa-flip-card fa-tilt">
+            <div class="fa-flip-inner">
+              <div class="fa-flip-front">
+                <div class="fa-quick-icon"><i class="bi bi-geo-alt-fill"></i></div>
+                <h4>Address</h4>
+                <span class="fa-flip-hint">Hover to view</span>
+              </div>
+              <div class="fa-flip-back">
+                <p data-copy="Faisal Town, Canal Road, near Susan Road, Faisalabad, Punjab, Pakistan">Faisal Town, Canal Road, near Susan Road, Faisalabad, Punjab, Pakistan</p>
+                <button type="button" class="fa-copy-btn"><i class="bi bi-clipboard"></i></button>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="fa-footer-bottom">
-            <div class="container fa-footer-bottom-inner">
-                <span>&copy; <span id="faYear">2026</span> Forces Academy Faisalabad. All Rights Reserved.</span>
-                <span class="fa-footer-legal">
-                    <a href="terms.html">Terms of Use</a>
-                    <span class="fa-footer-legal-sep">&bull;</span>
-                    <a href="privacy.html">Privacy Policy</a>
-                </span>
+        <div class="col-6 col-lg-3" data-reveal>
+          <div class="fa-flip-card fa-tilt">
+            <div class="fa-flip-inner">
+              <div class="fa-flip-front">
+                <div class="fa-quick-icon"><i class="bi bi-telephone-fill"></i></div>
+                <h4>Phone</h4>
+                <span class="fa-flip-hint">Hover to view</span>
+              </div>
+              <div class="fa-flip-back">
+                <p data-copy="+92 315 6954383"><a href="tel:+923156954383">+92 315 6954383</a><br><a href="tel:+9241111222333">+92 41 111 222 333</a></p>
+                <button type="button" class="fa-copy-btn"><i class="bi bi-clipboard"></i></button>
+              </div>
             </div>
+          </div>
         </div>
-    </footer>
-    <!-- ================== END FOOTER ================== -->
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <div class="col-6 col-lg-3" data-reveal>
+          <div class="fa-flip-card fa-tilt">
+            <div class="fa-flip-inner">
+              <div class="fa-flip-front">
+                <div class="fa-quick-icon"><i class="bi bi-envelope-fill"></i></div>
+                <h4>Email</h4>
+                <span class="fa-flip-hint">Hover to view</span>
+              </div>
+              <div class="fa-flip-back">
+                <p data-copy="info@forcesacademyfsd.edu.pk"><a href="mailto:info@forcesacademyfsd.edu.pk">info@forcesacademyfsd.edu.pk</a></p>
+                <button type="button" class="fa-copy-btn"><i class="bi bi-clipboard"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-lg-3" data-reveal>
+          <div class="fa-flip-card fa-tilt">
+            <div class="fa-flip-inner">
+              <div class="fa-flip-front">
+                <div class="fa-quick-icon"><i class="bi bi-clock-fill"></i></div>
+                <h4>Office Hours</h4>
+                <span class="fa-status-badge" id="officeStatus">Checking...</span>
+              </div>
+              <div class="fa-flip-back">
+                <p data-copy="Mon-Sat: 8:00 AM - 6:00 PM, Sunday: Closed">Mon &ndash; Sat: 8:00 AM &ndash; 4:00 PM<br>Sunday: Closed</p>
+                <button type="button" class="fa-copy-btn"><i class="bi bi-clipboard"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== SECTION 3 — MAP ===== -->
+    <div class="container fa-section">
+      <div class="fa-section-head" data-reveal>
+        <span class="fa-sec-tag"> LOCATION</span>
+        <h2>Find Us on the <span>Map</span></h2>
+        <p>Canal Road, near Susan Road, Faisalabad — toggle the view below.</p>
+      </div>
+
+      <div class="fa-map-wrap" data-reveal>
+        <div class="fa-map-header">
+          <div class="d-flex align-items-center gap-2">
+            <i class="bi bi-geo-alt-fill"></i>
+            <h5>Forces Academy Faisalabad</h5>
+          </div>
+          <div class="fa-map-toggle" role="group" aria-label="Map view toggle">
+            <button type="button" class="fa-map-btn active" data-view="roadmap">Map</button>
+            <button type="button" class="fa-map-btn" data-view="satellite">Satellite</button>
+          </div>
+        </div>
+
+        <div class="fa-map-frame-holder">
+          <iframe
+            id="mapFrame"
+            src="https://www.google.com/maps?q=Susan+Road,+Faisalabad,+Punjab,+Pakistan&t=m&z=15&output=embed"
+            width="100%" height="420" style="border:0;"
+            allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Forces Academy Faisalabad location map">
+          </iframe>
+          <div class="fa-map-glass">
+            <span class="fa-sec-tag" style="padding:0;">CAMPUS PIN</span>
+            <h6 class="mb-1">Canal Road, Faisalabad</h6>
+            <p class="mb-3">Near Susan Road interchange, five minutes from the main boulevard.</p>
+            <a class="fa-map-directions" href="https://www.google.com/maps/dir/?api=1&destination=Susan+Road,+Faisalabad,+Pakistan" target="_blank" rel="noopener">
+              <i class="bi bi-signpost-2-fill"></i> Get Directions
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== SECTION 4 — SOCIAL LINKS ===== -->
+    <div class="container fa-section">
+      <div class="fa-section-head" data-reveal>
+        <span class="fa-sec-tag">FOLLOW US</span>
+        <h2>Stay <span>Connected</span></h2>
+        <p>Follow the academy for admissions updates, results, and campus news.</p>
+      </div>
+
+      <div class="fa-social-row" data-reveal>
+        <a href="https://www.facebook.com/forcesacademyfaisalabad/" target="_blank" rel="noopener noreferrer" class="fa-social-tile fa-social-fb fa-tilt">
+          <i class="bi bi-facebook"></i><span>Facebook</span>
+        </a>
+        <a href="https://www.instagram.com/forcesacademyfaisalabad/" target="_blank" rel="noopener noreferrer" class="fa-social-tile fa-social-ig fa-tilt">
+          <i class="bi bi-instagram"></i><span>Instagram</span>
+        </a>
+        <a href="https://www.youtube.com/channel/UCRF74RQe3TiQl-_qyFZb-2w" target="_blank" rel="noopener noreferrer" class="fa-social-tile fa-social-yt fa-tilt">
+          <i class="bi bi-youtube"></i><span>YouTube</span>
+        </a>
+        <a href="https://wa.me/923156954383" target="_blank" rel="noopener noreferrer" class="fa-social-tile fa-social-wa fa-tilt">
+          <i class="bi bi-whatsapp"></i><span>WhatsApp</span>
+        </a>
+      </div>
+    </div>
+
+  </section>
+</main>
+<!-- ================== END CONTACT CONTENT ================== -->
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="fa-footer">
+  <div class="fa-footer-top">
+    <div class="container">
+      <div class="fa-footer-grid">
+        <div class="fa-footer-col fa-footer-brand-col">
+          <a href="index.html" class="fa-footer-brand">
+            <span class="fa-crest-ring fa-footer-crest-ring">
+              <img src="images/LOGO.png" alt="Forces Academy crest" class="fa-crest" />
+            </span>
+            <span class="fa-footer-brand-text">
+              FORCES ACADEMY<br />
+              <small>FAISALABAD</small>
+            </span>
+          </a>
+          <p class="fa-footer-tagline">Excellence in education, preparing tomorrow&rsquo;s leaders today.</p>
+          <p class="fa-footer-description">Forces Academy Faisalabad is committed to preparing aspiring candidates through professional training, mentorship, and disciplined guidance.</p>
+        </div>
+
+        <div class="fa-footer-dispatch-divider" aria-hidden="true"></div>
+
+        <div class="fa-footer-col">
+          <h6 class="fa-footer-heading">Quick Links</h6>
+          <ul class="fa-footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="admissions.html">Admissions</a></li>
+            <li><a href="results.html">Results</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="fa-footer-col">
+          <h6 class="fa-footer-heading">Get in Touch</h6>
+          <ul class="fa-footer-contact">
+            <li><span class="fa-footer-icon">&#9742;</span><span>+92 41 111 222 333</span></li>
+            <li><span class="fa-footer-icon">&#9993;</span><span>info@forcesacademy.edu.pk</span></li>
+            <li><span class="fa-footer-icon">&#128205;</span><span>Susan Road, Faisalabad, Pakistan</span></li>
+            <li><span class="fa-footer-icon">&#128337;</span><span>Mon &ndash; Sat: 8:00 AM &ndash; 4:00 PM</span></li>
+          </ul>
+        </div>
+
+        <div class="fa-footer-col">
+          <h6 class="fa-footer-heading">Follow Us</h6>
+          <p class="fa-footer-note">Stay updated with academy news, events, and admissions announcements.</p>
+          <div class="fa-footer-social">
+            <a href="https://www.facebook.com/forcesacademyfaisalabad/" class="fa-social-icon fa-social-facebook" title="Facebook" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M13.5 9H15V6.5h-1.75C11.6 6.5 10.5 7.6 10.5 9.25V11H9v2.5h1.5V21h2.5v-7.5H15L15.5 11h-2V9.5c0-.35.15-.5.5-.5z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/forcesacademyfaisalabad/" class="fa-social-icon fa-social-instagram" title="Instagram" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 8.8a3.2 3.2 0 1 0 0 6.4 3.2 3.2 0 0 0 0-6.4zm0 5.3a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zM16.9 6.1a.9.9 0 1 1-1.8 0 .9.9 0 0 1 1.8 0zM21 7.2c-.06-1.2-.33-2.27-1.2-3.14-.87-.87-1.94-1.14-3.14-1.2C15.4 2.8 8.6 2.8 7.34 2.86c-1.2.06-2.26.33-3.14 1.2-.87.87-1.13 1.94-1.2 3.14C2.94 8.6 2.94 15.4 3 16.66c.06 1.2.33 2.27 1.2 3.14.87.87 1.94 1.13 3.14 1.2 1.26.06 8.06.06 9.32 0 1.2-.06 2.27-.33 3.14-1.2.87-.87 1.14-1.94 1.2-3.14.06-1.26.06-8.06 0-9.32zm-1.8 11.02c-.26.66-.77 1.17-1.43 1.44-1 .4-3.36.3-4.77.3s-3.78.1-4.77-.3a2.55 2.55 0 0 1-1.44-1.44c-.4-1-.3-3.36-.3-4.77s-.1-3.78.3-4.77c.26-.66.77-1.17 1.43-1.44 1-.4 3.36-.3 4.77-.3s3.78-.1 4.77.3c.66.26 1.17.77 1.44 1.43.4 1 .3 3.36.3 4.77s.1 3.78-.3 4.78z"/></svg>
+            </a>
+            <a href="https://www.youtube.com/channel/UCRF74RQe3TiQl-_qyFZb-2w" class="fa-social-icon fa-social-youtube" title="YouTube" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M21.6 7.5s-.2-1.5-.85-2.16c-.8-.86-1.7-.86-2.12-.9C15.6 4.2 12 4.2 12 4.2s-3.6 0-6.63.24c-.4.04-1.3.04-2.12.9C2.6 6 2.4 7.5 2.4 7.5S2.2 9.25 2.2 11v1.9c0 1.75.2 3.5.2 3.5s.2 1.5.85 2.16c.8.86 1.86.83 2.34.92 1.7.17 7.21.24 7.21.24s3.6 0 6.63-.25c.4-.04 1.3-.04 2.12-.9.65-.66.85-2.16.85-2.16s.2-1.75.2-3.5V11c0-1.75-.2-3.5-.2-3.5zM9.9 14.7V8.8l5.4 2.95-5.4 2.95z"/></svg>
+            </a>
+            <a href="https://wa.me/923166954383" class="fa-social-icon fa-social-whatsapp" title="WhatsApp" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.94-.27-.1-.46-.15-.66.15-.2.3-.75.94-.92 1.13-.17.2-.34.22-.63.08-.3-.15-1.24-.46-2.37-1.47-.87-.78-1.47-1.75-1.64-2.04-.17-.3-.02-.46.13-.6.13-.14.3-.34.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.66-1.6-.9-2.18-.24-.58-.48-.5-.66-.5h-.56c-.2 0-.52.07-.79.37s-1.04 1.02-1.04 2.48 1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.5.71.3 1.26.48 1.7.62.71.23 1.36.2 1.87.12.57-.08 1.7-.7 1.94-1.37.24-.68.24-1.26.17-1.38-.07-.13-.27-.2-.57-.35zM12.02 3C7.05 3 3 7.03 3 12c0 1.6.42 3.1 1.15 4.4L3 21l4.75-1.1A9 9 0 0 0 12.02 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm0 16.3a7.28 7.28 0 0 1-3.72-1.02l-.27-.16-2.82.66.65-2.75-.17-.28A7.28 7.28 0 1 1 19.3 12a7.3 7.3 0 0 1-7.28 7.3z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="fa-footer-bottom">
+    <div class="container fa-footer-bottom-inner">
+      <span>&copy; <span id="faYear">2026</span> Forces Academy Faisalabad. All Rights Reserved.</span>
+      <span class="fa-footer-legal">
+        <a href="terms.html">Terms of Use</a>
+        <span class="fa-footer-legal-sep">&bull;</span>
+        <a href="privacy.html">Privacy Policy</a>
+      </span>
+    </div>
+  </div>
+</footer>
+<!-- ================== END FOOTER ================== -->
+
+<button class="fa-to-top" id="toTopBtn" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+document.getElementById('faYear').textContent = new Date().getFullYear();
+
+/* ---- Scroll progress bar ---- */
+(function(){
+  var bar = document.getElementById('scrollProgress');
+  window.addEventListener('scroll', function(){
+    var h = document.documentElement;
+    var pct = h.scrollTop / (h.scrollHeight - h.clientHeight) * 100;
+    bar.style.width = pct + '%';
+  });
+})();
+
+/* ---- Navbar scroll shadow ---- */
+(function(){
+  var nav = document.querySelector('.fa-navbar');
+  window.addEventListener('scroll', function(){ nav.classList.toggle('scrolled', window.scrollY > 40); });
+})();
+
+/* ---- Scroll reveal ---- */
+(function(){
+  var els = document.querySelectorAll('[data-reveal]');
+  if(!('IntersectionObserver' in window)){ els.forEach(function(el){ el.classList.add('fa-revealed'); }); return; }
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('fa-revealed'); obs.unobserve(e.target); } });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(function(el){ obs.observe(el); });
+})();
+
+/* ---- Dark mode toggle (guarded — button optional) ---- */
+(function(){
+  var btn = document.getElementById('themeToggle');
+  var root = document.documentElement;
+  if(localStorage.getItem('fa-theme') === 'dark') root.classList.add('fa-dark');
+  if(!btn) return;
+  btn.addEventListener('click', function(){
+    root.classList.toggle('fa-dark');
+    localStorage.setItem('fa-theme', root.classList.contains('fa-dark') ? 'dark' : 'light');
+  });
+})();
+
+/* ---- Tilt hover (mouse-tracked 3D tilt) ---- */
+(function(){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  document.querySelectorAll('.fa-tilt').forEach(function(el){
+    el.addEventListener('mousemove', function(e){
+      var r = el.getBoundingClientRect();
+      var x = (e.clientX - r.left) / r.width - 0.5;
+      var y = (e.clientY - r.top) / r.height - 0.5;
+      el.style.setProperty('--tiltX', (y * -6) + 'deg');
+      el.style.setProperty('--tiltY', (x * 6) + 'deg');
+    });
+    el.addEventListener('mouseleave', function(){
+      el.style.setProperty('--tiltX', '0deg');
+      el.style.setProperty('--tiltY', '0deg');
+    });
+  });
+})();
+
+/* ---- Tablet live clock ---- */
+(function(){
+  function tick(){
+    var d = new Date();
+    var h = String(d.getHours()).padStart(2,'0');
+    var m = String(d.getMinutes()).padStart(2,'0');
+    var el = document.getElementById('tabletTime');
+    if(el) el.textContent = h + ':' + m;
+  }
+  tick();
+  setInterval(tick, 10000);
+})();
+
+/* ---- Tablet tab switching: auto-advancing slideshow + manual click ----
+   The tablet cycles Send Message -> Contact Info -> Office Hours -> (repeat)
+   on its own. The thin bar under the tabs fills up to show how long is left
+   before it moves to the next one. Hovering the tablet pauses it in place;
+   clicking a tab jumps there directly and restarts the countdown. */
+(function(){
+  var tabletEl = document.querySelector('.fa-tablet');
+  var tabs = Array.from(document.querySelectorAll('.fa-tab'));
+  var panels = document.querySelectorAll('.fa-tab-panel');
+  var segments = Array.from(document.querySelectorAll('.fa-tab-progress-seg'));
+  if(!tabs.length) return;
+
+  var order = ['form', 'info', 'hours'];
+  var AUTO_DELAY = 5500;   /* how long each tab stays open, in ms — change this one number to speed up/slow down */
+  var current = 0;
+  var timer = null;
+  var segStart = 0;
+  var segRemaining = AUTO_DELAY;
+  var paused = false;
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function fillOf(seg){ return seg.querySelector('.fa-tab-progress-fill'); }
+
+  function setPanels(index){
+    var key = order[index];
+    tabs.forEach(function(t){
+      var on = t.dataset.tab === key;
+      t.classList.toggle('active', on);
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+    panels.forEach(function(p){
+      p.classList.toggle('active', p.id === 'tabPanel-' + key);
+    });
+  }
+
+  function paintSegments(index, animate){
+    segments.forEach(function(seg, i){
+      var fill = fillOf(seg);
+      if(!fill) return;
+      seg.classList.remove('fa-seg-active');
+      fill.style.transition = 'none';
+      if(i < index){
+        fill.style.width = '100%';
+      } else if(i === index && animate && !reduceMotion){
+        fill.style.width = '0%';
+        void fill.offsetWidth; /* force reflow so the transition below actually runs */
+        seg.classList.add('fa-seg-active');
+        fill.style.transition = 'width ' + segRemaining + 'ms linear';
+        fill.style.width = '100%';
+      } else {
+        fill.style.width = '0%';
+      }
+    });
+  }
+
+  function schedule(){
+    clearTimeout(timer);
+    if(reduceMotion || paused) return;
+    segStart = Date.now();
+    timer = setTimeout(advance, segRemaining);
+  }
+
+  function goTo(index, isManual){
+    current = index;
+    segRemaining = AUTO_DELAY;
+    setPanels(current);
+    paintSegments(current, !paused);
+    if(isManual){ schedule(); }
+  }
+
+  function advance(){
+    goTo((current + 1) % order.length);
+    schedule();
+  }
+
+  function pause(){
+    if(paused || reduceMotion) return;
+    paused = true;
+    clearTimeout(timer);
+    var elapsed = Date.now() - segStart;
+    segRemaining = Math.max(500, segRemaining - elapsed);
+    var seg = segments[current];
+    if(seg){
+      var fill = fillOf(seg);
+      var frozenWidth = getComputedStyle(fill).width;
+      fill.style.transition = 'none';
+      fill.style.width = frozenWidth;
+    }
+  }
+
+  function resume(){
+    if(!paused) return;
+    paused = false;
+    var seg = segments[current];
+    if(seg && !reduceMotion){
+      var fill = fillOf(seg);
+      void fill.offsetWidth;
+      seg.classList.add('fa-seg-active');
+      fill.style.transition = 'width ' + segRemaining + 'ms linear';
+      fill.style.width = '100%';
+    }
+    schedule();
+  }
+
+  tabs.forEach(function(tab){
+    tab.addEventListener('click', function(){
+      goTo(order.indexOf(tab.dataset.tab), true);
+    });
+  });
+
+  if(tabletEl){
+    tabletEl.addEventListener('mouseenter', pause);
+    tabletEl.addEventListener('mouseleave', resume);
+  }
+
+  goTo(0, false);
+  schedule();
+})();
+
+/* ---- Office hours rows highlight ---- */
+(function(){
+  var today = new Date().getDay();
+  var h = new Date().getHours();
+  var isOpen = today !== 0 && h >= 8 && h < 18;
+
+  /* flip card badge */
+  var badge = document.getElementById('officeStatus');
+  if(badge){
+    badge.textContent = isOpen ? 'Open Now' : 'Closed Now';
+    badge.classList.add(isOpen ? 'fa-open' : 'fa-closed');
+  }
+
+  /* hours tab badge */
+  var badge2 = document.getElementById('officeStatus2');
+  if(badge2){
+    badge2.textContent = isOpen ? 'Open Now' : 'Closed Now';
+    badge2.classList.add(isOpen ? 'fa-open' : 'fa-closed');
+  }
+
+  /* highlight today's row */
+  var rows = document.querySelectorAll('.fa-hours-row[data-day]');
+  rows.forEach(function(row){
+    var day = parseInt(row.dataset.day, 10);
+    var badge = row.querySelector('.fa-day-badge');
+    if(day === today){
+      row.classList.add('fa-today');
+      if(badge && day !== 0){
+        badge.textContent = isOpen ? 'Open' : 'Closed';
+        badge.classList.add(isOpen ? 'fa-badge-open' : 'fa-badge-closed');
+      }
+    } else if(badge && day !== 0){
+      badge.textContent = '';
+    }
+  });
+})();
+
+/* ---- Preferred contact toggle ---- */
+(function(){
+  var pills = document.querySelectorAll('.fa-pill');
+  var emailField = document.getElementById('emailField');
+  var phoneField = document.getElementById('phoneField');
+  pills.forEach(function(p){
+    p.addEventListener('click', function(){
+      pills.forEach(function(x){ x.classList.remove('active'); });
+      p.classList.add('active');
+      var pref = p.dataset.pref;
+      if(emailField) emailField.classList.toggle('fa-field-emphasis', pref === 'email');
+      if(phoneField) phoneField.classList.toggle('fa-field-emphasis', pref === 'phone');
+    });
+  });
+})();
+
+/* ---- Character counter ---- */
+(function(){
+  var msg = document.getElementById('cMessage');
+  var count = document.getElementById('charCount');
+  if(msg && count) msg.addEventListener('input', function(){ count.textContent = msg.value.length; });
+})();
+
+/* ---- Copy-to-clipboard ---- */
+(function(){
+  document.querySelectorAll('.fa-copy-btn').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      var text = btn.previousElementSibling.dataset.copy;
+      navigator.clipboard.writeText(text).then(function(){
+        var icon = btn.querySelector('i');
+        icon.className = 'bi bi-clipboard-check-fill';
+        btn.classList.add('fa-copied');
+        setTimeout(function(){
+          icon.className = 'bi bi-clipboard';
+          btn.classList.remove('fa-copied');
+        }, 1600);
+      });
+    });
+  });
+})();
+
+/* ---- Map roadmap / satellite toggle ---- */
+(function(){
+  var buttons = document.querySelectorAll('.fa-map-btn');
+  var frame = document.getElementById('mapFrame');
+  var base = 'https://www.google.com/maps?q=Susan+Road,+Faisalabad,+Punjab,+Pakistan&z=15&output=embed';
+  buttons.forEach(function(b){
+    b.addEventListener('click', function(){
+      buttons.forEach(function(x){ x.classList.remove('active'); });
+      b.classList.add('active');
+      frame.src = base + (b.dataset.view === 'satellite' ? '&t=k' : '&t=m');
+    });
+  });
+})();
+
+/* ---- Form validation ---- */
+(function(){
+  var form = document.getElementById('contactForm');
+  if(!form) return;
+  var submitBtn = document.getElementById('submitBtn');
+  var success = document.getElementById('formSuccess');
+
+  function setState(id, errId, ok, msg){
+    var input = document.getElementById(id);
+    var wrap = input.closest('.fa-input-wrap');
+    var err = document.getElementById(errId);
+    wrap.classList.toggle('fa-valid', ok && input.value.trim() !== '');
+    wrap.classList.toggle('fa-invalid', !ok);
+    err.textContent = ok ? '' : msg;
+    err.style.display = ok ? 'none' : 'block';
+    return ok;
+  }
+
+  function validateAll(){
+    var okName    = setState('cName',    'errName',    document.getElementById('cName').value.trim().length >= 3, 'Please enter your full name (min 3 characters).');
+    var okEmail   = setState('cEmail',   'errEmail',   /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(document.getElementById('cEmail').value.trim()), 'Please enter a valid email address.');
+    var okPhone   = setState('cPhone',   'errPhone',   document.getElementById('cPhone').value.trim().length >= 10, 'Please enter a valid phone number.');
+    var okSubject = setState('cSubject', 'errSubject', document.getElementById('cSubject').value.trim().length >= 3, 'Please enter a subject.');
+    var msgVal = document.getElementById('cMessage').value.trim();
+    var okMsg = msgVal.length >= 10;
+    document.getElementById('errMessage').textContent = okMsg ? '' : 'Please enter a message (min 10 characters).';
+    document.getElementById('errMessage').style.display = okMsg ? 'none' : 'block';
+    var msgWrap = document.getElementById('cMessage').closest('.fa-input-wrap');
+    msgWrap.classList.toggle('fa-valid', okMsg);
+    msgWrap.classList.toggle('fa-invalid', !okMsg);
+    return okName && okEmail && okPhone && okSubject && okMsg;
+  }
+
+  ['cName','cEmail','cPhone','cSubject','cMessage'].forEach(function(id){
+    document.getElementById(id).addEventListener('blur', validateAll);
+  });
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if(!validateAll()) return;
+    submitBtn.classList.add('fa-submitting');
+    setTimeout(function(){
+      submitBtn.classList.remove('fa-submitting');
+      form.reset();
+      document.getElementById('charCount').textContent = '0';
+      document.querySelectorAll('.fa-input-wrap').forEach(function(w){ w.classList.remove('fa-valid','fa-invalid'); });
+      success.classList.add('fa-show');
+      setTimeout(function(){ success.classList.remove('fa-show'); }, 5000);
+    }, 1400);
+  });
+})();
+
+/* ---- Back to top ---- */
+(function(){
+  var btn = document.getElementById('toTopBtn');
+  window.addEventListener('scroll', function(){ btn.classList.toggle('show', window.scrollY > 400); });
+  btn.addEventListener('click', function(){ window.scrollTo({ top: 0, behavior: 'smooth' }); });
+})();
+</script>
 </body>
 </html>
