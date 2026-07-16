@@ -1,0 +1,846 @@
+/* =====================================================
+   FORCES ACADEMY — GALLERY PAGE ("Field Archive")
+   Extends the site's existing tokens from css/style.css:
+   --fa-green / --fa-green-dark / --fa-parchment / --fa-sage /
+   --fa-gold / --fa-gold-light / --fa-font-display / --fa-font-mono
+   No new colors are introduced outside this palette.
+   ===================================================== */
+
+.fa-gallery-page {
+  background: var(--fa-parchment);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fa-gal-item,
+  .fa-gal-card,
+  .fa-gal-card-media img,
+  .fa-gal-slide,
+  .fa-gal-hero-bg::after,
+  .fa-gal-filter-indicator,
+  .fa-gal-view-switch-thumb {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+/* =====================================================
+   HERO
+   ===================================================== */
+.fa-gal-hero {
+  position: relative;
+  min-height: 46vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: var(--fa-parchment);
+  isolation: isolate;
+}
+ 
+.fa-gal-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(160deg, var(--fa-green-dark) 0%, var(--fa-green) 55%, #1d3f26 100%);
+}
+ 
+.fa-gal-hero-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(156, 175, 136, 0.14) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(156, 175, 136, 0.14) 1px, transparent 1px);
+  background-size: 38px 38px;
+  opacity: 0.55;
+  animation: fa-gal-grid-pan 20s linear infinite;
+}
+ 
+@keyframes fa-gal-grid-pan {
+  from { background-position: 0 0, 0 0; }
+  to   { background-position: 38px 0, 0 38px; }
+}
+ 
+.fa-gal-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(12, 32, 19, 0.25) 0%, rgba(12, 32, 19, 0.72) 65%, rgba(12, 32, 19, 0.96) 100%);
+}
+ 
+.fa-gal-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 6.5rem 0 3.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  text-align: left;
+}
+ 
+.fa-gal-hero-text {
+  max-width: 620px;
+}
+ 
+.fa-gal-hero-content .fa-hero-stats {
+  justify-content: flex-start;
+}
+ 
+.fa-gal-hero-title {
+  font-family: var(--fa-font-display);
+  font-weight: 700;
+  font-size: clamp(2.1rem, 4.6vw, 3.2rem);
+  letter-spacing: 0.01em;
+  margin: 0.9rem 0 1rem;
+  animation: fa-fade-up 0.9s ease 0.1s both;
+}
+ 
+.fa-gal-hero-tagline {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: rgba(243, 239, 228, 0.85);
+  max-width: 52ch;
+  margin: 0 0 2rem;
+  animation: fa-fade-up 0.9s ease 0.25s both;
+}
+ 
+.fa-gal-hero-content .fa-hero-badge { animation: fa-fade-down 0.8s ease both; }
+.fa-gal-hero-content .fa-hero-stats { animation: fa-fade-up 0.9s ease 0.4s both; }
+ 
+/* -----------------------------------------------------
+   Archivist's sticky note (new widget, sits right of hero text)
+   ----------------------------------------------------- */
+.fa-gal-sticky-note {
+  position: relative;
+  flex: 0 0 auto;
+  width: 250px;
+  background: var(--fa-gold-light);
+  color: var(--fa-green-dark);
+  padding: 1.5rem 1.3rem 1.2rem;
+  border-radius: 2px;
+  box-shadow: 0 18px 34px rgba(12, 32, 19, 0.35), 0 2px 0 rgba(0, 0, 0, 0.08) inset;
+  transform: rotate(4deg);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  animation: fa-fade-down 0.9s ease 0.5s both;
+}
+ 
+.fa-gal-sticky-note:hover {
+  transform: rotate(0deg) translateY(-4px);
+  box-shadow: 0 24px 42px rgba(12, 32, 19, 0.4), 0 2px 0 rgba(0, 0, 0, 0.08) inset;
+}
+ 
+.fa-gal-sticky-tape {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  width: 84px;
+  height: 22px;
+  background: rgba(243, 239, 228, 0.55);
+  border: 1px solid rgba(243, 239, 228, 0.7);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+ 
+.fa-gal-sticky-pin {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #e7c56b, var(--fa-green-dark) 130%);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.35);
+}
+ 
+.fa-gal-sticky-label {
+  display: block;
+  font-family: var(--fa-font-mono);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px dashed rgba(12, 32, 19, 0.3);
+}
+ 
+.fa-gal-sticky-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.83rem;
+  line-height: 1.5;
+  margin: 0 0 0.7rem;
+}
+ 
+.fa-gal-sticky-sign {
+  display: block;
+  font-family: var(--fa-font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.6px;
+  text-align: right;
+  opacity: 0.75;
+}
+ 
+@media (max-width: 991.98px) {
+  .fa-gal-hero-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 2.2rem;
+  }
+ 
+  .fa-gal-hero-text { max-width: 100%; }
+ 
+  .fa-gal-hero-tagline { margin: 0 auto 2rem; }
+ 
+  .fa-gal-hero-content .fa-hero-stats { justify-content: center; }
+ 
+  .fa-gal-sticky-note {
+    transform: rotate(-2deg);
+    width: 260px;
+  }
+}
+ 
+
+/* =====================================================
+   FEATURED SPOTLIGHT CAROUSEL (new widget)
+   ===================================================== */
+.fa-gal-spotlight {
+  background: var(--fa-green-dark);
+}
+
+.fa-gal-spotlight-eyebrow-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.3rem 0 0;
+}
+
+.fa-gal-spotlight-label {
+  font-family: var(--fa-font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+  color: var(--fa-gold-light);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.fa-gal-spotlight-label .fa-live-dot { margin-right: 0; }
+
+.fa-gal-spotlight-track {
+  position: relative;
+  height: 380px;
+  overflow: hidden;
+  margin-top: 1.1rem;
+  border-top: 3px solid var(--fa-gold);
+  border-bottom: 3px solid var(--fa-gold);
+  box-shadow: 0 0 0 1px rgba(224, 194, 94, 0.15), 0 24px 50px rgba(0, 0, 0, 0.35);
+}
+
+.fa-gal-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: scale(1.04);
+  transition: opacity 0.9s ease, transform 1.6s ease;
+  pointer-events: none;
+}
+
+.fa-gal-slide.is-active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 1;
+  pointer-events: auto;
+}
+
+/* Static, non-interactive image frame — spotlight slides no longer
+   open the lightbox, so there's no zoom-in cursor or click affordance. */
+.fa-gal-slide-frame {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.fa-gal-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  filter: saturate(0.85) contrast(1.05) brightness(0.72);
+}
+
+/* Slide #1 (parade): nudge the crop upward so the formation reads
+   clearly instead of being cut off by the wide banner aspect ratio.
+   Tweak the vertical percentage if the framing still isn't right. */
+.fa-gal-slide[data-slide="0"] img {
+  object-position: center 25%;
+}
+
+.fa-gal-slide-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  padding: 2.2rem clamp(1rem, 5vw, 4rem) 1.7rem;
+  background: linear-gradient(0deg, rgba(12, 32, 19, 0.95) 0%, transparent 100%);
+  color: var(--fa-parchment);
+}
+
+.fa-gal-slide-eyebrow {
+  font-family: var(--fa-font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--fa-gold-light);
+}
+
+.fa-gal-slide-title {
+  font-family: var(--fa-font-display);
+  font-size: 1.4rem;
+  margin: 0.3rem 0 0;
+}
+
+.fa-gal-dots {
+  position: absolute;
+  right: clamp(1rem, 5vw, 4rem);
+  bottom: 1.8rem;
+  z-index: 3;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.fa-gal-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgba(243, 239, 228, 0.35);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.fa-gal-dot.is-active {
+  background: var(--fa-gold-light);
+  transform: scale(1.35);
+}
+
+.fa-gal-dot:hover { background: var(--fa-sage); }
+
+/* =====================================================
+   STICKY CONTROLS: filters + search + sort + view toggle
+   ===================================================== */
+.fa-gal-controls {
+  position: sticky;
+  top: 74px;
+  z-index: 900;
+  background: var(--fa-green-dark);
+  border-bottom: 1px solid rgba(156, 175, 136, 0.25);
+}
+
+.fa-gal-controls-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.9rem;
+  padding: 0.85rem 0;
+}
+
+/* Filter pills with sliding indicator */
+.fa-gal-filters {
+  position: relative;
+  display: flex;
+  gap: 0.2rem;
+  background: rgba(0, 0, 0, 0.18);
+  border: 1px solid rgba(156, 175, 136, 0.25);
+  border-radius: 30px;
+  padding: 4px;
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+.fa-gal-filter-btn {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  background: transparent;
+  font-family: var(--fa-font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: rgba(243, 239, 228, 0.7);
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.fa-gal-filter-btn:focus-visible {
+  outline: 2px solid var(--fa-gold-light);
+  outline-offset: 2px;
+}
+
+.fa-gal-filter-led {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(243, 239, 228, 0.5);
+  transition: background 0.3s ease;
+}
+
+.fa-gal-filter-btn.is-active { color: var(--fa-green-dark); }
+.fa-gal-filter-btn.is-active .fa-gal-filter-led { background: var(--fa-green-dark); }
+.fa-gal-filter-btn:not(.is-active):hover { color: var(--fa-parchment); }
+.fa-gal-filter-btn:not(.is-active):hover .fa-gal-filter-led { background: var(--fa-gold-light); }
+
+.fa-gal-filter-count {
+  font-size: 0.62rem;
+  font-weight: 700;
+  background: rgba(243, 239, 228, 0.15);
+  padding: 1px 6px;
+  border-radius: 20px;
+  transition: background 0.3s ease;
+}
+
+.fa-gal-filter-btn.is-active .fa-gal-filter-count { background: rgba(12, 32, 19, 0.18); }
+
+.fa-gal-filter-indicator {
+  position: absolute;
+  z-index: 1;
+  top: 4px;
+  left: 0;
+  height: calc(100% - 8px);
+  border-radius: 30px;
+  background: var(--fa-sage);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), width 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  width: 0;
+}
+
+/* Tools cluster: search, sort, view toggle */
+.fa-gal-tools {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+}
+
+.fa-gal-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.fa-gal-search svg {
+  position: absolute;
+  left: 0.65rem;
+  width: 14px;
+  height: 14px;
+  color: rgba(243, 239, 228, 0.55);
+  pointer-events: none;
+  transition: color 0.3s ease;
+}
+
+.fa-gal-search input {
+  background: rgba(243, 239, 228, 0.08);
+  border: 1px solid rgba(156, 175, 136, 0.3);
+  border-radius: 20px;
+  color: var(--fa-parchment);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  padding: 0.5rem 0.9rem 0.5rem 2rem;
+  width: 170px;
+  transition: width 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+
+.fa-gal-search input::placeholder { color: rgba(243, 239, 228, 0.45); }
+
+.fa-gal-search input:focus {
+  outline: none;
+  width: 220px;
+  border-color: var(--fa-gold-light);
+  background: rgba(243, 239, 228, 0.14);
+}
+
+.fa-gal-search input:focus ~ svg,
+.fa-gal-search:focus-within svg { color: var(--fa-gold-light); }
+
+.fa-gal-sort {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.fa-gal-sort-btn {
+  font-family: var(--fa-font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: rgba(243, 239, 228, 0.65);
+  background: transparent;
+  border: 1px solid rgba(156, 175, 136, 0.3);
+  border-radius: 20px;
+  padding: 0.4rem 0.85rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.fa-gal-sort-btn:hover { border-color: var(--fa-gold-light); color: var(--fa-parchment); }
+.fa-gal-sort-btn.is-active { background: var(--fa-sage); border-color: var(--fa-sage); color: var(--fa-green-dark); }
+
+/* Grid / Masonry view toggle switch */
+.fa-gal-view-switch {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.fa-gal-view-switch-input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.fa-gal-view-label {
+  font-family: var(--fa-font-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: rgba(243, 239, 228, 0.5);
+  transition: color 0.3s ease;
+}
+
+.fa-gal-view-switch-input:not(:checked) ~ .fa-gal-view-label-grid,
+.fa-gal-view-switch-input:checked ~ .fa-gal-view-label-masonry {
+  color: var(--fa-parchment);
+  font-weight: 700;
+}
+
+.fa-gal-view-switch-track {
+  position: relative;
+  width: 42px;
+  height: 23px;
+  background: rgba(243, 239, 228, 0.15);
+  border-radius: 30px;
+  cursor: pointer;
+  display: inline-block;
+  transition: background 0.3s ease;
+}
+
+.fa-gal-view-switch-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: var(--fa-parchment);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.fa-gal-view-switch-input:checked ~ .fa-gal-view-switch-track { background: var(--fa-sage); }
+.fa-gal-view-switch-input:checked ~ .fa-gal-view-switch-track .fa-gal-view-switch-thumb {
+  transform: translateX(19px);
+  background: var(--fa-green-dark);
+}
+
+/* FIX: the input is visually hidden (opacity: 0) for custom-switch styling,
+   which also hid the browser's default focus ring from keyboard users.
+   Restore a visible indicator on the track when the input has focus. */
+.fa-gal-view-switch-input:focus-visible ~ .fa-gal-view-switch-track {
+  outline: 2px solid var(--fa-gold-light);
+  outline-offset: 2px;
+}
+
+/* =====================================================
+   RESULTS / META BAR
+   ===================================================== */
+.fa-gal-section { padding: 3rem 0 5rem; }
+
+.fa-gal-meta-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1.6rem;
+  font-family: var(--fa-font-mono);
+  font-size: 0.78rem;
+  color: #4b5a4b;
+}
+
+.fa-gal-meta-bar strong { color: var(--fa-green-dark); }
+
+/* =====================================================
+   GRID + CARDS
+   ===================================================== */
+.fa-gal-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.7rem;
+}
+
+.fa-gal-grid.fa-gal-grid--masonry {
+  display: block;
+  column-count: 4;
+  column-gap: 1.7rem;
+}
+
+.fa-gal-grid--masonry .fa-gal-item { break-inside: avoid; margin-bottom: 1.7rem; }
+
+@media (max-width: 991.98px) {
+  .fa-gal-grid { grid-template-columns: repeat(2, 1fr); }
+  .fa-gal-grid--masonry { column-count: 2; }
+}
+
+@media (max-width: 575.98px) {
+  .fa-gal-grid { grid-template-columns: 1fr; }
+  .fa-gal-grid--masonry { column-count: 1; }
+}
+
+.fa-gal-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fa-gal-item.fa-gal-item-visible { opacity: 1; transform: translateY(0); }
+.fa-gal-item.fa-gal-item-hidden { display: none; }
+
+.fa-gal-item a { text-decoration: none; display: block; }
+.fa-gal-item a:focus-visible { outline: none; }
+
+.fa-gal-card {
+  position: relative;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(22, 51, 31, 0.1);
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.fa-gal-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-top: 3px solid var(--fa-sage);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.fa-gal-item:hover .fa-gal-card {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(12, 32, 19, 0.18);
+  border-color: transparent;
+}
+
+.fa-gal-item:hover .fa-gal-card::before { transform: scaleX(1); }
+
+.fa-gal-item a:focus-visible .fa-gal-card {
+  outline: 2px solid var(--fa-gold);
+  outline-offset: 2px;
+}
+
+.fa-gal-card-media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--fa-green-dark);
+}
+
+.fa-gal-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.02);
+  filter: saturate(0.92);
+  transition: transform 0.6s ease, filter 0.4s ease;
+}
+
+.fa-gal-item:hover .fa-gal-card-media img {
+  transform: scale(1.1);
+  filter: saturate(1.05);
+}
+
+.fa-gal-card-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(0deg, rgba(12, 32, 19, 0.55) 0%, rgba(12, 32, 19, 0) 55%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.fa-gal-item:hover .fa-gal-card-overlay,
+.fa-gal-item a:focus-visible .fa-gal-card-overlay { opacity: 1; }
+
+.fa-gal-view-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--fa-parchment);
+  color: var(--fa-green-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0.6);
+  opacity: 0;
+  transition: transform 0.35s ease, opacity 0.35s ease, background 0.3s ease;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+}
+
+.fa-gal-item:hover .fa-gal-view-btn,
+.fa-gal-item a:focus-visible .fa-gal-view-btn { transform: scale(1); opacity: 1; }
+
+.fa-gal-item:hover .fa-gal-view-btn:hover { background: var(--fa-gold-light); }
+
+.fa-gal-card-body { padding: 1rem 1.1rem 1.15rem; }
+
+.fa-gal-card-tag {
+  font-family: var(--fa-font-mono);
+  font-size: 0.64rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--fa-green);
+  background: rgba(156, 175, 136, 0.22);
+  border-radius: 20px;
+  padding: 0.24rem 0.65rem;
+  display: inline-block;
+  margin-bottom: 0.55rem;
+}
+
+.fa-gal-card-title {
+  font-family: var(--fa-font-display);
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: var(--fa-green-dark);
+  margin: 0 0 0.25rem;
+}
+
+.fa-gal-card-code {
+  font-family: var(--fa-font-mono);
+  font-size: 0.68rem;
+  color: #7c8a7c;
+  letter-spacing: 0.5px;
+}
+
+.fa-gal-ribbon {
+  position: absolute;
+  top: 12px;
+  right: -6px;
+  z-index: 3;
+  background: var(--fa-gold);
+  color: var(--fa-green-dark);
+  font-family: var(--fa-font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 0.28rem 0.7rem 0.28rem 0.55rem;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 8px 100%, 0 60%);
+}
+
+/* =====================================================
+   EMPTY STATE
+   ===================================================== */
+.fa-gal-empty {
+  text-align: center;
+  padding: 4.4rem 1.2rem;
+  border: 1px dashed rgba(22, 51, 31, 0.25);
+  border-radius: 10px;
+  background: rgba(156, 175, 136, 0.08);
+}
+
+.fa-gal-empty-code {
+  display: inline-block;
+  font-family: var(--fa-font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--fa-green);
+  border: 1px solid var(--fa-green);
+  padding: 0.35rem 1rem;
+  border-radius: 20px;
+  margin-bottom: 0.9rem;
+}
+
+.fa-gal-empty p { color: #4b5a4b; margin: 0; }
+
+/* =====================================================
+   LOAD MORE
+   ===================================================== */
+.fa-gal-loadmore-wrap { text-align: center; margin-top: 2.6rem; }
+
+.fa-gal-loadmore-btn {
+  border-color: var(--fa-green);
+  color: var(--fa-green);
+}
+
+/* =====================================================
+   GLIGHTBOX SKIN
+   ===================================================== */
+.glightbox-clean .gslide-media,
+.gslide-image img {
+  max-height: 76vh !important;
+  width: auto !important;
+  margin: 0 auto;
+}
+
+.gslide-description, .gdesc-inner {
+  background: var(--fa-green-dark) !important;
+  color: var(--fa-parchment) !important;
+  max-height: 16vh;
+  overflow-y: auto;
+  padding: 0.9rem 1.3rem !important;
+}
+
+.gslide-title {
+  font-family: var(--fa-font-display) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-size: 1rem !important;
+  margin-bottom: 0.25rem !important;
+  color: var(--fa-parchment) !important;
+}
+
+.gslide-desc {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 0.85rem !important;
+  color: var(--fa-parchment) !important;
+  opacity: 0.85;
+}
+
+.gclose, .gnext, .gprev {
+  background: rgba(12, 32, 19, 0.6) !important;
+  border-radius: 50% !important;
+  transition: background 0.25s ease !important;
+}
+
+.gclose:hover, .gnext:hover, .gprev:hover { background: var(--fa-sage) !important; }
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+@media (max-width: 767.98px) {
+  .fa-gal-controls { top: 62px; }
+  .fa-gal-controls-inner { flex-direction: column; align-items: stretch; }
+  .fa-gal-filters { overflow-x: auto; }
+  .fa-gal-tools { justify-content: space-between; }
+  .fa-gal-search input { width: 140px; }
+  .fa-gal-search input:focus { width: 170px; }
+  .fa-gal-spotlight-track { height: 260px; }
+  .fa-gal-hero-content { padding-top: 5.5rem; }
+  .fa-gal-hero-actions .fa-btn { width: 100%; justify-content: center; text-align: center; }
+}
