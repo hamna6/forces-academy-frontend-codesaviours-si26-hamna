@@ -1,3 +1,6 @@
+<!-- ============================================================
+     FORCES ACADEMY - Results Page (results.html)
+     ============================================================ -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,17 +8,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Results | Forces Academy Faisalabad</title>
 
+    <!-- Bootstrap 5 CSS -->
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
         rel="stylesheet"
     />
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
         href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap"
         rel="stylesheet"
     />
+
+    <!-- Our custom CSS -->
     <link rel="stylesheet" href="css/style.css" />
+    <!-- Results page CSS -->
+    <link rel="stylesheet" href="css/results.css" />
 </head>
 <body>
 
@@ -84,32 +94,286 @@
     </nav>
     <!-- ================== END NAVBAR ================== -->
 
-
-    <!-- ==================== RESULTS CONTENT ==================== -->
-    <main>
-        <section class="fa-gallery-hero py-5 text-center">
-            <div class="container">
-                <p class="fa-eyebrow mb-2">ACADEMIC RECORD</p>
-                <h1 class="fa-page-title mb-3">Results</h1>
-                <p class="fa-page-subtitle mx-auto">
-                    Board results, merit lists, and academic achievements of Forces Academy Faisalabad cadets.
-                </p>
-            </div>
-        </section>
-
-        <section class="fa-results-grid-section py-5">
-            <div class="container">
-                <div class="row g-4">
-                    <!-- Results tables / merit lists go here -->
-                    <div class="col-12">
-                        <p class="text-center text-muted">Results will be published here soon.</p>
-                    </div>
+    <!-- ============ RESULTS PAGE HEADER ============ -->
+    <section class="fa-res-header">
+        <div class="fa-res-header-texture" aria-hidden="true"></div>
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-8">
+                    <span class="fa-res-eyebrow">
+                        <span class="fa-res-eyebrow-dot"></span>
+                        Office of Academic Records
+                    </span>
+                    <h1 class="fa-res-title">Examination Results</h1>
+                    <p class="fa-res-subtitle">
+                        A consolidated record of cadet academic performance across all
+                        active programs. Search by class and session to review scores,
+                        subject breakdowns, and final grades.
+                    </p>
+                    <nav class="fa-res-breadcrumb" aria-label="breadcrumb">
+                        <a href="index.html">Home</a>
+                        <span class="fa-res-breadcrumb-sep">/</span>
+                        <span>Results</span>
+                    </nav>
                 </div>
             </div>
-        </section>
-    </main>
-    <!-- ================== END RESULTS CONTENT ================== -->
+        </div>
+    </section>
+    <!-- ============ END RESULTS HEADER ============ -->
 
+    <!-- ============ FILTER BAR ============ -->
+    <section class="fa-res-filter-wrap">
+        <div class="container">
+            <div class="fa-res-filter-card">
+                <div class="fa-res-filter-title">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <path d="M4 5h16M7 12h10M10.5 19h3" stroke-linecap="round"/>
+                    </svg>
+                    Filter Records
+                </div>
+
+                <div class="fa-res-filter-controls">
+                    <div class="fa-res-select-group">
+                        <label for="filterClass">Class</label>
+                        <select id="filterClass" class="form-select fa-res-select">
+                            <option selected>All Classes</option>
+                            <option>FSc Pre-Medical</option>
+                            <option>FSc Pre-Engineering</option>
+                            <option>ICS</option>
+                            <option>Matric Science</option>
+                            <option>Matric Arts</option>
+                        </select>
+                    </div>
+
+                    <div class="fa-res-select-group">
+                        <label for="filterYear">Year</label>
+                        <select id="filterYear" class="form-select fa-res-select">
+                            <option selected>2026</option>
+                            <option>2025</option>
+                            <option>2024</option>
+                            <option>2023</option>
+                        </select>
+                    </div>
+
+                    <button type="button" class="fa-res-filter-btn">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="7"/>
+                            <path d="M21 21l-4.3-4.3" stroke-linecap="round"/>
+                        </svg>
+                        Apply Filters
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ============ END FILTER BAR ============ -->
+
+    <!-- ============ STATS STRIP ============ -->
+    <section class="fa-res-stats-section">
+        <div class="container">
+            <div class="row g-3 g-lg-4">
+
+                <div class="col-6 col-lg-3">
+                    <div class="fa-res-stat-card" style="--d:0s">
+                        <span class="fa-res-stat-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M4 19v-1a4 4 0 0 1 4-4h1a4 4 0 0 1 4 4v1M15 19v-1a4 4 0 0 1 3-3.87M13 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM18 10a2.5 2.5 0 1 0 0-5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </span>
+                        <span class="fa-res-stat-num">642</span>
+                        <span class="fa-res-stat-label">Total Students</span>
+                    </div>
+                </div>
+
+                <div class="col-6 col-lg-3">
+                    <div class="fa-res-stat-card" style="--d:0.1s">
+                        <span class="fa-res-stat-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M4 20V10M12 20V4M20 20v-7" stroke-linecap="round"/>
+                            </svg>
+                        </span>
+                        <span class="fa-res-stat-num">81.4<span class="fa-res-stat-unit">%</span></span>
+                        <span class="fa-res-stat-label">Average Marks</span>
+                    </div>
+                </div>
+
+                <div class="col-6 col-lg-3">
+                    <div class="fa-res-stat-card" style="--d:0.2s">
+                        <span class="fa-res-stat-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M12 2l2.4 4.9L20 8l-4 4 1 5.6L12 15l-5 2.6 1-5.6-4-4 5.6-1.1z" stroke-linejoin="round"/>
+                            </svg>
+                        </span>
+                        <span class="fa-res-stat-num">128</span>
+                        <span class="fa-res-stat-label">Distinctions</span>
+                    </div>
+                </div>
+
+                <div class="col-6 col-lg-3">
+                    <div class="fa-res-stat-card" style="--d:0.3s">
+                        <span class="fa-res-stat-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </span>
+                        <span class="fa-res-stat-num">94<span class="fa-res-stat-unit">%</span></span>
+                        <span class="fa-res-stat-label">Pass Rate</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- ============ END STATS STRIP ============ -->
+
+    <!-- ============ RESULTS TABLE ============ -->
+    <section class="fa-res-table-section">
+        <div class="container">
+            <div class="fa-res-table-card">
+
+                <div class="fa-res-table-header">
+                    <div>
+                        <span class="fa-res-table-kicker">Consolidated Merit List</span>
+                        <h2 class="fa-res-table-title">Session 2025&ndash;2026</h2>
+                    </div>
+                    <div class="fa-res-stamp" aria-hidden="true">
+                        <span>VERIFIED</span>
+                    </div>
+                </div>
+
+                <div class="table-responsive fa-res-table-scroll">
+                    <table class="table fa-res-table align-middle mb-0">
+                        <thead>
+                            <tr>
+                                <th>Roll No</th>
+                                <th>Student Name</th>
+                                <th>Class</th>
+                                <th>Subject</th>
+                                <th>Marks</th>
+                                <th>Grade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="--d:0.02s">
+                                <td class="fa-res-roll">CDT-0142</td>
+                                <td>Hassan Raza</td>
+                                <td>FSc Pre-Medical</td>
+                                <td>Biology</td>
+                                <td class="fa-res-marks">92<span>/100</span></td>
+                                <td><span class="fa-grade fa-grade-aplus">A+</span></td>
+                            </tr>
+                            <tr style="--d:0.06s">
+                                <td class="fa-res-roll">CDT-0158</td>
+                                <td>Ayesha Malik</td>
+                                <td>ICS</td>
+                                <td>Computer Science</td>
+                                <td class="fa-res-marks">88<span>/100</span></td>
+                                <td><span class="fa-grade fa-grade-a">A</span></td>
+                            </tr>
+                            <tr style="--d:0.1s">
+                                <td class="fa-res-roll">CDT-0163</td>
+                                <td>Bilal Ahmed</td>
+                                <td>FSc Pre-Engineering</td>
+                                <td>Mathematics</td>
+                                <td class="fa-res-marks">95<span>/100</span></td>
+                                <td><span class="fa-grade fa-grade-aplus">A+</span></td>
+                            </tr>
+                            <tr style="--d:0.14s">
+                                <td class="fa-res-roll">CDT-0177</td>
+                                <td>Fatima Noor</td>
+                                <td>Matric Science</td>
+                                <td>Chemistry</td>
+                                <td class="fa-res-marks">79<span>/100</span></td>
+                                <td><span class="fa-grade fa-grade-bplus">B+</span></td>
+                            </tr>
+                            <tr style="--d:0.18s">
+                                <td class="fa-res-roll">CDT-0184</td>
+                                <td>Usman Tariq</td>
+                                <td>FSc Pre-Engineering</td>
+                                <td>Physics</td>
+                                <td class="fa-res-marks">84<span>/100</span></td>
+                                <td><span class="fa-grade fa-grade-a">A</span></td>
+                            </tr>
+                            <tr style="--d:0.22s">
+                                <td class="fa-res-roll">CDT-0196</td>
+                                <td>Zainab Hussain</td>
+                                <td>Matric Arts</td>
+                                <td>Pakistan Studies</td>
+                                <td class="fa-res-marks">73<span>/100</span></td>
+                                <td><span class="fa-grade fa-grade-b">B</span></td>
+                            </tr>
+                            <tr style="--d:0.26s">
+                                <td class="fa-res-roll">CDT-0205</td>
+                                <td>Ahmed Siddiqui</td>
+                                <td>ICS</td>
+                                <td>Mathematics</td>
+                                <td class="fa-res-marks">90<span>/100</span></td>
+                                <td><span class="fa-grade fa-grade-aplus">A+</span></td>
+                            </tr>
+                            <tr style="--d:0.3s">
+                                <td class="fa-res-roll">CDT-0211</td>
+                                <td>Mahnoor Iqbal</td>
+                                <td>FSc Pre-Medical</td>
+                                <td>Chemistry</td>
+                                <td class="fa-res-marks">86<span>/100</span></td>
+                                <td><span class="fa-grade fa-grade-a">A</span></td>
+                            </tr>
+                            <tr style="--d:0.34s">
+                                <td class="fa-res-roll">CDT-0224</td>
+                                <td>Hamza Khalid</td>
+                                <td>Matric Science</td>
+                                <td>Physics</td>
+                                <td class="fa-res-marks">68<span>/100</span></td>
+                                <td><span class="fa-grade fa-grade-c">C</span></td>
+                            </tr>
+                            <tr style="--d:0.38s">
+                                <td class="fa-res-roll">CDT-0233</td>
+                                <td>Sana Yousaf</td>
+                                <td>Matric Arts</td>
+                                <td>English</td>
+                                <td class="fa-res-marks">77<span>/100</span></td>
+                                <td><span class="fa-grade fa-grade-bplus">B+</span></td>
+                            </tr>
+                            <tr style="--d:0.42s">
+                                <td class="fa-res-roll">CDT-0247</td>
+                                <td>Ali Raza Chaudhry</td>
+                                <td>FSc Pre-Engineering</td>
+                                <td>Chemistry</td>
+                                <td class="fa-res-marks">81<span>/100</span></td>
+                                <td><span class="fa-grade fa-grade-a">A</span></td>
+                            </tr>
+                            <tr style="--d:0.46s">
+                                <td class="fa-res-roll">CDT-0259</td>
+                                <td>Rida Fatima</td>
+                                <td>ICS</td>
+                                <td>Physics</td>
+                                <td class="fa-res-marks">91<span>/100</span></td>
+                                <td><span class="fa-grade fa-grade-aplus">A+</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- ============ END RESULTS TABLE ============ -->
+
+    <!-- ============ NOTICE ============ -->
+    <section class="fa-res-notice-section">
+        <div class="container">
+            <div class="fa-res-notice">
+                <span class="fa-res-notice-icon">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <circle cx="12" cy="12" r="9"/>
+                        <path d="M12 8v5M12 16.5h.01" stroke-linecap="round"/>
+                    </svg>
+                </span>
+                <p>Results are updated by administration. Contact admin for queries.</p>
+            </div>
+        </div>
+    </section>
+    <!-- ============ END NOTICE ============ -->
 
     <!-- ==================== FOOTER ==================== -->
     <footer class="fa-footer">
@@ -244,6 +508,10 @@
     </footer>
     <!-- ================== END FOOTER ================== -->
 
+    <!-- Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('faYear').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
