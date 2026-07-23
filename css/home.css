@@ -1,0 +1,684 @@
+/* =====================================================
+   FORCES ACADEMY – HOME PAGE ADD-ONS (v3)
+   Stats Counter + Peel-Off Testimonials Slider
+   Uses the same tokens as css/style.css
+   ===================================================== */
+
+:root {
+  --fa-green: #16331f;
+  --fa-green-dark: #0c2013;
+  --fa-green-light: #3f7a52;   /* mid green accent, used sparingly */
+  --fa-green-pale: #b8e8c4;    /* lightest green — icons, numbers, borders in counter cards */
+  --fa-parchment: #f3efe4;
+  --fa-sage: #9caf88;
+  --fa-gold: #c9a227;
+  --fa-gold-light: #e0c25e;
+  --fa-font-display: 'Oswald', sans-serif;
+  --fa-font-mono: 'JetBrains Mono', monospace;
+}
+
+/* Smooth scroll for all in-page/nav anchor links (Step 9) */
+html {
+  scroll-behavior: smooth;
+}
+
+/* =========================================================
+   STATS COUNTER SECTION
+========================================================= */
+
+.fa-counters {
+  position: relative;
+  isolation: isolate;
+  background: linear-gradient(180deg, var(--fa-green) 0%, var(--fa-green-dark) 100%);
+  padding: 5.5rem 0;
+  overflow: hidden;
+}
+
+/* Grid lines removed — element kept in markup but not rendered */
+.fa-counters-grid-bg {
+  display: none;
+}
+
+/* Two soft glowing orbs for depth (green tones only, no yellow) */
+.fa-counters::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle, rgba(184, 232, 196, 0.4) 0%, transparent 68%),
+    radial-gradient(circle, rgba(156, 175, 136, 0.38) 0%, transparent 68%);
+  background-repeat: no-repeat;
+  background-size: 380px 380px, 440px 440px;
+  background-position: -120px -140px, calc(100% + 140px) calc(100% + 120px);
+  filter: blur(6px);
+  animation: fa-orb-drift 9s ease-in-out infinite alternate;
+}
+
+@keyframes fa-orb-drift {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  100% { transform: translate3d(18px, -16px, 0) scale(1.08); }
+}
+
+.fa-counters-head {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 3rem;
+}
+
+.fa-eyebrow-dark {
+  color: var(--fa-green-pale);
+  border-bottom-color: var(--fa-green-pale);
+}
+
+.fa-counters-title {
+  font-family: var(--fa-font-display);
+  font-weight: 700;
+  font-size: clamp(1.6rem, 3.2vw, 2.2rem);
+  color: var(--fa-gold-light);
+  margin-top: 0.6rem;
+}
+
+.fa-counters-row {
+  position: relative;
+  z-index: 1;
+}
+
+.fa-counter-card {
+  position: relative;
+  text-align: center;
+  padding: 2.1rem 1rem;
+  border-radius: 14px;
+  background:
+    radial-gradient(circle at var(--mx, 50%) var(--my, 0%), rgba(184, 232, 196, 0.12), transparent 60%),
+    rgba(243, 239, 228, 0.04);
+  border: 1px solid rgba(156, 175, 136, 0.22);
+  backdrop-filter: blur(3px);
+  overflow: hidden;
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.35s ease, background-color 0.35s ease, box-shadow 0.35s ease;
+
+  opacity: 0;
+  translate: 0 34px;
+}
+
+.fa-counters-visible .fa-counter-card {
+  opacity: 1;
+  translate: 0 0;
+  transition: opacity 0.7s ease, translate 0.7s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.fa-counters-visible .col-6:nth-child(1) .fa-counter-card { transition-delay: 0.05s; }
+.fa-counters-visible .col-6:nth-child(2) .fa-counter-card { transition-delay: 0.18s; }
+.fa-counters-visible .col-6:nth-child(3) .fa-counter-card { transition-delay: 0.31s; }
+.fa-counters-visible .col-6:nth-child(4) .fa-counter-card { transition-delay: 0.44s; }
+
+.fa-counter-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  padding: 1px;
+  background: conic-gradient(from 0deg, var(--fa-green-pale), transparent 30%, transparent 70%, var(--fa-green-pale));
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  opacity: 0;
+  animation: fa-border-spin 3s linear infinite;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+@keyframes fa-border-spin {
+  to { transform: rotate(360deg); }
+}
+
+.fa-counter-card:hover {
+  transform: translateY(-9px) scale(1.015);
+  border-color: transparent;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.fa-counter-card:hover::after {
+  opacity: 1;
+}
+
+.fa-counter-icon {
+  width: 58px;
+  height: 58px;
+  margin: 0 auto 1.1rem;
+  border-radius: 50%;
+  background: rgba(184, 232, 196, 0.15);
+  color: var(--fa-green-pale);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fa-icon-bob 3.2s ease-in-out infinite;
+  transition: transform 0.35s ease, background 0.35s ease, color 0.35s ease;
+}
+
+@keyframes fa-icon-bob {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-4px); }
+}
+
+.fa-counter-card:hover .fa-counter-icon {
+  animation-play-state: paused;
+  transform: rotate(-10deg) scale(1.14);
+  background: var(--fa-green-pale);
+  color: var(--fa-green-dark);
+}
+
+.fa-counter-num {
+  display: block;
+  font-family: var(--fa-font-mono);
+  font-weight: 700;
+  font-size: clamp(2rem, 4vw, 2.7rem);
+  color: var(--fa-green-pale);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  transition: text-shadow 0.35s ease, color 0.35s ease;
+}
+
+.fa-counter-card:hover .fa-counter-num {
+  color: var(--fa-green-pale);
+  text-shadow: 0 0 18px rgba(184, 232, 196, 0.55);
+}
+
+.fa-counter-label {
+  display: block;
+  font-size: 0.82rem;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: rgba(184, 232, 196, 0.75);
+}
+
+@media (max-width: 575.98px) {
+  .fa-counters { padding: 3.5rem 0; }
+  .fa-counter-card { padding: 1.6rem 0.6rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fa-counter-icon,
+  .fa-counter-card::after {
+    animation: none !important;
+  }
+}
+
+/* =========================================================
+   TESTIMONIALS SLIDER — Peel-Off Effect (green theme, larger slider)
+========================================================= */
+
+.fa-testimonials {
+  background:
+    radial-gradient(circle at 10% 15%, rgba(156, 175, 136, 0.28), transparent 42%),
+    radial-gradient(circle at 92% 10%, rgba(63, 122, 82, 0.22), transparent 40%),
+    radial-gradient(circle at 85% 90%, rgba(156, 175, 136, 0.25), transparent 42%),
+    radial-gradient(circle at 8% 92%, rgba(63, 122, 82, 0.16), transparent 38%),
+    linear-gradient(165deg, #eef4ec 0%, #e2ece0 50%, #d3e3d4 100%);
+  padding: 6.5rem 0;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.fa-testimonials-grid-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(22, 51, 31, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(22, 51, 31, 0.05) 1px, transparent 1px);
+  background-size: 46px 46px;
+  mask-image: radial-gradient(circle at center, black 5%, transparent 75%);
+}
+
+.fa-testimonials::before {
+  content: '';
+  position: absolute;
+  top: -140px;
+  right: -140px;
+  width: 380px;
+  height: 380px;
+  z-index: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(156, 175, 136, 0.32), transparent 70%);
+  filter: blur(10px);
+  animation: fa-orb-float 9s ease-in-out infinite;
+}
+
+.fa-testimonials::after {
+  content: '';
+  position: absolute;
+  bottom: -160px;
+  left: -140px;
+  width: 360px;
+  height: 360px;
+  z-index: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(63, 122, 82, 0.26), transparent 70%);
+  filter: blur(10px);
+  animation: fa-orb-float 11s ease-in-out infinite reverse;
+}
+
+@keyframes fa-orb-float {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50%      { transform: translate3d(14px, -18px, 0) scale(1.1); }
+}
+
+.fa-testimonials-head {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 3.5rem;
+}
+
+.fa-testimonials-title {
+  font-size: clamp(2.3rem, 5.2vw, 3.6rem) !important;
+  margin-top: 0.7rem;
+  position: relative;
+  display: inline-block;
+  color: var(--fa-green-dark);
+  text-shadow: 0 2px 0 rgba(255, 255, 255, 0.5);
+}
+
+.fa-testimonials-title::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  width: 70px;
+  height: 3px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, transparent, var(--fa-green-light), transparent);
+}
+
+.fa-testimonials-lead {
+  font-size: 1.08rem;
+}
+
+.fa-testimonials-lead {
+  max-width: 34rem;
+  margin: 0 auto;
+}
+
+/* Larger slider: more width and height */
+.fa-slider {
+  position: relative;
+  z-index: 1;
+  max-width: 1000px;
+  margin: 0 auto;
+  perspective: 1400px;
+}
+
+.fa-slider-track {
+  position: relative;
+  min-height: 480px;
+}
+
+.fa-slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: var(--fa-sage);
+  background-image: linear-gradient(155deg, var(--fa-sage) 0%, var(--fa-green) 100%);
+  border: 1px solid rgba(156, 175, 136, 0.3);
+  border-radius: 18px;
+  padding: 3.4rem 3.2rem 2.8rem;
+  box-shadow: 0 18px 40px rgba(12, 32, 19, 0.1);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform-origin: top right;
+  will-change: transform, clip-path, opacity;
+}
+
+.fa-slide-active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  z-index: 2;
+  transition: transform 0.25s ease;
+}
+
+/* corner curl hint, always present, brightens on peel */
+.fa-slide::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 46px;
+  height: 46px;
+  background: linear-gradient(135deg, transparent 50%, rgba(156, 175, 136, 0.35) 50%);
+  border-radius: 0 18px 0 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.fa-slide-active:hover::after {
+  opacity: 1;
+}
+
+.fa-slide-peel-out {
+  z-index: 4;
+  animation: fa-peel-out 0.85s cubic-bezier(0.61, 0.06, 0.7, 0.19) forwards;
+}
+
+.fa-slide-peel-in {
+  animation: fa-peel-in 0.6s ease 0.15s both;
+}
+
+@keyframes fa-peel-out {
+  0% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    transform: translate3d(0, 0, 0) rotate(0deg);
+    box-shadow: 0 18px 40px rgba(12, 32, 19, 0.12);
+    opacity: 1;
+  }
+  22% {
+    clip-path: polygon(0 0, 76% 0, 100% 24%, 100% 100%, 0 100%);
+    box-shadow: -14px 22px 42px rgba(12, 32, 19, 0.26);
+  }
+  55% {
+    clip-path: polygon(0 0, 32% 0, 62% 48%, 100% 100%, 0 100%);
+    transform: translate3d(-14px, -8px, 0) rotate(-5deg);
+    box-shadow: -26px 30px 55px rgba(12, 32, 19, 0.32);
+  }
+  100% {
+    clip-path: polygon(0 0, 0 0, 0 55%, 0 100%);
+    transform: translate3d(-70px, -26px, 0) rotate(-11deg);
+    opacity: 0;
+    box-shadow: none;
+  }
+}
+
+@keyframes fa-peel-in {
+  0%   { opacity: 0; transform: scale(0.92) translateY(16px); filter: blur(3px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
+}
+
+.fa-quote-mark {
+  font-family: var(--fa-font-display);
+  font-size: 4rem;
+  line-height: 1;
+  color: var(--fa-green-dark);
+  opacity: 0.4;
+  margin-bottom: -0.4rem;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.fa-slide-active:hover .fa-quote-mark {
+  transform: scale(1.15) rotate(-4deg);
+  opacity: 0.8;
+}
+
+.fa-slide-avatar {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--fa-green-dark);
+  color: var(--fa-green-pale);
+  font-family: var(--fa-font-display);
+  font-weight: 600;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+  border: 3px solid var(--fa-parchment);
+  box-shadow: 0 0 0 2px rgba(12, 32, 19, 0.25);
+  transition: transform 0.35s ease;
+}
+
+.fa-slide-avatar::before {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(156, 175, 136, 0.5);
+  animation: fa-avatar-ring 2.6s ease-out infinite;
+}
+
+@keyframes fa-avatar-ring {
+  0%   { transform: scale(0.9); opacity: 0.8; }
+  100% { transform: scale(1.35); opacity: 0; }
+}
+
+.fa-slide-active:hover .fa-slide-avatar {
+  transform: scale(1.08) rotate(-4deg);
+}
+
+.fa-slide-quote {
+  font-size: 1.12rem;
+  line-height: 1.8;
+  color: var(--fa-green-dark);
+  max-width: 38rem;
+  margin-bottom: 1.2rem;
+}
+
+.fa-slide-stars {
+  color: var(--fa-gold);
+  letter-spacing: 3px;
+  margin-bottom: 0.9rem;
+  font-size: 1rem;
+  background: linear-gradient(90deg, var(--fa-gold) 0%, var(--fa-gold-light) 50%, var(--fa-gold) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fa-star-shimmer 2.4s linear infinite;
+}
+
+@keyframes fa-star-shimmer {
+  to { background-position: -200% center; }
+}
+
+.fa-slide-name {
+  font-family: var(--fa-font-display);
+  font-weight: 600;
+  color: var(--fa-green-dark);
+  margin-bottom: 0.15rem;
+  font-size: 1.05rem;
+}
+
+.fa-slide-meta {
+  font-family: var(--fa-font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: rgba(12, 32, 19, 0.65);
+}
+
+.fa-slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(22, 51, 31, 0.2);
+  background: #ffffff;
+  color: var(--fa-green-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 5;
+  box-shadow: 0 8px 18px rgba(12, 32, 19, 0.1);
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.fa-slider-arrow svg {
+  transition: transform 0.25s ease;
+}
+
+.fa-slider-arrow:hover {
+  background: var(--fa-green);
+  color: var(--fa-parchment);
+  border-color: var(--fa-green);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 12px 26px rgba(12, 32, 19, 0.28);
+}
+
+.fa-slider-prev:hover svg { transform: translateX(-2px); }
+.fa-slider-next:hover svg { transform: translateX(2px); }
+
+.fa-slider-arrow:active {
+  transform: translateY(-50%) scale(0.92);
+}
+
+.fa-slider-prev { left: -6px; }
+.fa-slider-next { right: -6px; }
+
+@media (max-width: 575.98px) {
+  .fa-slider-prev { left: -2px; }
+  .fa-slider-next { right: -2px; }
+  .fa-slider-arrow { width: 36px; height: 36px; }
+}
+
+.fa-slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 1.6rem;
+}
+
+.fa-slider-dots button {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(22, 51, 31, 0.2);
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.fa-slider-dots button:hover {
+  background: rgba(156, 175, 136, 0.7);
+  transform: scale(1.25);
+}
+
+.fa-slider-dots button.fa-dot-active {
+  background: var(--fa-sage);
+  width: 26px;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(156, 175, 136, 0.6);
+}
+
+/* Autoplay progress bar */
+.fa-slider-progress {
+  width: 140px;
+  height: 3px;
+  margin: 1.2rem auto 0;
+  border-radius: 3px;
+  background: rgba(22, 51, 31, 0.12);
+  overflow: hidden;
+}
+
+.fa-slider-progress-bar {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, var(--fa-sage), var(--fa-green-light));
+  border-radius: 3px;
+}
+
+.fa-slider-progress-bar.fa-progress-run {
+  animation: fa-progress-fill linear forwards;
+  animation-duration: var(--fa-autoplay-duration, 5s);
+}
+
+@keyframes fa-progress-fill {
+  from { width: 0%; }
+  to   { width: 100%; }
+}
+
+@media (max-width: 991.98px) {
+  .fa-slider { max-width: 820px; }
+  .fa-slider-track { min-height: 500px; }
+}
+
+@media (max-width: 767.98px) {
+  .fa-testimonials { padding: 3.5rem 0; }
+  .fa-slide { padding: 2.4rem 1.6rem 2rem; }
+  .fa-slider-track { min-height: 480px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fa-slide-peel-out,
+  .fa-slide-peel-in,
+  .fa-slide-avatar::before,
+  .fa-slide-stars,
+  .fa-testimonials::before,
+  .fa-testimonials::after,
+  .fa-counters::after,
+  .fa-slider-progress-bar.fa-progress-run {
+    animation: none !important;
+  }
+}
+
+/* =========================================================
+   FLOATING BACK-TO-TOP BUTTON (Steps 10 & 11)
+========================================================= */
+
+.fa-back-to-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background: var(--fa-green);
+  color: var(--fa-parchment);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 0 10px 24px rgba(12, 32, 19, 0.32);
+
+  /* hidden by default; JS toggles .fa-visible after 300px scroll */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fa-back-to-top.fa-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.fa-back-to-top:hover {
+  background: var(--fa-green-light);
+  box-shadow: 0 14px 30px rgba(12, 32, 19, 0.4);
+  transform: translateY(-3px);
+}
+
+.fa-back-to-top:active {
+  transform: translateY(0) scale(0.94);
+}
+
+@media (max-width: 575.98px) {
+  .fa-back-to-top {
+    right: 16px;
+    bottom: 16px;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fa-back-to-top {
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+  }
+}
