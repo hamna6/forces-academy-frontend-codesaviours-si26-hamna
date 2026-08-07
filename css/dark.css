@@ -1,0 +1,402 @@
+/* =====================================================
+   FORCES ACADEMY — DARK MODE OVERRIDES
+   Load LAST (after style.css / page CSS) so it wins the
+   cascade without !important everywhere.
+   js/main.js toggles `dark-mode` on <body> + saves to
+   localStorage. Every rule is scoped under body.dark-mode,
+   so light mode is untouched.
+   ===================================================== */
+
+:root {
+  --fa-dark-bg: #0c1810;
+  --fa-dark-bg-alt: #14261a;
+  --fa-dark-bg-deep: #060d07;
+  --fa-dark-border: rgba(156, 175, 136, 0.18);
+  --fa-dark-text: #e4e8dd;
+  --fa-dark-text-muted: rgba(228, 232, 221, 0.68);
+  --fa-dark-accent: #9caf88;
+  --fa-dark-gold: #e0c25e;
+}
+
+/* Smooth theme switch (disabled by style.css's reduced-motion rule) */
+body, body * {
+  transition: background-color .3s ease, color .3s ease,
+              border-color .3s ease, box-shadow .3s ease;
+}
+
+body.dark-mode {
+  background-color: var(--fa-dark-bg);
+  color: var(--fa-dark-text);
+}
+
+/* =====================================================
+   THEME TOGGLE BUTTON
+   ===================================================== */
+.fa-theme-toggle {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px; flex-shrink: 0; border-radius: 50%;
+  border: 1.5px solid rgba(156, 175, 136, .5);
+  background: transparent; color: var(--fa-dark-accent);
+  cursor: pointer; padding: 0;
+  transition: background .25s ease, color .25s ease, transform .25s ease, border-color .25s ease;
+}
+.fa-theme-toggle:hover { background: var(--fa-dark-accent); color: #0c2013; transform: translateY(-2px) rotate(12deg); }
+.fa-theme-toggle:focus-visible { outline: 2px solid var(--fa-dark-accent); outline-offset: 2px; }
+
+.fa-theme-icon { display: none; }
+.fa-theme-icon-moon { display: inline-flex; }
+body.dark-mode .fa-theme-icon-sun { display: inline-flex; }
+body.dark-mode .fa-theme-icon-moon { display: none; }
+
+@media (max-width: 991.98px) {
+  .fa-theme-toggle { margin-top: .5rem; }
+}
+
+/* =====================================================
+   NAVBAR / FOOTER SHELLS
+   ===================================================== */
+body.dark-mode .fa-navbar { background-color: var(--fa-dark-bg-deep); border-bottom-color: rgba(156, 175, 136, .3); }
+body.dark-mode .fa-footer { background: var(--fa-dark-bg-deep); }
+body.dark-mode .fa-footer-bottom { background: #030602; }
+body.dark-mode .fa-social-icon,
+body.dark-mode .fa-social-tile { background: var(--fa-dark-bg-alt); color: var(--fa-dark-text); }
+body.dark-mode .fa-social-tile { border-color: var(--fa-dark-border); }
+
+/* =====================================================
+   HERO OVERLAYS (home + admissions)
+   ===================================================== */
+body.dark-mode .fa-hero-overlay {
+  background:
+    radial-gradient(circle at 80% 15%, rgba(156, 175, 136, .14), transparent 45%),
+    linear-gradient(180deg, rgba(4,10,6,.65) 0%, rgba(4,10,6,.88) 55%, rgba(4,10,6,.98) 100%);
+}
+body.dark-mode .fa-adm-hero-bg,
+body.dark-mode .fa-adm-cta-media {
+  background: linear-gradient(160deg, #060d07 0%, #0c1810 55%, #10241a 100%);
+}
+body.dark-mode .fa-adm-hero-overlay {
+  background: linear-gradient(180deg, rgba(4,10,6,.35) 0%, rgba(4,10,6,.65) 60%, rgba(4,10,6,.97) 100%);
+}
+
+/* "Get in Touch" popup card */
+body.dark-mode .fa-notify-card { background: var(--fa-dark-bg-alt); color: var(--fa-dark-text); box-shadow: 0 16px 34px rgba(0,0,0,.55); }
+body.dark-mode .fa-notify-header { color: var(--fa-dark-text); border-bottom-color: rgba(156, 175, 136, .25); }
+body.dark-mode .fa-notify-list li { color: var(--fa-dark-text-muted); }
+body.dark-mode .fa-notify-icon { color: var(--fa-dark-accent); }
+body.dark-mode .fa-notify-cta { background: var(--fa-dark-accent); color: #0c2013; }
+body.dark-mode .fa-notify-cta:hover { background: transparent; outline: 1.5px solid var(--fa-dark-accent); color: var(--fa-dark-text); }
+
+/* =====================================================
+   STATS COUNTER + TESTIMONIALS (home page)
+   ===================================================== */
+body.dark-mode .fa-counters, body.dark-mode #faCounters,
+body.dark-mode .fa-testimonials, body.dark-mode #faTestimonials {
+  background-color: var(--fa-dark-bg) !important;
+  background-image: none !important;
+}
+body.dark-mode .fa-counters-title,
+body.dark-mode .fa-testimonials-title,
+body.dark-mode .fa-testimonials-lead,
+body.dark-mode .fa-section-eyebrow,
+body.dark-mode .fa-section-eyebrow.fa-eyebrow-dark { color: var(--fa-dark-text) !important; }
+
+body.dark-mode .fa-counter-card { background: var(--fa-dark-bg-alt); border-color: var(--fa-dark-border); box-shadow: 0 10px 26px rgba(0,0,0,.4); }
+body.dark-mode .fa-counter-icon { color: var(--fa-dark-accent); }
+body.dark-mode .fa-counter-num { color: var(--fa-dark-gold); }
+body.dark-mode .fa-counter-label { color: var(--fa-dark-text-muted); }
+
+body.dark-mode .fa-slide { background: var(--fa-dark-bg-alt); border: 1px solid var(--fa-dark-border); box-shadow: 0 14px 30px rgba(0,0,0,.4); }
+body.dark-mode .fa-slide-quote, body.dark-mode .fa-slide-name { color: var(--fa-dark-text); }
+body.dark-mode .fa-slide-meta { color: var(--fa-dark-text-muted); }
+body.dark-mode .fa-slide-avatar { background: var(--fa-dark-accent); color: #0c2013; }
+body.dark-mode .fa-slider-arrow { background: var(--fa-dark-bg-alt); border-color: var(--fa-dark-border); color: var(--fa-dark-accent); }
+body.dark-mode .fa-slider-arrow:hover { background: var(--fa-dark-accent); color: #0c2013; }
+body.dark-mode .fa-slider-dots button { background: rgba(156, 175, 136, .3); }
+body.dark-mode .fa-slider-dots button.fa-dot-active { background: var(--fa-dark-accent); }
+body.dark-mode .fa-slider-progress { background: rgba(156, 175, 136, .15); }
+
+/* =====================================================
+   COURSES PAGE
+   ===================================================== */
+body.dark-mode .fa-courses-page,
+body.dark-mode .fa-courses-intro,
+body.dark-mode .fa-courses-grid-section { background: var(--fa-dark-bg); }
+
+body.dark-mode .fa-section-title,
+body.dark-mode .fa-course-name { color: var(--fa-dark-text); }
+body.dark-mode .fa-section-lead,
+body.dark-mode .fa-course-desc,
+body.dark-mode .fa-course-meta { color: var(--fa-dark-text-muted); }
+
+body.dark-mode .fa-course-card { background: var(--fa-dark-bg-alt); border-color: var(--fa-dark-border); }
+body.dark-mode .fa-course-tag { color: var(--fa-dark-accent); background: rgba(156, 175, 136, .15); }
+body.dark-mode .fa-course-footer { border-top-color: rgba(156, 175, 136, .15); }
+body.dark-mode .fa-btn-card { color: var(--fa-dark-accent); border-color: var(--fa-dark-accent); }
+body.dark-mode .fa-btn-card:hover { background: var(--fa-dark-accent); color: #0c2013; }
+
+/* =====================================================
+   ADMISSIONS PAGE
+   ===================================================== */
+body.dark-mode .fa-admissions-page { background: var(--fa-dark-bg); }
+body.dark-mode .fa-adm-section-alt { background: var(--fa-dark-bg-alt); }
+body.dark-mode .fa-adm-subnav { background: var(--fa-dark-bg-deep); border-bottom-color: rgba(156, 175, 136, .2); }
+
+body.dark-mode .fa-timeline-body { background: var(--fa-dark-bg-alt); border-left-color: var(--fa-dark-accent); }
+body.dark-mode .fa-timeline-body h6 { color: var(--fa-dark-text); }
+body.dark-mode .fa-timeline-body p { color: var(--fa-dark-text-muted); }
+body.dark-mode .fa-timeline-node { border-color: var(--fa-dark-bg); }
+
+body.dark-mode .fa-elig-filter label { background: var(--fa-dark-bg-alt); border-color: var(--fa-dark-border); color: var(--fa-dark-text); }
+body.dark-mode .fa-flip-front { background: var(--fa-dark-bg-alt); border-color: var(--fa-dark-border); }
+body.dark-mode .fa-flip-front h6 { color: var(--fa-dark-text); }
+
+body.dark-mode .fa-doc-item { border-bottom-color: rgba(156, 175, 136, .2); }
+body.dark-mode .fa-doc-item label { color: var(--fa-dark-text); }
+body.dark-mode .fa-doc-check:checked + label { color: rgba(228, 232, 221, .45); }
+
+body.dark-mode .fa-fee-toggle-label { color: var(--fa-dark-text-muted); }
+body.dark-mode .fa-fee-toggle-wrap .fa-fee-toggle-label:first-child,
+body.dark-mode .fa-fee-switch-input:checked ~ .fa-fee-toggle-wrap .fa-fee-toggle-label:last-child { color: var(--fa-dark-text); }
+body.dark-mode .fa-fee-table-wrap { box-shadow: 0 14px 34px rgba(0,0,0,.45); }
+
+/* Bootstrap 5.3 tables read background from --bs-table-bg, not the
+   <table> background property, so override the variable directly. */
+body.dark-mode .fa-fee-table {
+  --bs-table-bg: var(--fa-dark-bg-alt);
+  --bs-table-color: var(--fa-dark-text);
+  background-color: var(--fa-dark-bg-alt);
+  color: var(--fa-dark-text);
+}
+body.dark-mode .fa-fee-table tbody td { color: var(--fa-dark-text); border-color: rgba(156, 175, 136, .12); }
+body.dark-mode .fa-fee-table tbody tr:hover { background: rgba(156, 175, 136, .1); }
+body.dark-mode .fa-fee-note, body.dark-mode .fa-fee-footnote { color: var(--fa-dark-text-muted); }
+
+body.dark-mode .fa-hero-stat strong { color: var(--fa-dark-gold); }
+body.dark-mode .fa-hero-stat span { color: rgba(228, 232, 221, .7); }
+
+/* =====================================================
+   BACK TO TOP
+   ===================================================== */
+body.dark-mode .fa-back-to-top { background: var(--fa-dark-bg-alt); color: var(--fa-dark-text); box-shadow: 0 10px 24px rgba(0,0,0,.5); }
+body.dark-mode .fa-back-to-top:hover { background: #c9a227; color: #0c2013; }
+
+/* =====================================================
+   ABOUT PAGE
+   ===================================================== */
+body.dark-mode.fa-about-page { background: var(--fa-dark-bg); }
+body.dark-mode .fa-history,
+body.dark-mode .fa-why-section { background: var(--fa-dark-bg); }
+body.dark-mode .fa-mv-section,
+body.dark-mode .fa-leadership-section { background: var(--fa-dark-bg-alt); }
+
+body.dark-mode .fa-eyebrow-gold { color: var(--fa-dark-gold); }
+body.dark-mode .fa-title-dark,
+body.dark-mode .fa-hero-text,
+body.dark-mode .fa-slide-heading,
+body.dark-mode .fa-check-text { color: var(--fa-dark-text); }
+body.dark-mode .fa-hero-text { color: var(--fa-dark-text-muted); }
+body.dark-mode .fa-lede-dark { color: var(--fa-dark-text-muted); }
+
+/* <strong> lead-ins were inheriting a dark light-mode color and
+   disappearing against the dark background — force them light. */
+body.dark-mode .fa-lede-dark strong { color: var(--fa-dark-text); }
+
+body.dark-mode .fa-carousel-slide,
+body.dark-mode .fa-slide-checklist-wrap,
+body.dark-mode .fa-highlight-chip { background: var(--fa-dark-bg-alt); border-color: var(--fa-dark-border); }
+body.dark-mode .fa-highlight-chip { color: var(--fa-dark-text); }
+
+body.dark-mode .fa-sticky-note { background: #2a2410; color: var(--fa-dark-text); border-color: rgba(224, 194, 94, .3); }
+/* Heading was also inheriting a dark color, low-contrast on the sticky note */
+body.dark-mode .fa-sticky-title { color: var(--fa-dark-gold); }
+body.dark-mode .fa-sticky-fact, body.dark-mode .fa-sticky-check { color: var(--fa-dark-text-muted); }
+
+body.dark-mode .fa-glass-card { background: rgba(255,255,255,.04); border-color: var(--fa-dark-border); color: var(--fa-dark-text); }
+body.dark-mode .fa-glass-card p { color: var(--fa-dark-text-muted); }
+
+body.dark-mode .fa-feature-card { background: var(--fa-dark-bg-alt); border-color: var(--fa-dark-border); }
+body.dark-mode .fa-feature-card .card-title { color: var(--fa-dark-text); }
+body.dark-mode .fa-feature-card .card-text { color: var(--fa-dark-text-muted); }
+
+body.dark-mode .fa-team-card { background: var(--fa-dark-bg); border-color: var(--fa-dark-border); color: var(--fa-dark-text); }
+/* Name (h4) was inheriting a dark color from about.css's light-mode
+   rule, more specific than .fa-team-card's color — invisible on dark cards. */
+body.dark-mode .fa-team-card h4 { color: var(--fa-dark-text); }
+body.dark-mode .fa-team-card p { color: var(--fa-dark-text-muted); }
+
+/* =====================================================
+   GALLERY PAGE ("Field Archive")
+   ===================================================== */
+body.dark-mode.fa-gallery-page { background: var(--fa-dark-bg); }
+body.dark-mode .fa-gal-section { background: var(--fa-dark-bg); }
+body.dark-mode .fa-gal-controls { background: var(--fa-dark-bg-deep); border-color: var(--fa-dark-border); }
+
+/* Hero */
+body.dark-mode .fa-gal-hero-bg {
+  background: linear-gradient(160deg, #060d07 0%, #0c1810 55%, #10241a 100%);
+}
+body.dark-mode .fa-gal-hero-overlay {
+  background:
+    radial-gradient(circle at 80% 15%, rgba(156, 175, 136, .14), transparent 45%),
+    linear-gradient(180deg, rgba(4,10,6,.55) 0%, rgba(4,10,6,.85) 60%, rgba(4,10,6,.98) 100%);
+}
+body.dark-mode .fa-gal-hero-title { color: var(--fa-dark-text); }
+body.dark-mode .fa-gal-hero-tagline { color: var(--fa-dark-text-muted); }
+body.dark-mode .fa-hero-badge {
+  background: rgba(156, 175, 136, .12);
+  border-color: var(--fa-dark-border);
+  color: var(--fa-dark-accent);
+}
+body.dark-mode .fa-live-dot { background: var(--fa-dark-gold); }
+body.dark-mode .fa-hero-stat-divider { background: var(--fa-dark-border); }
+
+/* Archivist's sticky note */
+body.dark-mode .fa-gal-sticky-note { background: #2a2410; color: var(--fa-dark-text); border-color: rgba(224, 194, 94, .3); }
+body.dark-mode .fa-gal-sticky-label { color: var(--fa-dark-gold); }
+body.dark-mode .fa-gal-sticky-text,
+body.dark-mode .fa-gal-sticky-sign { color: var(--fa-dark-text-muted); }
+
+/* Spotlight carousel */
+body.dark-mode .fa-gal-spotlight { background: var(--fa-dark-bg-alt); }
+body.dark-mode .fa-gal-spotlight-label { color: var(--fa-dark-accent); }
+body.dark-mode .fa-gal-slide-frame { background: var(--fa-dark-bg-deep); border-color: var(--fa-dark-border); }
+body.dark-mode .fa-gal-slide-eyebrow { color: var(--fa-dark-gold); }
+body.dark-mode .fa-gal-slide-title { color: var(--fa-dark-text); }
+body.dark-mode .fa-gal-dot { background: rgba(156, 175, 136, .3); }
+body.dark-mode .fa-gal-dot.is-active { background: var(--fa-dark-accent); }
+
+/* Filter / search / sort / view controls */
+body.dark-mode .fa-gal-filter-btn { color: var(--fa-dark-text-muted); }
+body.dark-mode .fa-gal-filter-btn.is-active { color: var(--fa-dark-text); }
+body.dark-mode .fa-gal-filter-led { background: rgba(156, 175, 136, .3); }
+body.dark-mode .fa-gal-filter-btn.is-active .fa-gal-filter-led { background: var(--fa-dark-gold); }
+body.dark-mode .fa-gal-filter-count { background: rgba(156, 175, 136, .15); color: var(--fa-dark-text-muted); }
+body.dark-mode .fa-gal-filter-indicator { background: var(--fa-dark-bg-alt); border-color: var(--fa-dark-border); }
+
+body.dark-mode .fa-gal-search { background: var(--fa-dark-bg-alt); border-color: var(--fa-dark-border); color: var(--fa-dark-text); }
+body.dark-mode .fa-gal-search input { background: transparent; color: var(--fa-dark-text); }
+body.dark-mode .fa-gal-search input::placeholder { color: rgba(228, 232, 221, .35); }
+body.dark-mode .fa-gal-search svg { color: var(--fa-dark-text-muted); }
+
+body.dark-mode .fa-gal-sort-btn { color: var(--fa-dark-text-muted); background: var(--fa-dark-bg-alt); border-color: var(--fa-dark-border); }
+body.dark-mode .fa-gal-sort-btn.is-active { color: #0c2013; background: var(--fa-dark-accent); }
+
+body.dark-mode .fa-gal-view-label { color: var(--fa-dark-text-muted); }
+body.dark-mode .fa-gal-view-switch-track { background: var(--fa-dark-bg-alt); border-color: var(--fa-dark-border); }
+body.dark-mode .fa-gal-view-switch-thumb { background: var(--fa-dark-accent); }
+
+/* Meta bar + grid cards */
+body.dark-mode .fa-gal-meta-bar { color: var(--fa-dark-text-muted); border-color: var(--fa-dark-border); }
+body.dark-mode .fa-gal-meta-bar strong { color: var(--fa-dark-text); }
+
+body.dark-mode .fa-gal-card { background: var(--fa-dark-bg-alt); border-color: var(--fa-dark-border); box-shadow: 0 10px 26px rgba(0,0,0,.4); }
+body.dark-mode .fa-gal-card-media { background: var(--fa-dark-bg-deep); }
+body.dark-mode .fa-gal-card-overlay { background: rgba(6,13,7,.55); }
+body.dark-mode .fa-gal-view-btn { background: rgba(228, 232, 221, .9); color: #0c2013; }
+body.dark-mode .fa-gal-card-tag { color: var(--fa-dark-accent); background: rgba(156, 175, 136, .15); }
+body.dark-mode .fa-gal-card-title { color: var(--fa-dark-text); }
+body.dark-mode .fa-gal-card-code { color: var(--fa-dark-text-muted); }
+body.dark-mode .fa-gal-ribbon { background: var(--fa-dark-gold); color: #0c2013; }
+
+body.dark-mode .fa-gal-empty { color: var(--fa-dark-text-muted); }
+body.dark-mode .fa-gal-empty-code { color: var(--fa-dark-gold); }
+
+body.dark-mode .fa-gal-loadmore-btn,
+body.dark-mode .fa-btn-ghost { color: var(--fa-dark-accent); border-color: var(--fa-dark-accent); }
+body.dark-mode .fa-gal-loadmore-btn:hover,
+body.dark-mode .fa-btn-ghost:hover { background: var(--fa-dark-accent); color: #0c2013; }
+
+/* =====================================================
+   CONTACT PAGE
+   ===================================================== */
+body.dark-mode .fa-gallery-hero { background: rgba(6,13,7,.55); }
+/* The section wrapper (tablet/flip-cards/map/social) had its own light
+   background from contact.css, so dark-mode text was landing on a pale
+   background almost invisible — force the page-level dark background here. */
+body.dark-mode .fa-contact-grid-section { background: var(--fa-dark-bg); }
+body.dark-mode .fa-page-subtitle,
+body.dark-mode .fa-eyebrow,
+body.dark-mode .fa-sec-tag { color: rgba(228, 232, 221, .75); }
+body.dark-mode .fa-section-head h2 { color: var(--fa-dark-text); }
+body.dark-mode .fa-section-head p { color: var(--fa-dark-text-muted); }
+
+/* Tablet widget shell */
+body.dark-mode .fa-tablet { background: var(--fa-dark-bg-alt); border-color: var(--fa-dark-border); box-shadow: 0 20px 50px rgba(0,0,0,.55); }
+body.dark-mode .fa-tablet-statusbar,
+body.dark-mode .fa-tablet-tabbar { background: var(--fa-dark-bg-deep); color: var(--fa-dark-text); border-color: var(--fa-dark-border); }
+body.dark-mode .fa-tab { color: var(--fa-dark-text-muted); }
+body.dark-mode .fa-tab.active { color: var(--fa-dark-text); }
+body.dark-mode .fa-tablet-screen { background: var(--fa-dark-bg-alt); color: var(--fa-dark-text); }
+body.dark-mode .fa-tablet-homebar { background: rgba(156, 175, 136, .3); }
+
+/* Preferred-contact pill toggle (Email / Phone) */
+body.dark-mode .fa-pref-label { color: var(--fa-dark-text-muted); }
+body.dark-mode .fa-pill { background: var(--fa-dark-bg-deep); border-color: var(--fa-dark-border); color: var(--fa-dark-text-muted); }
+body.dark-mode .fa-pill:hover { border-color: var(--fa-dark-accent); color: var(--fa-dark-text); }
+body.dark-mode .fa-pill.active { background: var(--fa-dark-accent); border-color: var(--fa-dark-accent); color: #0c2013; }
+
+/* Form fields, icons, validation + submit states */
+body.dark-mode .form-control, body.dark-mode .fa-input, body.dark-mode .fa-textarea {
+  background-color: var(--fa-dark-bg-deep); border-color: var(--fa-dark-border); color: var(--fa-dark-text);
+}
+body.dark-mode .form-control::placeholder, body.dark-mode .fa-input::placeholder { color: rgba(228, 232, 221, .35); }
+body.dark-mode .form-control:focus, body.dark-mode .fa-input:focus {
+  background-color: var(--fa-dark-bg-deep); color: var(--fa-dark-text);
+  border-color: var(--fa-dark-accent); box-shadow: 0 0 0 .2rem rgba(156, 175, 136, .25);
+}
+body.dark-mode .fa-form-label { color: var(--fa-dark-text); }
+body.dark-mode .fa-input-icon { color: var(--fa-dark-text-muted); }
+body.dark-mode .fa-valid-icon { color: var(--fa-dark-accent); }
+body.dark-mode .fa-char-count { color: var(--fa-dark-text-muted); }
+body.dark-mode .fa-error { color: #e08a7d; }
+body.dark-mode .fa-submit-btn { box-shadow: 0 10px 24px rgba(0,0,0,.45); }
+body.dark-mode .fa-form-success { background: var(--fa-dark-bg-alt); border-color: var(--fa-dark-border); color: var(--fa-dark-text); }
+body.dark-mode .fa-form-success i { color: var(--fa-dark-accent); }
+body.dark-mode .fa-form-success p { color: var(--fa-dark-text-muted); }
+
+/* Contact info list (tablet "Contact Info" tab) */
+body.dark-mode .fa-info-item { background: var(--fa-dark-bg-alt); border-color: var(--fa-dark-border); }
+body.dark-mode .fa-info-item h5 { color: var(--fa-dark-text); }
+body.dark-mode .fa-info-item p, body.dark-mode .fa-info-item a { color: var(--fa-dark-text-muted); }
+
+/* Office hours table + open/closed status badges */
+body.dark-mode .fa-hours-grid { background: var(--fa-dark-bg-deep); }
+body.dark-mode .fa-hours-row { color: var(--fa-dark-text-muted); border-color: var(--fa-dark-border); }
+body.dark-mode .fa-hours-row.fa-today { background: rgba(156, 175, 136, .1); color: var(--fa-dark-text); }
+body.dark-mode .fa-status-badge,
+body.dark-mode .fa-day-badge { background: rgba(156, 175, 136, .15); color: var(--fa-dark-text-muted); border-color: var(--fa-dark-border); }
+body.dark-mode .fa-status-badge.fa-open,
+body.dark-mode .fa-day-badge.fa-badge-open { background: rgba(156, 175, 136, .22); color: var(--fa-dark-accent); }
+body.dark-mode .fa-status-badge.fa-closed,
+body.dark-mode .fa-day-badge.fa-badge-closed { background: rgba(224, 108, 94, .16); color: #e08a7d; }
+
+/* Flip cards ("Reach Us Directly"): front bg/border already covered by the
+   global .fa-flip-front rule above — add the h4 header used on this page,
+   the hint text, icon, and the back face (not styled anywhere yet) */
+body.dark-mode .fa-flip-front h4 { color: var(--fa-dark-text); }
+body.dark-mode .fa-flip-hint { color: var(--fa-dark-text-muted); }
+body.dark-mode .fa-quick-icon { color: var(--fa-dark-accent); }
+body.dark-mode .fa-flip-back { background: var(--fa-dark-bg-deep); border-color: var(--fa-dark-border); color: var(--fa-dark-text); }
+body.dark-mode .fa-flip-back p,
+body.dark-mode .fa-flip-back a { color: var(--fa-dark-text-muted); }
+body.dark-mode .fa-copy-btn { color: var(--fa-dark-accent); border-color: var(--fa-dark-border); }
+body.dark-mode .fa-copy-btn:hover { background: var(--fa-dark-accent); color: #0c2013; }
+
+/* Map card + roadmap/satellite toggle */
+body.dark-mode .fa-map-wrap { background: var(--fa-dark-bg-alt); border-color: var(--fa-dark-border); }
+body.dark-mode .fa-map-header { background: var(--fa-dark-bg-deep); color: var(--fa-dark-text); }
+body.dark-mode .fa-map-glass { background: rgba(6,13,7,.85); color: var(--fa-dark-text); }
+/* The "Campus Pin" card's heading and paragraph inherit contact.css's
+   light-mode dark-green text (meant to sit on a pale glass card), which
+   the parent color above can't override on its own — style them directly. */
+body.dark-mode .fa-map-glass h6 { color: var(--fa-dark-text); }
+body.dark-mode .fa-map-glass p { color: var(--fa-dark-text-muted); }
+/* Same story for the "Get Directions" button: dark-green text/border on
+   a near-black card was unreadable, so give it the sage accent instead. */
+body.dark-mode .fa-map-directions { color: var(--fa-dark-accent); border-color: var(--fa-dark-accent); }
+body.dark-mode .fa-map-directions:hover { background: var(--fa-dark-accent); color: #0c2013; }
+body.dark-mode .fa-map-toggle { background: var(--fa-dark-bg-deep); }
+body.dark-mode .fa-map-btn { color: var(--fa-dark-text-muted); }
+body.dark-mode .fa-map-btn.active { background: var(--fa-dark-accent); color: #0c2013; }
+
+body.dark-mode .fa-scroll-progress { background: var(--fa-dark-gold); }
