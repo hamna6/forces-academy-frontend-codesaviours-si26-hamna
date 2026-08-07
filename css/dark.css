@@ -1,10 +1,5 @@
 /* =====================================================
    FORCES ACADEMY — DARK MODE OVERRIDES
-   Load LAST (after style.css / page CSS) so it wins the
-   cascade without !important everywhere.
-   js/main.js toggles `dark-mode` on <body> + saves to
-   localStorage. Every rule is scoped under body.dark-mode,
-   so light mode is untouched.
    ===================================================== */
 
 :root {
