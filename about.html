@@ -8,6 +8,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Us — Forces Academy Faisalabad</title>
 
+    <!-- ==================== SEO META TAGS ==================== -->
+    <meta name="description" content="Learn about Forces Academy Faisalabad's history, mission, vision, and leadership team — a trusted institution for disciplined academic and forces preparation." />
+    <meta name="keywords" content="About Forces Academy Faisalabad, forces academy history, mission vision, leadership team, ISSB preparation Faisalabad, army academy staff" />
+    <meta name="author" content="Forces Academy Faisalabad" />
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="About Us — Forces Academy Faisalabad" />
+    <meta property="og:description" content="Discover the story, mission, vision, and leadership behind Forces Academy Faisalabad's disciplined approach to education and forces preparation." />
+    <meta property="og:image" content="images/logo.png" />
+    <meta property="og:url" content="https://www.forcesacademy.edu.pk/about.html" />
+    <meta property="og:site_name" content="Forces Academy Faisalabad" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="About Us — Forces Academy Faisalabad" />
+    <meta name="twitter:description" content="Discover the story, mission, vision, and leadership behind Forces Academy Faisalabad's disciplined approach to education and forces preparation." />
+    <meta name="twitter:image" content="images/logo.png" />
+
+    <!-- Favicon (uses your existing logo directly — no extra files needed) -->
+    <link rel="icon" type="image/png" href="images/logo.png" />
+    <link rel="apple-touch-icon" href="images/logo.png" />
+    <!-- ================== END SEO META TAGS ==================== -->
+
     <!-- Bootstrap 5 CSS -->
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
@@ -31,6 +55,8 @@
     <!-- Our custom CSS -->
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/about.css" />
+    <!-- Dark mode overrides — must load LAST so it can override everything above -->
+    <link rel="stylesheet" href="css/dark.css" />
 </head>
 <body class="fa-about-page">
 
@@ -41,8 +67,8 @@
             <a class="navbar-brand fa-brand" href="index.html">
                 <span class="fa-crest-ring">
                     <img
-                        src="images/LOGO.png"
-                        alt="Forces Academy crest"
+                        src="images/logo.png"
+                        alt="Forces Academy crest logo"
                         class="fa-crest"
                     />
                 </span>
@@ -86,6 +112,32 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+                        <button
+                            type="button"
+                            id="faThemeToggle"
+                            class="fa-theme-toggle"
+                            aria-pressed="false"
+                            aria-label="Toggle dark mode"
+                        >
+                            <!-- shown in LIGHT mode: click to go dark -->
+                            <svg class="fa-theme-icon fa-theme-icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                            </svg>
+                            <!-- shown in DARK mode: click to go light -->
+                            <svg class="fa-theme-icon fa-theme-icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="5"/>
+                                <line x1="12" y1="1" x2="12" y2="3"/>
+                                <line x1="12" y1="21" x2="12" y2="23"/>
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                                <line x1="1" y1="12" x2="3" y2="12"/>
+                                <line x1="21" y1="12" x2="23" y2="12"/>
+                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                            </svg>
+                        </button>
                     </li>
                     <li class="nav-item ms-lg-4 mt-3 mt-lg-0">
                         <a href="portal.html" class="fa-clearance-badge">
@@ -190,15 +242,12 @@
                                 </div>
                             </div>
 
-                            <!-- SLIDE 3 — Image slide
-                                 Replace the src below with your own image path,
-                                 e.g. src="images/campus-photo.jpg"
-                            -->
+                            <!-- SLIDE 3 — Image slide -->
                             <div class="carousel-item">
                                 <div class="fa-carousel-slide fa-slide-image-wrap">
                                     <img
                                         src="images/army.png"
-                                        alt="Forces Academy Faisalabad"
+                                        alt="Cadets and instructors at Forces Academy Faisalabad"
                                         class="fa-slide-img"
                                     />
                                     <span class="fa-slide-overlay" aria-hidden="true"></span>
@@ -261,7 +310,6 @@
                     <span class="fa-frame-corner br" aria-hidden="true"></span>
 
                     <div class="fa-history-photo">
-                        <!-- Replace src with your own campus image, e.g. images/campus-photo.jpg -->
                         <img
                             src="images/pak.png"
                             alt="Forces Academy Faisalabad campus"
@@ -457,7 +505,7 @@
                     <div class="fa-footer-col fa-footer-brand-col">
                         <a href="index.html" class="fa-footer-brand">
                             <span class="fa-crest-ring fa-footer-crest-ring">
-                                <img src="images/LOGO.png" alt="Forces Academy crest" class="fa-crest" />
+                                <img src="images/logo.png" alt="Forces Academy crest logo" class="fa-crest" />
                             </span>
                             <span class="fa-footer-brand-text">
                                 FORCES ACADEMY<br />
@@ -581,6 +629,10 @@
 
     <!-- Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Main site JS (handles theme toggle; counter/slider sections safely no-op — this page has neither) -->
+    <script src="js/main.js"></script>
+
     <script>
         document.getElementById('faYear').textContent = new Date().getFullYear();
 

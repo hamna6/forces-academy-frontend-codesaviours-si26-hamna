@@ -8,6 +8,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Forces Academy Faisalabad</title>
 
+    <!-- ==================== SEO META TAGS ==================== -->
+    <meta name="description" content="Forces Academy Faisalabad is the city's premier academy for forces preparation, offering expert-led courses, ISSB coaching, and disciplined mentorship since 2011." />
+    <meta name="keywords" content="Forces Academy Faisalabad, ISSB preparation, PMA long course, army academy Faisalabad, forces coaching, cadet training, PAF GD Pilot, Naval Academy prep, forces academy Pakistan" />
+    <meta name="author" content="Forces Academy Faisalabad" />
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Forces Academy Faisalabad" />
+    <meta property="og:description" content="Excellence in education, preparing tomorrow's leaders today. Explore courses, admissions, and results at Forces Academy Faisalabad." />
+    <meta property="og:image" content="images/logo.png" />
+    <meta property="og:url" content="https://www.forcesacademy.edu.pk/" />
+    <meta property="og:site_name" content="Forces Academy Faisalabad" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Forces Academy Faisalabad" />
+    <meta name="twitter:description" content="Excellence in education, preparing tomorrow's leaders today. Explore courses, admissions, and results at Forces Academy Faisalabad." />
+    <meta name="twitter:image" content="images/logo.png" />
+
+    <!-- Favicon (uses your existing logo directly — no extra files needed) -->
+    <link rel="icon" type="image/png" href="images/logo.png" />
+    <link rel="apple-touch-icon" href="images/logo.png" />
+    <!-- ================== END SEO META TAGS ==================== -->
+
     <!-- Bootstrap 5 CSS -->
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
@@ -26,6 +50,8 @@
     <link rel="stylesheet" href="css/style.css" />
     <!-- Home page add-ons: stats counter + testimonials -->
     <link rel="stylesheet" href="css/home.css" />
+    <!-- Dark mode overrides — must load LAST so it can override everything above -->
+    <link rel="stylesheet" href="css/dark.css" />
 </head>
 <body>
 
@@ -36,8 +62,8 @@
             <a class="navbar-brand fa-brand" href="index.html">
                 <span class="fa-crest-ring">
                     <img
-                        src="images/LOGO.png"
-                        alt="Forces Academy crest"
+                        src="images/logo.png"
+                        alt="Forces Academy crest logo"
                         class="fa-crest"
                     />
                 </span>
@@ -82,7 +108,33 @@
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact</a>
                     </li>
-                    <li class="nav-item ms-lg-4 mt-3 mt-lg-0">
+                    <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+                        <button
+                            type="button"
+                            id="faThemeToggle"
+                            class="fa-theme-toggle"
+                            aria-pressed="false"
+                            aria-label="Toggle dark mode"
+                        >
+                            <!-- shown in LIGHT mode: click to go dark -->
+                            <svg class="fa-theme-icon fa-theme-icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                            </svg>
+                            <!-- shown in DARK mode: click to go light -->
+                            <svg class="fa-theme-icon fa-theme-icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="5"/>
+                                <line x1="12" y1="1" x2="12" y2="3"/>
+                                <line x1="12" y1="21" x2="12" y2="23"/>
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                                <line x1="1" y1="12" x2="3" y2="12"/>
+                                <line x1="21" y1="12" x2="23" y2="12"/>
+                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                            </svg>
+                        </button>
+                    </li>
+                    <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
                         <a href="portal.html" class="fa-clearance-badge">
                             <span class="fa-clearance-dot"></span>
                             Student Portal
@@ -116,9 +168,9 @@
         </div>
 
         <div class="fa-hero-media">
-            <div class="fa-hero-img"></div>
-            <div class="fa-hero-img fa-hero-slide-2"></div>
-            <div class="fa-hero-img fa-hero-slide-3"></div>
+            <div class="fa-hero-img" role="img" aria-label="Forces Academy cadets in training"></div>
+            <div class="fa-hero-img fa-hero-slide-2" role="img" aria-label="Forces Academy campus and instructors"></div>
+            <div class="fa-hero-img fa-hero-slide-3" role="img" aria-label="Forces Academy cadets during physical training"></div>
             <div class="fa-hero-overlay"></div>
         </div>
 
@@ -330,7 +382,7 @@
                     <div class="fa-footer-col fa-footer-brand-col">
                         <a href="index.html" class="fa-footer-brand">
                             <span class="fa-crest-ring fa-footer-crest-ring">
-                                <img src="images/LOGO.png" alt="Forces Academy crest" class="fa-crest" />
+                                <img src="images/logo.png" alt="Forces Academy crest logo" class="fa-crest" />
                             </span>
                             <span class="fa-footer-brand-text">
                                 FORCES ACADEMY<br />

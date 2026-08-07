@@ -4,9 +4,59 @@
    2) Spotlight cursor glow + subtle tilt on stat cards
    3) Floating back-to-top button (appears after 300px scroll)
    4) Peel-off testimonials slider (autoplay + progress bar + manual controls)
+   5) Dark / light mode toggle (persists via localStorage)
    ===================================================== */
 
 document.addEventListener('DOMContentLoaded', function () {
+
+  /* ---------------------------------------------------
+     0) DARK MODE TOGGLE
+     - Reads saved preference from localStorage on load
+     - Toggles a `dark-mode` class on <body>
+     - Updates the button's pressed state / icon via CSS
+  --------------------------------------------------- */
+  const THEME_KEY = 'fa-theme';
+  const themeToggleBtn = document.getElementById('faThemeToggle');
+
+  function applyTheme(theme) {
+    if (theme === 'dark') {
+      document.body.classList.add('dark-mode');
+      if (themeToggleBtn) themeToggleBtn.setAttribute('aria-pressed', 'true');
+    } else {
+      document.body.classList.remove('dark-mode');
+      if (themeToggleBtn) themeToggleBtn.setAttribute('aria-pressed', 'false');
+    }
+  }
+
+  // Determine initial theme: saved preference > system preference > light
+  let savedTheme = null;
+  try {
+    savedTheme = window.localStorage.getItem(THEME_KEY);
+  } catch (e) {
+    // localStorage unavailable (privacy mode, etc.) — fall back gracefully
+    savedTheme = null;
+  }
+
+  if (savedTheme === 'dark' || savedTheme === 'light') {
+    applyTheme(savedTheme);
+  } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    applyTheme('dark');
+  } else {
+    applyTheme('light');
+  }
+
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', function () {
+      const isDark = document.body.classList.contains('dark-mode');
+      const nextTheme = isDark ? 'light' : 'dark';
+      applyTheme(nextTheme);
+      try {
+        window.localStorage.setItem(THEME_KEY, nextTheme);
+      } catch (e) {
+        // ignore write failures (e.g. storage disabled)
+      }
+    });
+  }
 
   /* ---------------------------------------------------
      1) STATS COUNTER + ENTRANCE ANIMATION

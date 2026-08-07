@@ -7,7 +7,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Results | Forces Academy Faisalabad</title>
+<!-- ==================== SEO META TAGS ==================== -->
+<meta name="description" content="View student results at Forces Academy Faisalabad. Check academic performance, marks, grades, and examination results for Matric, FSc, ICS, and entry test preparation programs." />
 
+<meta name="keywords" content="Forces Academy Faisalabad results, student results, exam results, marks, grades, Matric results, FSc results, ICS results, academic performance, Forces Academy" />
+
+<meta name="author" content="Forces Academy Faisalabad" />
+
+<!-- Open Graph / Social Sharing -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Results — Forces Academy Faisalabad" />
+<meta property="og:description" content="Check student examination results, marks, grades, and academic performance at Forces Academy Faisalabad." />
+<meta property="og:image" content="images/logo.png" />
+<meta property="og:url" content="https://www.forcesacademy.edu.pk/results.html" />
+<meta property="og:site_name" content="Forces Academy Faisalabad" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Results — Forces Academy Faisalabad" />
+<meta name="twitter:description" content="Check student examination results, marks, grades, and academic performance at Forces Academy Faisalabad." />
+<meta name="twitter:image" content="images/logo.png" />
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="images/logo.png" />
+<link rel="apple-touch-icon" href="images/logo.png" />
+<!-- ================= END SEO META TAGS ================= -->
     <!-- Bootstrap 5 CSS -->
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
@@ -26,6 +50,90 @@
     <link rel="stylesheet" href="css/style.css" />
     <!-- Results page CSS -->
     <link rel="stylesheet" href="css/results.css" />
+    <!-- Dark mode overrides — must load LAST so it can override everything above -->
+    <link rel="stylesheet" href="css/dark.css" />
+
+    <!-- Results-page-specific dark mode rules (results.css classes aren't covered by the shared dark.css yet) -->
+    <style>
+        body.dark-mode .fa-res-header { background-color: var(--fa-dark-bg-deep); }
+        /* The record-sheet line texture is drawn in a light color for light
+           mode; in dark mode it reads as harsh white streaks across the hero,
+           so we switch it off entirely rather than just dimming it. */
+        body.dark-mode .fa-res-header-texture {
+            background-image: none !important;
+            opacity: 0 !important;
+        }
+        body.dark-mode .fa-res-eyebrow { color: var(--fa-dark-accent); }
+        body.dark-mode .fa-res-title { color: var(--fa-dark-text); }
+        body.dark-mode .fa-res-subtitle { color: var(--fa-dark-text-muted); }
+        body.dark-mode .fa-res-breadcrumb { color: var(--fa-dark-text-muted); }
+        body.dark-mode .fa-res-breadcrumb a { color: var(--fa-dark-accent); }
+
+        body.dark-mode .fa-res-filter-wrap { background-color: var(--fa-dark-bg); }
+        body.dark-mode .fa-res-filter-card {
+            background: var(--fa-dark-bg-alt);
+            border-color: var(--fa-dark-border);
+            box-shadow: 0 14px 30px rgba(0,0,0,.4);
+        }
+        body.dark-mode .fa-res-filter-title { color: var(--fa-dark-text); }
+        body.dark-mode .fa-res-select-group label { color: var(--fa-dark-text-muted); }
+        body.dark-mode .fa-res-select,
+        body.dark-mode .fa-res-input {
+            background-color: var(--fa-dark-bg-deep);
+            border-color: var(--fa-dark-border);
+            color: var(--fa-dark-text);
+        }
+        body.dark-mode .fa-res-input::placeholder { color: rgba(228, 232, 221, .35); }
+        body.dark-mode .fa-res-select:focus,
+        body.dark-mode .fa-res-input:focus {
+            background-color: var(--fa-dark-bg-deep);
+            color: var(--fa-dark-text);
+            border-color: var(--fa-dark-accent);
+            box-shadow: 0 0 0 .2rem rgba(156, 175, 136, .25);
+        }
+        body.dark-mode .fa-res-filter-btn { background: var(--fa-dark-accent); color: #0c2013; border-color: var(--fa-dark-accent); }
+        body.dark-mode .fa-res-filter-btn:hover { background: transparent; color: var(--fa-dark-text); }
+
+        body.dark-mode .fa-res-stats-section { background-color: var(--fa-dark-bg); }
+        body.dark-mode .fa-res-stat-card {
+            background: var(--fa-dark-bg-alt);
+            border-color: var(--fa-dark-border);
+            box-shadow: 0 10px 26px rgba(0,0,0,.4);
+        }
+        body.dark-mode .fa-res-stat-icon { color: var(--fa-dark-accent); }
+        body.dark-mode .fa-res-stat-num { color: var(--fa-dark-gold); }
+        body.dark-mode .fa-res-stat-unit { color: var(--fa-dark-gold); }
+        body.dark-mode .fa-res-stat-label { color: var(--fa-dark-text-muted); }
+
+        body.dark-mode .fa-res-table-section { background-color: var(--fa-dark-bg); }
+        body.dark-mode .fa-res-table-card {
+            background: var(--fa-dark-bg-alt);
+            border-color: var(--fa-dark-border);
+            box-shadow: 0 14px 34px rgba(0,0,0,.45);
+        }
+        body.dark-mode .fa-res-table-kicker { color: var(--fa-dark-accent); }
+        body.dark-mode .fa-res-table-title { color: var(--fa-dark-text); }
+        body.dark-mode .fa-res-stamp { color: var(--fa-dark-gold); border-color: var(--fa-dark-gold); }
+
+        body.dark-mode .fa-res-table {
+            --bs-table-bg: var(--fa-dark-bg-alt);
+            --bs-table-color: var(--fa-dark-text);
+            background-color: var(--fa-dark-bg-alt);
+            color: var(--fa-dark-text);
+        }
+        body.dark-mode .fa-res-table thead th { color: var(--fa-dark-text); border-color: rgba(156, 175, 136, .2); }
+        body.dark-mode .fa-res-table tbody td { color: var(--fa-dark-text); border-color: rgba(156, 175, 136, .12); }
+        body.dark-mode .fa-res-roll { color: var(--fa-dark-accent); }
+        body.dark-mode .fa-res-marks span { color: var(--fa-dark-text-muted); }
+
+        body.dark-mode .fa-res-notice-section { background-color: var(--fa-dark-bg); }
+        body.dark-mode .fa-res-notice {
+            background: var(--fa-dark-bg-alt);
+            border-color: var(--fa-dark-border);
+            color: var(--fa-dark-text-muted);
+        }
+        body.dark-mode .fa-res-notice-icon { color: var(--fa-dark-accent); }
+    </style>
 </head>
 <body>
 
@@ -82,6 +190,32 @@
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact</a>
                     </li>
+                    <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+                        <button
+                            type="button"
+                            id="faThemeToggle"
+                            class="fa-theme-toggle"
+                            aria-pressed="false"
+                            aria-label="Toggle dark mode"
+                        >
+                            <!-- shown in LIGHT mode: click to go dark -->
+                            <svg class="fa-theme-icon fa-theme-icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                            </svg>
+                            <!-- shown in DARK mode: click to go light -->
+                            <svg class="fa-theme-icon fa-theme-icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="5"/>
+                                <line x1="12" y1="1" x2="12" y2="3"/>
+                                <line x1="12" y1="21" x2="12" y2="23"/>
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                                <line x1="1" y1="12" x2="3" y2="12"/>
+                                <line x1="21" y1="12" x2="23" y2="12"/>
+                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                            </svg>
+                        </button>
+                    </li>
                     <li class="nav-item ms-lg-4 mt-3 mt-lg-0">
                         <a href="portal.html" class="fa-clearance-badge">
                             <span class="fa-clearance-dot"></span>
@@ -134,6 +268,17 @@
 
                 <div class="fa-res-filter-controls">
                     <div class="fa-res-select-group">
+                        <label for="filterRoll">Roll No</label>
+                        <input
+                            type="text"
+                            id="filterRoll"
+                            class="form-control fa-res-input"
+                            placeholder="e.g. CDT-0142"
+                            autocomplete="off"
+                        />
+                    </div>
+
+                    <div class="fa-res-select-group">
                         <label for="filterClass">Class</label>
                         <select id="filterClass" class="form-select fa-res-select">
                             <option selected>All Classes</option>
@@ -155,7 +300,7 @@
                         </select>
                     </div>
 
-                    <button type="button" class="fa-res-filter-btn">
+                    <button type="button" id="filterApplyBtn" class="fa-res-filter-btn">
                         <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
                             <circle cx="11" cy="11" r="7"/>
                             <path d="M21 21l-4.3-4.3" stroke-linecap="round"/>
@@ -199,11 +344,9 @@
 
                 <div class="col-6 col-lg-3">
                     <div class="fa-res-stat-card" style="--d:0.2s">
-                        <span class="fa-res-stat-icon">
-                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8">
-                                <path d="M12 2l2.4 4.9L20 8l-4 4 1 5.6L12 15l-5 2.6 1-5.6-4-4 5.6-1.1z" stroke-linejoin="round"/>
-                            </svg>
-                        </span>
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <path d="M12 2l2.4 4.9L20 8l-4 4 1 5.6L12 15l-5 2.6 1-5.6-4-4 5.6-1.1z" stroke-linejoin="round"/>
+                        </svg>
                         <span class="fa-res-stat-num">128</span>
                         <span class="fa-res-stat-label">Distinctions</span>
                     </div>
@@ -242,7 +385,19 @@
                 </div>
 
                 <div class="table-responsive fa-res-table-scroll">
-                    <table class="table fa-res-table align-middle mb-0">
+                    <table class="table fa-res-table align-middle mb-0" id="resultsTable">
+                        <!-- colgroup locks each column's width to its header, so
+                             table-layout: fixed (in results.css) keeps every
+                             row's cells aligned under the correct heading no
+                             matter how long the content in a given cell is. -->
+                        <colgroup>
+                            <col style="width: 13%;">
+                            <col style="width: 20%;">
+                            <col style="width: 19%;">
+                            <col style="width: 18%;">
+                            <col style="width: 15%;">
+                            <col style="width: 15%;">
+                        </colgroup>
                         <thead>
                             <tr>
                                 <th>Roll No</th>
@@ -353,6 +508,10 @@
                         </tbody>
                     </table>
                 </div>
+
+                <p class="fa-res-no-results" id="noResultsMsg" style="display:none; text-align:center; padding:1.5rem; margin:0;">
+                    No records match that roll number / class combination.
+                </p>
 
             </div>
         </div>
@@ -510,8 +669,46 @@
 
     <!-- Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Main site JS (handles theme toggle; counter/slider sections safely no-op — this page has neither) -->
+    <script src="js/main.js"></script>
+
     <script>
         document.getElementById('faYear').textContent = new Date().getFullYear();
+
+        // Roll No / Class filtering for the results table
+        (function () {
+            var rollInput   = document.getElementById('filterRoll');
+            var classSelect = document.getElementById('filterClass');
+            var applyBtn    = document.getElementById('filterApplyBtn');
+            var rows         = document.querySelectorAll('#resultsTable tbody tr');
+            var noResultsMsg = document.getElementById('noResultsMsg');
+
+            function applyFilters() {
+                var roll = rollInput.value.trim().toLowerCase();
+                var cls = classSelect.value;
+                var visibleCount = 0;
+
+                rows.forEach(function (row) {
+                    var rowRoll = row.querySelector('.fa-res-roll').textContent.trim().toLowerCase();
+                    var rowClass = row.children[2].textContent.trim();
+
+                    var matchesRoll = roll === '' || rowRoll.indexOf(roll) !== -1;
+                    var matchesClass = cls === 'All Classes' || rowClass === cls;
+
+                    var isVisible = matchesRoll && matchesClass;
+                    row.style.display = isVisible ? '' : 'none';
+                    if (isVisible) visibleCount++;
+                });
+
+                noResultsMsg.style.display = visibleCount === 0 ? '' : 'none';
+            }
+
+            applyBtn.addEventListener('click', applyFilters);
+            rollInput.addEventListener('keyup', function (e) {
+                if (e.key === 'Enter') applyFilters();
+            });
+        })();
     </script>
 </body>
 </html>
