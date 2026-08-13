@@ -1,9 +1,6 @@
 /* =====================================================
-   FORCES ACADEMY – HOME PAGE ADD-ONS (v3)
-   Stats Counter + Peel-Off Testimonials Slider
-   Uses the same tokens as css/style.css
+   FORCES ACADEMY – HOME PAGE ADD-ONS (v4)
    ===================================================== */
-
 :root {
   --fa-green: #16331f;
   --fa-green-dark: #0c2013;
@@ -34,12 +31,10 @@ html {
   overflow: hidden;
 }
 
-/* Grid lines removed — element kept in markup but not rendered */
 .fa-counters-grid-bg {
   display: none;
 }
 
-/* Two soft glowing orbs for depth (green tones only, no yellow) */
 .fa-counters::after {
   content: '';
   position: absolute;
@@ -302,7 +297,6 @@ html {
   margin: 0 auto;
 }
 
-/* Larger slider: more width and height */
 .fa-slider {
   position: relative;
   z-index: 1;
@@ -346,7 +340,6 @@ html {
   transition: transform 0.25s ease;
 }
 
-/* corner curl hint, always present, brightens on peel */
 .fa-slide::after {
   content: '';
   position: absolute;
@@ -573,7 +566,6 @@ html {
   box-shadow: 0 0 10px rgba(156, 175, 136, 0.6);
 }
 
-/* Autoplay progress bar */
 .fa-slider-progress {
   width: 140px;
   height: 3px;
@@ -619,9 +611,224 @@ html {
   .fa-testimonials::before,
   .fa-testimonials::after,
   .fa-counters::after,
+  .fa-announcements::after,
+  .fa-announce-card:hover::after,
   .fa-slider-progress-bar.fa-progress-run {
     animation: none !important;
   }
+}
+
+/* =========================================================
+   ANNOUNCEMENTS SECTION
+========================================================= */
+
+.fa-announcements {
+  background: linear-gradient(180deg, var(--fa-green) 0%, var(--fa-green-dark) 100%);
+  padding: 6rem 0;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.fa-announcements::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image:
+    radial-gradient(circle at 6% 12%, rgba(184, 232, 196, 0.16), transparent 40%),
+    radial-gradient(circle at 96% 88%, rgba(201, 162, 39, 0.16), transparent 42%);
+  animation: fa-orb-float 10s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.fa-announcements-head {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 3rem;
+}
+
+.fa-announcements-head .fa-section-eyebrow {
+  color: var(--fa-green-pale);
+  border-bottom-color: var(--fa-green-pale);
+}
+
+.fa-announcements-title {
+  font-size: clamp(1.7rem, 3.6vw, 2.4rem) !important;
+  margin-top: 0.6rem;
+  color: var(--fa-gold-light);
+}
+
+.fa-announcements-lead {
+  max-width: 32rem;
+  margin: 0 auto;
+  color: rgba(243, 239, 228, 0.78);
+}
+
+.fa-announcements-row {
+  position: relative;
+  z-index: 1;
+}
+
+.fa-announce-card {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  background:
+    radial-gradient(480px circle at var(--amx, 50%) var(--amy, 0%), rgba(201, 162, 39, 0.09), transparent 62%),
+    #ffffff;
+  border: 1px solid rgba(22, 51, 31, 0.1);
+  border-radius: 16px;
+  padding: 1.9rem 1.7rem 1.6rem;
+  box-shadow: 0 10px 26px rgba(12, 32, 19, 0.06);
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.fa-announce-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--fa-green-light), var(--fa-gold), var(--fa-green-light));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+  z-index: 2;
+}
+
+.fa-announce-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(115deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+  transform: skewX(-20deg);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.fa-announce-card:hover {
+  transform: translateY(-8px) scale(1.012);
+  border-color: rgba(63, 122, 82, 0.35);
+  box-shadow: 0 24px 46px rgba(12, 32, 19, 0.16);
+}
+
+.fa-announce-card:hover::before {
+  transform: scaleX(1);
+}
+
+.fa-announce-card:hover::after {
+  opacity: 1;
+  animation: fa-announce-shine 1s ease forwards;
+}
+
+@keyframes fa-announce-shine {
+  0%   { left: -60%; }
+  100% { left: 130%; }
+}
+
+.fa-announce-tag {
+  display: inline-block;
+  font-family: var(--fa-font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--fa-green-dark);
+  background: var(--fa-green-pale);
+  padding: 0.3rem 0.7rem;
+  border-radius: 20px;
+  margin-bottom: 0.9rem;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.fa-announce-card:hover .fa-announce-tag {
+  background: var(--fa-gold);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.fa-announce-date {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--fa-font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.4px;
+  color: rgba(12, 32, 19, 0.55);
+  margin-bottom: 0.7rem;
+}
+
+.fa-announce-date svg {
+  transition: transform 0.35s ease, color 0.35s ease;
+}
+
+.fa-announce-card:hover .fa-announce-date svg {
+  transform: rotate(-8deg) scale(1.1);
+  color: var(--fa-green-light);
+}
+
+.fa-announce-title {
+  font-family: var(--fa-font-display);
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: var(--fa-green-dark);
+  margin-bottom: 0.7rem;
+  line-height: 1.35;
+  transition: color 0.3s ease;
+}
+
+.fa-announce-card:hover .fa-announce-title {
+  color: var(--fa-green-light);
+}
+
+.fa-announce-desc {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: rgba(12, 32, 19, 0.72);
+  margin-bottom: 1.3rem;
+  flex-grow: 1;
+}
+
+.fa-announce-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--fa-font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: var(--fa-green);
+  text-decoration: none;
+  transition: color 0.25s ease, gap 0.25s ease;
+}
+
+.fa-announce-link svg {
+  transition: transform 0.25s ease;
+}
+
+.fa-announce-link:hover {
+  color: var(--fa-gold);
+  gap: 0.65rem;
+}
+
+.fa-announce-link:hover svg {
+  transform: translateX(3px);
+}
+
+@media (max-width: 767.98px) {
+  .fa-announcements { padding: 3.5rem 0; }
+  .fa-announce-card { padding: 1.6rem 1.3rem 1.4rem; }
 }
 
 /* =========================================================
@@ -645,7 +852,6 @@ html {
   z-index: 999;
   box-shadow: 0 10px 24px rgba(12, 32, 19, 0.32);
 
-  /* hidden by default; JS toggles .fa-visible after 300px scroll */
   opacity: 0;
   visibility: hidden;
   transform: translateY(16px);
