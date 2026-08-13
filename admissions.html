@@ -36,9 +36,30 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/admissions.css" />
+    
     <!-- Dark mode overrides — must load LAST so it can override everything above -->
     <link rel="stylesheet" href="css/dark.css" />
+    <!-- ==================== Enquiry form + subnav pill styling (compact) ==================== -->
+    <style>
+        .fa-adm-subnav a.fa-subnav-active { background: rgba(183,196,138,.18); border: 1px solid rgba(196,204,148,.55); color: #e8e6c9 !important; border-radius: 999px; padding: 6px 16px; transition: background .25s ease, border-color .25s ease; }
+
+        .fa-enquiry-wrap { max-width: 640px; margin: 2.5rem auto 0; background: #16301f; border: 1px solid rgba(196,204,148,.4); border-radius: 14px; padding: 2rem; text-align: left; box-shadow: 0 10px 30px rgba(10,20,14,.18); }
+        .fa-enquiry-wrap h3 { font-family: 'Oswald', sans-serif; color: #f2f0d8; letter-spacing: .03em; margin-bottom: .35rem; }
+        .fa-enquiry-wrap .fa-enquiry-sub { color: rgba(232,230,201,.75); font-size: .92rem; margin-bottom: 1.5rem; }
+        .fa-enquiry-wrap label { color: #e8e6c9; font-size: .85rem; font-weight: 500; margin-bottom: .3rem; display: block; }
+        .fa-enquiry-wrap .form-control, .fa-enquiry-wrap .form-select { background: rgba(255,255,255,.08); border: 1px solid rgba(196,204,148,.4); color: #f2f0d8; border-radius: 8px; padding: .6rem .85rem; }
+        .fa-enquiry-wrap .form-control::placeholder { color: rgba(242,240,216,.45); }
+        .fa-enquiry-wrap .form-control:focus, .fa-enquiry-wrap .form-select:focus { background: rgba(255,255,255,.12); border-color: #b7c48a; box-shadow: 0 0 0 .2rem rgba(183,196,138,.25); color: #f2f0d8; }
+        .fa-enquiry-wrap .form-select option { background: #16301f; color: #f2f0d8; }
+        .fa-enquiry-submit-btn { background: #b7c48a; border: 1px solid #b7c48a; color: #10201a; font-weight: 600; letter-spacing: .02em; border-radius: 999px; padding: .65rem 1.8rem; transition: opacity .2s ease; }
+        .fa-enquiry-submit-btn:hover:not(:disabled) { opacity: .9; }
+        .fa-enquiry-submit-btn:disabled { opacity: .6; cursor: not-allowed; }
+        .fa-enquiry-status { margin-top: 1rem; padding: .65rem 1rem; border-radius: 8px; font-size: .9rem; display: none; }
+        .fa-enquiry-status.fa-status-success { display: block; background: rgba(120,200,120,.15); border: 1px solid rgba(120,200,120,.5); color: #cdeecd; }
+        .fa-enquiry-status.fa-status-error { display: block; background: rgba(220,90,90,.15); border: 1px solid rgba(220,90,90,.5); color: #f5c7c7; }
+        .fa-enquiry-spinner { display: inline-block; width: 14px; height: 14px; border: 2px solid rgba(16,32,26,.35); border-top-color: #10201a; border-radius: 50%; animation: fa-spin .7s linear infinite; margin-right: 6px; vertical-align: -2px; }
+        @keyframes fa-spin { to { transform: rotate(360deg); } }
+    </style>
 </head>
 <body class="fa-admissions-page">
     <!-- ==================== NAVBAR ==================== -->
@@ -83,7 +104,7 @@
                         </button>
                     </li>
                     <li class="nav-item ms-lg-4 mt-3 mt-lg-0">
-                        <a href="portal.html" class="fa-clearance-badge">
+                         <a href="https://farhadlms.great-site.net/login.php" class="fa-clearance-badge">
                             <span class="fa-clearance-dot"></span>
                             Student Portal
                         </a>
@@ -145,7 +166,8 @@
             <a href="#eligibility" data-target="eligibility">02. Eligibility</a>
             <a href="#documents" data-target="documents">03. Documents</a>
             <a href="#fees" data-target="fees">04. Fee Structure</a>
-            <a href="#apply-cta" data-target="apply-cta">05. Apply Now</a>
+            <a href="#enquiry-form" data-target="enquiry-form">05. Enquiry Form</a>
+            <a href="#apply-cta" data-target="apply-cta">06. Apply Now</a>
         </div>
     </nav>
     <!-- ================== END TIMELINE NAV ================== -->
@@ -504,7 +526,59 @@
         </div>
     </section>
     <!-- ================== END SECTION 4 ================== -->
-    <!-- ==================== SECTION 5: APPLY NOW CTA ==================== -->
+    <!-- ==================== SECTION 5: ENQUIRY FORM ==================== -->
+    <section id="enquiry-form" class="fa-adm-section">
+        <div class="container">
+            <div class="text-center mb-5 fa-reveal">
+                <span class="fa-section-eyebrow">Get In Touch</span>
+                <h2 class="fa-section-title">Send Us an Enquiry</h2>
+                <p class="fa-section-lead mx-auto" style="max-width: 40rem;">Fill this in and our admissions team will get back to you within 48 hours.</p>
+            </div>
+
+            <div class="fa-enquiry-wrap fa-reveal">
+                <form id="enquiryForm" novalidate>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label for="enq_name">Full Name</label>
+                            <input type="text" class="form-control" id="enq_name" name="from_name" placeholder="e.g. Ali Raza" required />
+                        </div>
+                        <div class="col-md-6">
+                            <label for="enq_phone">Phone Number</label>
+                            <input type="tel" class="form-control" id="enq_phone" name="phone" placeholder="03XX-XXXXXXX" required />
+                        </div>
+                        <div class="col-md-6">
+                            <label for="enq_email">Email Address</label>
+                            <input type="email" class="form-control" id="enq_email" name="from_email" placeholder="you@example.com" required />
+                        </div>
+                        <div class="col-md-6">
+                            <label for="enq_course">Course of Interest</label>
+                            <select class="form-select" id="enq_course" name="course" required>
+                                <option value="" selected disabled>Select a course</option>
+                                <option value="FSc Pre-Medical">FSc Pre-Medical</option>
+                                <option value="FSc Pre-Engineering">FSc Pre-Engineering</option>
+                                <option value="Matric Science">Matric Science</option>
+                                <option value="Matric Arts">Matric Arts</option>
+                                <option value="Entry Test Preparation">Entry Test Preparation</option>
+                                <option value="Foundation & Bridge Course">Foundation &amp; Bridge Course</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <label for="enq_message">Message (optional)</label>
+                            <textarea class="form-control" id="enq_message" name="message" rows="3" placeholder="Tell us a bit about what you're looking for..."></textarea>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="fa-enquiry-submit-btn mt-4" id="enquirySubmitBtn">
+                        <span id="enquiryBtnText">Send Enquiry</span>
+                    </button>
+
+                    <div id="enquiryStatus" class="fa-enquiry-status" role="status" aria-live="polite"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- ================== END SECTION 5 ================== -->
+    <!-- ==================== SECTION 6: APPLY NOW CTA ==================== -->
     <section id="apply-cta" class="fa-adm-cta">
         <div class="fa-adm-cta-media">
             <div class="fa-hero-layer fa-hero-glow"></div>
@@ -515,12 +589,12 @@
             <h2>Seats Are Filling for the 2026 Session</h2>
             <p>Secure your place at Forces Academy today &mdash; enquiry takes less than two minutes.</p>
             <div class="fa-adm-cta-actions">
-                <a href="contact.html" class="fa-btn fa-btn-fill">Apply Now <i class="bi bi-arrow-right"></i></a>
+                <a href="#enquiry-form" class="fa-btn fa-btn-fill">Apply Now <i class="bi bi-arrow-right"></i></a>
                 <a href="tel:+9241111222333" class="fa-btn fa-btn-ghost"><i class="bi bi-telephone"></i> Call Admissions Office</a>
             </div>
         </div>
     </section>
-    <!-- ================== END SECTION 5 ================== -->
+    <!-- ================== END SECTION 6 ================== -->
     <!-- ==================== FOOTER ==================== -->
     <footer class="fa-footer">
         <div class="fa-footer-top">
@@ -596,9 +670,16 @@
     <a href="#admHero" class="fa-back-to-top" id="backToTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></a>
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- ==================== EmailJS SDK ==================== -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({ publicKey: "PJAnq1BOjIWiZV9y7" });
+        })();
+    </script>
     <!-- Main site JS (handles theme toggle; counter/slider sections safely no-op — this page has neither) -->
     <script src="js/main.js"></script>
-    <!-- Page scripts: year, reveal-on-scroll, subnav active state, back-to-top -->
+    <!-- Page scripts: year, reveal-on-scroll, subnav active state, back-to-top, enquiry form -->
     <script>
         document.getElementById('faYear').textContent = new Date().getFullYear();
         // Scroll-reveal
@@ -660,6 +741,45 @@
                 backToTop.classList.remove('fa-visible');
             }
         });
+
+        // ==================== Enquiry Form submission via EmailJS ====================
+        const enquiryForm = document.getElementById('enquiryForm');
+        const enquirySubmitBtn = document.getElementById('enquirySubmitBtn');
+        const enquiryBtnText = document.getElementById('enquiryBtnText');
+        const enquiryStatus = document.getElementById('enquiryStatus');
+
+        if (enquiryForm) {
+            enquiryForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                // Basic HTML5 validation check
+                if (!enquiryForm.checkValidity()) {
+                    enquiryForm.reportValidity();
+                    return;
+                }
+
+                enquirySubmitBtn.disabled = true;
+                enquiryBtnText.innerHTML = '<span class="fa-enquiry-spinner"></span> Sending...';
+                enquiryStatus.className = 'fa-enquiry-status';
+                enquiryStatus.textContent = '';
+
+                emailjs.sendForm('service_mjrlvzi', 'template_lsdo7zp', enquiryForm)
+                    .then(function () {
+                        enquiryStatus.className = 'fa-enquiry-status fa-status-success';
+                        enquiryStatus.textContent = 'Thank you! Your enquiry has been sent — our admissions team will contact you within 48 hours.';
+                        enquiryForm.reset();
+                    })
+                    .catch(function (error) {
+                        enquiryStatus.className = 'fa-enquiry-status fa-status-error';
+                        enquiryStatus.textContent = 'Sorry, something went wrong sending your enquiry. Please try again or call us directly.';
+                        console.error('EmailJS error:', error);
+                    })
+                    .finally(function () {
+                        enquirySubmitBtn.disabled = false;
+                        enquiryBtnText.textContent = 'Send Enquiry';
+                    });
+            });
+        }
     </script>
 </body>
 </html>
