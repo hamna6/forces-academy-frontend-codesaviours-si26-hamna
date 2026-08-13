@@ -1,5 +1,10 @@
 /* =====================================================
    FORCES ACADEMY — DARK MODE OVERRIDES
+   Load LAST (after style.css / page CSS) so it wins the
+   cascade without !important everywhere.
+   js/main.js toggles `dark-mode` on <body> + saves to
+   localStorage. Every rule is scoped under body.dark-mode,
+   so light mode is untouched.
    ===================================================== */
 
 :root {
@@ -109,6 +114,47 @@ body.dark-mode .fa-slider-arrow:hover { background: var(--fa-dark-accent); color
 body.dark-mode .fa-slider-dots button { background: rgba(156, 175, 136, .3); }
 body.dark-mode .fa-slider-dots button.fa-dot-active { background: var(--fa-dark-accent); }
 body.dark-mode .fa-slider-progress { background: rgba(156, 175, 136, .15); }
+
+/* =====================================================
+   ANNOUNCEMENTS (home page)
+   The section is now a dark green gradient in light mode too, so the
+   dark-mode toggle just pushes it to the deeper site-wide dark palette.
+   No grid overlay to override anymore — it was removed at the source.
+   ===================================================== */
+body.dark-mode .fa-announcements {
+  background-color: var(--fa-dark-bg) !important;
+  background-image: none !important;
+}
+body.dark-mode .fa-announcements::after {
+  background-image:
+    radial-gradient(circle at 6% 12%, rgba(156, 175, 136, 0.14), transparent 40%),
+    radial-gradient(circle at 96% 88%, rgba(224, 194, 94, 0.12), transparent 42%);
+}
+body.dark-mode .fa-announcements-title { color: var(--fa-dark-text); }
+body.dark-mode .fa-announcements-lead { color: var(--fa-dark-text-muted); }
+
+body.dark-mode .fa-announce-card {
+  background:
+    radial-gradient(480px circle at var(--amx, 50%) var(--amy, 0%), rgba(224, 194, 94, 0.1), transparent 62%),
+    var(--fa-dark-bg-alt);
+  border-color: var(--fa-dark-border);
+  box-shadow: 0 10px 26px rgba(0,0,0,.4);
+}
+body.dark-mode .fa-announce-card:hover {
+  box-shadow: 0 22px 44px rgba(0,0,0,.5);
+}
+body.dark-mode .fa-announce-card::after {
+  background: linear-gradient(115deg, transparent, rgba(156, 175, 136, 0.25), transparent);
+}
+body.dark-mode .fa-announce-tag { color: var(--fa-dark-accent); background: rgba(156, 175, 136, .15); }
+body.dark-mode .fa-announce-card:hover .fa-announce-tag { background: var(--fa-dark-gold); color: #0c2013; }
+body.dark-mode .fa-announce-date { color: var(--fa-dark-text-muted); }
+body.dark-mode .fa-announce-card:hover .fa-announce-date svg { color: var(--fa-dark-accent); }
+body.dark-mode .fa-announce-title { color: var(--fa-dark-text); }
+body.dark-mode .fa-announce-card:hover .fa-announce-title { color: var(--fa-dark-gold); }
+body.dark-mode .fa-announce-desc { color: var(--fa-dark-text-muted); }
+body.dark-mode .fa-announce-link { color: var(--fa-dark-accent); }
+body.dark-mode .fa-announce-link:hover { color: var(--fa-dark-gold); }
 
 /* =====================================================
    COURSES PAGE
