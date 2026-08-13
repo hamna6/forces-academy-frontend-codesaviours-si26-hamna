@@ -1,10 +1,5 @@
 /* =====================================================
    FORCES ACADEMY – HOME PAGE JS (v2)
-   1) Animated stats counter + staggered entrance (Intersection Observer)
-   2) Spotlight cursor glow + subtle tilt on stat cards
-   3) Floating back-to-top button (appears after 300px scroll)
-   4) Peel-off testimonials slider (autoplay + progress bar + manual controls)
-   5) Dark / light mode toggle (persists via localStorage)
    ===================================================== */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -148,6 +143,50 @@ document.addEventListener('DOMContentLoaded', function () {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
+
+  /* ---------------------------------------------------
+     3.5) ANNOUNCEMENT CARDS — cursor spotlight + haptic feedback
+     - Tracks the cursor so the card's gold spotlight (see home.css)
+       follows the pointer, same technique as the stat cards above
+     - Fires a short vibration on supported touch devices so tapping
+       a card / "Read More" link gives a small physical confirmation
+  --------------------------------------------------- */
+  const announceCards = document.querySelectorAll('.fa-announce-card');
+  const supportsVibration = typeof navigator !== 'undefined' && 'vibrate' in navigator;
+
+  function fireHaptic(pattern) {
+    if (!supportsVibration) return;
+    try { navigator.vibrate(pattern); } catch (e) {
+      // ignore — some browsers throw if called outside a user gesture
+    }
+  }
+
+  announceCards.forEach(function (card) {
+    card.addEventListener('mousemove', function (e) {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty('--amx', x + 'px');
+      card.style.setProperty('--amy', y + 'px');
+    });
+
+    card.addEventListener('mouseleave', function () {
+      card.style.removeProperty('--amx');
+      card.style.removeProperty('--amy');
+    });
+
+    // Light tap feedback the moment a finger lands on a card
+    card.addEventListener('touchstart', function () {
+      fireHaptic(8);
+    }, { passive: true });
+  });
+
+  // Slightly stronger confirmation pulse when actually following a link
+  document.querySelectorAll('.fa-announce-link').forEach(function (link) {
+    link.addEventListener('click', function () {
+      fireHaptic(15);
+    });
+  });
 
   /* ---------------------------------------------------
      4) PEEL-OFF TESTIMONIALS SLIDER
