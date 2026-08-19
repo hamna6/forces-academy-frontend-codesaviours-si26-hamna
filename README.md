@@ -8,9 +8,9 @@
 
 ## 📸 Screenshots
 
-| Home Page | About Page | Results Page |
-|---|---|---|
-| ![Home](./images/home.png) | ![About](./images/about.png) | ![Results](./images/results.png) |
+| Home Page | About Page | Results Page | Gallery Page |
+|---|---|---|---|
+| ![Home](./images/home.png) | ![About](./images/about.png) | ![Results](./images/results.png) | ![Gallery](./images/gallery.png) |
 
 ---
 
@@ -39,6 +39,26 @@
 - *Contact page* — inquiry form alongside the academy's location and contact information
 - *Semantic, accessible markup* — clean HTML5 structure throughout the site
 - *Cross-browser support* — consistent rendering across Chrome, Firefox, and Edge
+
+---
+
+## 🚀 How to Run Locally
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/hamna6/forces-academy-frontend-codesaviours-si26-hamna.git
+   ```
+
+2. **Navigate into the project folder**
+   ```bash
+   cd forces-academy-frontend-codesaviours-si26-hamna
+   ```
+
+3. **Open the site**
+   - Double-click `index.html` to open it directly in your browser, **or**
+   - Use **VS Code Live Server** (recommended): install the *Live Server* extension → right-click `index.html` → **Open with Live Server**
+
+4. **Browse the site** — use the navbar to move between Home, About, Courses, Admissions, Results, Gallery, and Contact.
 
 ---
 
